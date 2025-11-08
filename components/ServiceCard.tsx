@@ -4,13 +4,13 @@ export default function ServiceCard({title, children, icon}:{title:string; child
   const reduce = useReducedMotion()
   
   return (
-    <motion.div 
-      initial={reduce ? {} : {opacity: 0, y: 20}} 
-      whileInView={reduce ? {} : {opacity: 1, y: 0}} 
+    <motion.div
+      initial={reduce ? {} : {opacity: 0, y: 20}}
+      whileInView={reduce ? {} : {opacity: 1, y: 0}}
       viewport={{once: true, margin: "-50px"}}
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="p-8 bg-gradient-to-b from-white/80 to-white/60 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300"
+      className="p-8 bg-gradient-to-b from-white/80 to-white/60 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover-lift gradient-border"
     >
       <div className="flex flex-col items-start gap-4">
         {icon && (
