@@ -68,15 +68,15 @@ body {
   }
 
   .glass-card {
-    @apply bg-gradient-to-b from-[var(--gradient-start)] to-[var(--gradient-end)] backdrop-blur-lg border border-[var(--glass-stroke)] shadow-xl;
+    @apply bg-gradient-to-b from-[var(--gradient-start)] to-[var(--gradient-end)] backdrop-blur-lg border border-[var(--glass-stroke)] shadow-xl hover:shadow-2xl transition-all duration-500;
   }
 
   .glass-button {
-    @apply bg-gradient-to-r from-primary/90 to-primary-dark/90 backdrop-blur-sm text-white shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-0.5;
+    @apply bg-gradient-to-r from-primary/90 to-primary-dark/90 backdrop-blur-sm text-white shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105;
   }
 
   .heading-gradient {
-    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accentBlue to-primary-dark bg-clip-text text-transparent;
   }
 
   .animate-float {
@@ -84,7 +84,7 @@ body {
   }
 
   .hero-gradient {
-    background: 
+    background:
       radial-gradient(circle at 0% 0%, var(--primary) 0%, transparent 25%),
       radial-gradient(circle at 100% 100%, var(--primary-dark) 0%, transparent 25%),
       linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -92,6 +92,40 @@ body {
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5), 0 0 20px rgba(6, 182, 212, 0.3), 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .gradient-border {
+    background: linear-gradient(45deg, #2563eb, #06b6d4, #1e40af);
+    padding: 2px;
+    border-radius: 12px;
+  }
+
+  .gradient-border > * {
+    background: white;
+    border-radius: 10px;
+  }
+
+  .dark .gradient-border > * {
+    background: #07112a;
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, #2563eb, #06b6d4, #1e40af, #064e3b);
+    background-size: 400% 400%;
+    animation: gradient-xy 15s ease infinite;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 }
 
