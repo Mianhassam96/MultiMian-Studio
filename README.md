@@ -32,7 +32,7 @@ Features
 
 📄 Ready-to-use portfolio sections, services, contact, and testimonials pages
 
-Screenshots
+[live Preview](https://mianhassam96.github.io/MultiMian-Studio/)
 
 
 
