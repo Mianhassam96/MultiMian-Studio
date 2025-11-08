@@ -88,9 +88,9 @@ export default function Contact() {
             Let's Connect
           </h1>
           <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-8">
-            Ready to bring your ideas to life? I'm here to help you build something amazing.
-            Whether it's a new project, collaboration, or just a chat about technology,
-            I'd love to hear from you.
+            Ready to bring your ideas to life? I&apos;m here to help you build something amazing.
+            Whether it&apos;s a new project, collaboration, or just a chat about technology,
+            I&apos;d love to hear from you.
           </p>
           <div className="inline-flex items-center gap-3 text-sm text-primary bg-primary/10 px-6 py-3 rounded-xl">
             <span>🚀</span>

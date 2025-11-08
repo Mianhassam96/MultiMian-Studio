@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const testimonials = [
   {
@@ -90,7 +91,7 @@ export default function Testimonials() {
           Client Testimonials
         </h1>
         <p className="text-xl text-muted mb-8">
-          Don&apos;t just take our word for it — hear from our satisfied clients who have experienced
+          Don&apos;t just take our word for it &mdash; hear from our satisfied clients who have experienced
           the quality and dedication we bring to every project.
         </p>
         <div className="inline-flex items-center gap-3 text-sm text-primary bg-primary/10 px-6 py-3 rounded-xl">
@@ -150,7 +151,7 @@ export default function Testimonials() {
             Let&apos;s discuss how we can help bring your vision to life with the same quality and dedication
             our clients have experienced.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center gap-2 glass-button px-8 py-4 rounded-xl font-medium"
           >

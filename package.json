@@ -1,12 +1,15 @@
 {
-  "name": "multimian-website",
+  "name": "multimian-studio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Mianhassam96.github.io/MultiMian-Studio",
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
