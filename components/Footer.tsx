@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t bg-gradient-to-r from-white/60 via-primary/5 to-white/60 dark:from-gray-900/60 dark:via-primary/5 dark:to-gray-900/60 backdrop-blur-sm">
       <div className="container py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-sm text-muted">
-          © {new Date().getFullYear()} Mian Hassam — Full-stack developer
+          © {new Date().getFullYear()} MultiMian Dev 
           <br />
           <span className="text-xs opacity-75">Building amazing digital experiences</span>
         </div>
