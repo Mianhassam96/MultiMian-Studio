@@ -20,14 +20,34 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/about" className="text-sm font-medium text-muted hover:text-primary transition-colors">About</Link>
-          <Link href="/services" className="text-sm font-medium text-muted hover:text-primary transition-colors">Services</Link>
-          <Link href="/portfolio" className="text-sm font-medium text-muted hover:text-primary transition-colors">Portfolio</Link>
-          <Link href="/testimonials" className="text-sm font-medium text-muted hover:text-primary transition-colors">Testimonials</Link>
-          <Link href="/contact" className="ml-4 inline-flex items-center px-6 py-2.5 glass-button rounded-lg text-sm font-medium">
-            Get in touch
+          <Link href="/about" className="text-sm font-medium text-muted hover:text-primary transition-all duration-300 hover:scale-105 relative group">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark group-hover:w-full transition-all duration-300"></span>
           </Link>
-          {/* single theme toggle button (dark green) */}
+          <Link href="/services" className="text-sm font-medium text-muted hover:text-primary transition-all duration-300 hover:scale-105 relative group">
+            Services
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/portfolio" className="text-sm font-medium text-muted hover:text-primary transition-all duration-300 hover:scale-105 relative group">
+            Portfolio
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/testimonials" className="text-sm font-medium text-muted hover:text-primary transition-all duration-300 hover:scale-105 relative group">
+            Testimonials
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/login" className="inline-flex items-center px-3 py-2 border border-primary/20 rounded-lg text-sm font-medium text-primary hover:bg-primary/10 transition-all duration-300 hover-lift">
+            Login
+          </Link>
+          <Link href="/register" className="inline-flex items-center px-3 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-dark transition-all duration-300 hover-lift">
+            Register
+          </Link>
+          <Link href="/contact" className="ml-4 inline-flex items-center px-6 py-2.5 glass-button rounded-lg text-sm font-medium hover-lift">
+            Get in touch
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
           <ThemeToggle />
         </nav>
 
@@ -42,7 +62,8 @@ export default function Header() {
                 <Link href="/about" className="block px-4 py-2 text-sm text-muted">About</Link>
                 <Link href="/services" className="block px-4 py-2 text-sm text-muted">Services</Link>
                 <Link href="/contact" className="block px-4 py-2 text-sm text-muted">Contact</Link>
-
+                <Link href="/login" className="block px-4 py-2 text-sm text-primary">Login</Link>
+                <Link href="/register" className="block px-4 py-2 text-sm text-primary">Register</Link>
                 <Link href="/contact" className="block px-4 py-2 text-sm text-primary">Get in touch</Link>
               </div>
             </div>
