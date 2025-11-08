@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <section className="rounded-2xl p-8 md:p-16 text-center relative overflow-hidden min-h-[80vh] flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/15 to-orange-500/20 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-gradient-to-tl from-cyan-400/10 via-transparent to-magenta-400/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-green-600/15 to-cyan-500/20 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-green-500/10 via-transparent to-blue-500/10"></div>
       {/* Floating elements for attraction */}
       <motion.div
         className="absolute top-20 left-20 w-4 h-4 bg-purple-400 rounded-full opacity-60"
@@ -20,7 +20,7 @@ export default function Hero() {
         }}
       />
       <motion.div
-        className="absolute top-40 right-32 w-6 h-6 bg-pink-400 rounded-full opacity-50"
+        className="absolute top-40 right-32 w-6 h-6 bg-green-400 rounded-full opacity-50"
         animate={{
           y: [0, 30, 0],
           x: [0, -10, 0],
@@ -33,7 +33,7 @@ export default function Hero() {
         }}
       />
       <motion.div
-        className="absolute bottom-32 left-40 w-3 h-3 bg-orange-400 rounded-full opacity-70"
+        className="absolute bottom-32 left-40 w-3 h-3 bg-cyan-400 rounded-full opacity-70"
         animate={{
           y: [0, -15, 0],
           rotate: [0, -360],
@@ -56,15 +56,15 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm border border-green-400/30"
         >
-          <span className="flex h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse"></span>
+          <span className="flex h-2 w-2 rounded-full bg-gradient-to-r from-green-400 to-cyan-500 animate-pulse"></span>
           <span className="text-sm font-medium text-white">Full-Stack Development Studio</span>
         </motion.div>
 
 
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-magenta-500"
+          className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -132,7 +132,7 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-6 flex-wrap">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-medium inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-medium inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               👉 Let’s Build Your Project
             <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
