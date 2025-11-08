@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  /* Accent/theme colors requested by user */
+  --accent-green: #064e3b; /* dark green */
+  --accent-red: #7f1d1d; /* dark red */
+  --accent-blue: #0b3d91; /* dark blue */
+  --accent-yellow: #b45309; /* dark yellow / amber */
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --glass: rgba(255,255,255,0.8);
+  --glass-stroke: rgba(255,255,255,0.1);
+  --card-shadow: 0 8px 32px -4px rgba(0,0,0,0.1);
+  --gradient-start: rgba(255,255,255,0.8);
+  --gradient-end: rgba(255,255,255,0.6);
+}
+
+.dark {
+  --primary: #3b82f6;
+  --primary-dark: #60a5fa;
+  /* Dark-mode accents (slightly lighter for contrast) */
+  --accent-green: #065f46;
+  --accent-red: #991b1b;
+  --accent-blue: #0b57d0;
+  --accent-yellow: #f59e0b;
+  --bg: #07112a;
+  --text: #e6eef8;
+  --muted: #9fb3d4;
+  --glass: rgba(255,255,255,0.04);
+  --glass-stroke: rgba(255,255,255,0.05);
+  --card-shadow: 0 8px 32px -4px rgba(0,0,0,0.3);
+  --gradient-start: rgba(255,255,255,0.1);
+  --gradient-end: rgba(255,255,255,0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-image: 
+    radial-gradient(circle at 100% 0%, var(--primary-dark) 0%, transparent 25%),
+    radial-gradient(circle at 0% 100%, var(--primary) 0%, transparent 25%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-card {
+    @apply bg-gradient-to-b from-[var(--gradient-start)] to-[var(--gradient-end)] backdrop-blur-lg border border-[var(--glass-stroke)] shadow-xl;
+  }
+
+  .glass-button {
+    @apply bg-gradient-to-r from-primary/90 to-primary-dark/90 backdrop-blur-sm text-white shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-0.5;
+  }
+
+  .heading-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hero-gradient {
+    background: 
+      radial-gradient(circle at 0% 0%, var(--primary) 0%, transparent 25%),
+      radial-gradient(circle at 100% 100%, var(--primary-dark) 0%, transparent 25%),
+      linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .text-muted { 
+    color: var(--muted); 
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
