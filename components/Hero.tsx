@@ -3,8 +3,48 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="hero-gradient rounded-2xl p-8 md:p-16 text-center relative overflow-hidden min-h-[80vh] flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-dark/5 backdrop-blur-sm"></div>
+    <section className="rounded-2xl p-8 md:p-16 text-center relative overflow-hidden min-h-[80vh] flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/15 to-orange-500/20 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-cyan-400/10 via-transparent to-magenta-400/10"></div>
+      {/* Floating elements for attraction */}
+      <motion.div
+        className="absolute top-20 left-20 w-4 h-4 bg-purple-400 rounded-full opacity-60"
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 360],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute top-40 right-32 w-6 h-6 bg-pink-400 rounded-full opacity-50"
+        animate={{
+          y: [0, 30, 0],
+          x: [0, -10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
+      <motion.div
+        className="absolute bottom-32 left-40 w-3 h-3 bg-orange-400 rounded-full opacity-70"
+        animate={{
+          y: [0, -15, 0],
+          rotate: [0, -360],
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+      />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -16,15 +56,15 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30"
         >
-          <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-          <span className="text-sm font-medium text-primary">Full-Stack Development Studio</span>
+          <span className="flex h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse"></span>
+          <span className="text-sm font-medium text-white">Full-Stack Development Studio</span>
         </motion.div>
 
 
-        <motion.h1 
-          className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark"
+        <motion.h1
+          className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-magenta-500"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -34,7 +74,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-muted max-w-3xl mx-auto mb-6 leading-relaxed"
+          className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-6 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
@@ -43,7 +83,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          className="max-w-3xl mx-auto text-base text-muted mb-8 leading-relaxed"
+          className="max-w-3xl mx-auto text-base text-gray-300 mb-8 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -60,48 +100,48 @@ export default function Hero() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             <div className="flex items-start gap-3">
-              <div className="text-primary text-xl">✅</div>
+              <div className="text-cyan-400 text-xl">✅</div>
               <div>
-                <div className="font-semibold">Full Stack Expertise</div>
-                <div className="text-sm text-muted">Frontend, Backend, APIs, and Databases</div>
+                <div className="font-semibold text-white">Full Stack Expertise</div>
+                <div className="text-sm text-gray-300">Frontend, Backend, APIs, and Databases</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="text-primary text-xl">✅</div>
+              <div className="text-cyan-400 text-xl">✅</div>
               <div>
-                <div className="font-semibold">Clean & Scalable Code</div>
-                <div className="text-sm text-muted">Maintainable architecture and best practices</div>
+                <div className="font-semibold text-white">Clean & Scalable Code</div>
+                <div className="text-sm text-gray-300">Maintainable architecture and best practices</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="text-primary text-xl">✅</div>
+              <div className="text-cyan-400 text-xl">✅</div>
               <div>
-                <div className="font-semibold">Responsive & SEO-Optimized</div>
-                <div className="text-sm text-muted">Fast, accessible, and search-friendly designs</div>
+                <div className="font-semibold text-white">Responsive & SEO-Optimized</div>
+                <div className="text-sm text-gray-300">Fast, accessible, and search-friendly designs</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="text-primary text-xl">✅</div>
+              <div className="text-cyan-400 text-xl">✅</div>
               <div>
-                <div className="font-semibold">On-Time Delivery</div>
-                <div className="text-sm text-muted">Reliable timelines and ongoing support</div>
+                <div className="font-semibold text-white">On-Time Delivery</div>
+                <div className="text-sm text-gray-300">Reliable timelines and ongoing support</div>
               </div>
             </div>
           </div>
 
           <div className="flex items-center justify-center gap-6 flex-wrap">
-            <Link 
-              href="/contact" 
-              className="glass-button px-8 py-4 rounded-xl font-medium inline-flex items-center gap-2"
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-medium inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               👉 Let’s Build Your Project
             <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
             </svg>
           </Link>
-          <Link 
-            href="/portfolio" 
-            className="px-6 py-4 rounded-xl text-primary font-medium hover:bg-primary/5 transition-all duration-300 inline-flex items-center gap-2 border border-primary/20"
+          <Link
+            href="/portfolio"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white px-6 py-4 rounded-xl font-medium inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             View My Work
             <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
@@ -119,16 +159,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-1">100+</div>
-            <div className="text-sm text-muted">Projects Delivered</div>
+            <div className="text-2xl font-bold text-cyan-400 mb-1">100+</div>
+            <div className="text-sm text-gray-300">Projects Delivered</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-1">5★</div>
-            <div className="text-sm text-muted">Client Rating</div>
+            <div className="text-2xl font-bold text-cyan-400 mb-1">5★</div>
+            <div className="text-sm text-gray-300">Client Rating</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-            <div className="text-sm text-muted">Support</div>
+            <div className="text-2xl font-bold text-cyan-400 mb-1">24/7</div>
+            <div className="text-sm text-gray-300">Support</div>
           </div>
         </motion.div>
       </motion.div>
