@@ -89,10 +89,8 @@ Deploy to GitHub Pages:
 
 npm run deploy
 
+https://github.com/Mianhassam96/MultiMian-Studio/
 
-Your project will be publicly available at:
-
-https://<your-github-username>.github.io/MultiMian-Studio/
 
 Technologies Used
 
