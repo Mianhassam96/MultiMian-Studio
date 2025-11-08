@@ -8,6 +8,6 @@
 - [x] Enhance button styles with hover effects and better colors
 - [x] Adjust text colors for better contrast and appeal
 - [x] Ensure responsive design remains intact
-- [ ] Test the component visually by running the dev server
-- [ ] Commit changes to a new branch with prefix 'blackboxai/'
-- [ ] Push changes to GitHub
+- [x] Test the component visually by running the dev server
+- [x] Commit changes to a new branch with prefix 'blackboxai/'
+- [x] Push changes to GitHub
