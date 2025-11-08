@@ -1,30 +1,120 @@
-# MultiMian-Studio
+MultiMian-Studio 🚀
 
-🚀 **MultiMian-Studio** is a full-stack development studio portfolio showcasing modern, scalable, and user-centric web solutions. Built with Next.js, React, TypeScript, and other cutting-edge technologies, this project demonstrates interactive frontends, robust backends, and clean, maintainable code.
 
----
 
-## 🔹 Live Demo
-Check out the live version: [MultiMian-Studio Live](#) *(replace `#` with deployed link)*
+MultiMian-Studio is a modern full-stack development portfolio showcasing interactive, scalable, and visually engaging web applications. It features responsive layouts, smooth animations with Framer Motion, and a clean, user-friendly interface built with Next.js, React, and TailwindCSS.
 
----
+This project demonstrates a complete front-to-back web application workflow, including:
 
-## 📂 Features
-- **Responsive Design:** Works seamlessly across devices.  
-- **Interactive UI:** Smooth animations and modern layout with Framer Motion.  
-- **Portfolio Showcase:** Highlighting projects with live demos and GitHub links.  
-- **Services Section:** Detailed breakdown of services offered.  
-- **CTA Integration:** Call-to-action sections to encourage user engagement.  
-- **Clean Architecture:** Modular and maintainable code structure.
+Modern portfolio sections with project showcases
 
----
+Interactive hero sections with animations
 
-## 🛠️ Technologies Used
-- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion  
-- **Backend (if applicable):** Node.js, Express, MongoDB, MySQL  
-- **Tools & Platforms:** Git, VS Code, Vercel, Firebase, Docker  
-- **Other:** Responsive layouts, SEO optimization, animations, and interactivity  
+Responsive service cards and CTA banners
 
----
+Fully typed with TypeScript
 
-## 📁 Project Structure
+Easy deployment to GitHub Pages
+
+Features
+
+🚀 Next.js & React for a fast, modern frontend
+
+💻 TypeScript for type-safe development
+
+🎨 TailwindCSS for responsive and customizable styling
+
+⚡ Framer Motion for smooth animations and transitions
+
+🌐 Fully responsive design for desktop, tablet, and mobile
+
+📂 Clean folder structure for scalability
+
+📄 Ready-to-use portfolio sections, services, contact, and testimonials pages
+
+Screenshots
+
+
+
+
+
+
+Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/Mianhassam96/MultiMian-Studio.git
+cd MultiMian-Studio
+
+
+Install dependencies:
+
+npm install
+
+
+Run the development server:
+
+npm run dev
+
+
+Open your browser and visit http://localhost:3000
+
+Building & Deployment
+
+Build the project:
+
+npm run build
+
+
+Start production server:
+
+npm start
+
+GitHub Pages Deployment
+
+To deploy on GitHub Pages, install gh-pages:
+
+npm install --save-dev gh-pages
+
+
+Add the following scripts to your package.json:
+
+"scripts": {
+  "predeploy": "next build && next export",
+  "deploy": "gh-pages -d out"
+}
+
+
+Deploy to GitHub Pages:
+
+npm run deploy
+
+
+Your project will be publicly available at:
+
+https://<your-github-username>.github.io/MultiMian-Studio/
+
+Technologies Used
+
+Frontend: Next.js, React, TailwindCSS, Framer Motion
+
+Languages: TypeScript, JavaScript
+
+Build & Deployment: Node.js, npm, GitHub Pages
+
+
+Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+License
+
+This project is licensed under the MIT License.
+
+Contact
+
+Mian Hassam
+
+GitHub: @Mianhassam96
+
+Email: mhassamkb@gmail.com
