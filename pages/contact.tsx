@@ -85,7 +85,7 @@ export default function Contact() {
       >
         <div className="container">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Connect
           </h1>
           <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-8">
             Ready to bring your ideas to life? I&apos;m here to help you build something amazing.
@@ -94,7 +94,7 @@ export default function Contact() {
           </p>
           <div className="inline-flex items-center gap-3 text-sm text-primary bg-primary/10 px-6 py-3 rounded-xl">
             <span>🚀</span>
-            <span>Let's create something extraordinary together</span>
+            <span>Let&apos;s create something extraordinary together</span>
           </div>
         </div>
       </motion.div>
