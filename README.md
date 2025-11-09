@@ -36,15 +36,11 @@ Features
 
 
 
-
-
-
 Installation & Setup
 
 Clone the repository:
 
 git clone https://github.com/Mianhassam96/MultiMian-Studio.git
-cd MultiMian-Studio
 
 
 Install dependencies:
