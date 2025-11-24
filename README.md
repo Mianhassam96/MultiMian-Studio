@@ -10,11 +10,7 @@ Modern portfolio sections with project showcases
 
 Interactive hero sections with animations
 
-Responsive service cards and CTA banners
 
-Fully typed with TypeScript
-
-Easy deployment to GitHub Pages
 
 Features
 
