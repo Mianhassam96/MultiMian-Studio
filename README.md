@@ -32,65 +32,12 @@ Features
 
 
 
-Installation & Setup
-
-Clone the repository:
-
-git clone https://github.com/Mianhassam96/MultiMian-Studio.git
-
-
-Install dependencies:
-
-npm install
-
-
-Run the development server:
-
-npm run dev
-
-
-Open your browser and visit http://localhost:3000
-
-Building & Deployment
-
-Build the project:
-
-npm run build
-
-
-Start production server:
-
-npm start
-
-GitHub Pages Deployment
-
-To deploy on GitHub Pages, install gh-pages:
-
-npm install --save-dev gh-pages
-
-
-Add the following scripts to your package.json:
-
-"scripts": {
-  "predeploy": "next build && next export",
-  "deploy": "gh-pages -d out"
-}
-
-
 Deploy to GitHub Pages:
 
 npm run deploy
 
 https://github.com/Mianhassam96/MultiMian-Studio/
 
-
-Technologies Used
-
-Frontend: Next.js, React, TailwindCSS, Framer Motion
-
-Languages: TypeScript, JavaScript
-
-Build & Deployment: Node.js, npm, GitHub Pages
 
 
 Contributing
