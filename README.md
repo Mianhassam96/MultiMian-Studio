@@ -32,10 +32,6 @@ Features
 
 
 
-Deploy to GitHub Pages:
-
-npm run deploy
-
 https://github.com/Mianhassam96/MultiMian-Studio/
 
 
