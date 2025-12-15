@@ -1,6 +1,3 @@
-MultiMian-Studio 🚀
-
-
 
 MultiMian-Studio is a modern full-stack development portfolio showcasing interactive, scalable, and visually engaging web applications. It features responsive layouts, smooth animations with Framer Motion, and a clean, user-friendly interface built with Next.js, React, and TailwindCSS.
 
