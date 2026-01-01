@@ -29,8 +29,6 @@ Features
 
 
 
-https://github.com/Mianhassam96/MultiMian-Studio/
-
 
 
 Contributing
