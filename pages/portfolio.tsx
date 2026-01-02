@@ -11,12 +11,12 @@ const projects = [
     repo: "https://github.com/Mianhassam96/MultiMian-SkyScope"
   },
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
+    title: "MianPix",
+    description: "MianPix is a modern, fast, and user-friendly image editing web app that allows anyone to upload, preview, and enhance images instantly. With a clean interface and smooth animations, users can edit photos effortlessly—whether it’s adjusting, cropping, or preparing images for download.",
     tech: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-    image: "/portfolio/ecommerce.jpg",
-    demo: "#",
-    repo: "#"
+    image: "/portfolio/MianPix.jpg",
+    demo: "https://mianhassam96.github.io/MianPix/",
+    repo: "https://github.com/Mianhassam96/MianPix"
   },
   {
     title: "SaaS Dashboard",
