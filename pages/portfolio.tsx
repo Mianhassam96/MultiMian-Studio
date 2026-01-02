@@ -19,12 +19,36 @@ const projects = [
     repo: "https://github.com/Mianhassam96/MianPix"
   },
   {
-    title: "SaaS Dashboard",
-    description: "Modern analytics dashboard with real-time data visualization and user management.",
+    title: "MultiMian TypePro",
+    description: "MultiMian TypePro is an advanced, interactive typing speed and accuracy testing tool designed to help users improve their typing skills. It goes beyond basic typing tests by providing real-time analysis, performance metrics, and engaging animations to make practicing fun and productive.",
     tech: ["React", "Node.js", "D3.js", "PostgreSQL"],
     image: "/portfolio/dashboard.jpg",
-    demo: "#",
-    repo: "#"
+    demo: "https://mianhassam96.github.io/MultiMian-TypePro/",
+    repo: "https://github.com/Mianhassam96/MultiMian-TypePro"
+  },
+  {
+    title: "Real-time Character Counter",
+    description: "A Real-time Character Counter that helps users track the number of characters, words, and remaining characters while typing. Features include a customizable character limit, a progress bar, copy and reset buttons, speech-to-text functionality, and a dark mode toggle for an enhanced user experience. Built with HTML, CSS, and JavaScript.",
+    tech: ["React", "Node.js", "D3.js", "PostgreSQL"],
+    image: "/portfolio/dashboard.jpg",
+    demo: "https://real-time-character-counter-blond.vercel.app/",
+    repo: "https://github.com/Mianhassam96/Real-Time-Character-Counter"
+  },
+  {
+    title: "Video-Processor",
+    description: "Video-Processor is your all-in-one solution for seamless video handling. Upload videos, generate instant links, and download them in versatile formats—original, audio-only, or muted. Built with cutting-edge technologies like Vite, TypeScript, React, shadcn-ui, and Tailwind CSS for an exceptional experience.",
+    tech: ["React", "Node.js", "D3.js", "PostgreSQL"],
+    image: "/portfolio/dashboard.jpg",
+    demo: "https://video-processor-lac.vercel.app/",
+    repo: "https://github.com/Mianhassam96/Video-Processor"
+  },
+    {
+    title: "GitHub-Profile-Viewer---MultiMian",
+    description: "A web app to search and view GitHub profiles, showcasing user details, repositories, followers, and more. Built with HTML, CSS, and JavaScript, this app uses the GitHub API to fetch data. Features a clean UI with responsive design and includes social media links. A simple tool for exploring GitHub users.",
+    tech: ["React", "Node.js", "D3.js", "PostgreSQL"],
+    image: "/portfolio/dashboard.jpg",
+    demo: "https://git-hub-profile-viewer-multi-mian.vercel.app/",
+    repo: "https://github.com/Mianhassam96/GitHub-Profile-Viewer---MultiMian"
   }
 ]
 
