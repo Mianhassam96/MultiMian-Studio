@@ -117,7 +117,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-xl">☕</span>
-                  <p className="text-muted"><strong>Fun Fact:</strong> Debugging is my favorite puzzle, and coffee is my trusted sidekick.</p>
+                  <p className="text-muted"><strong>Fun Fact:</strong> Debugging is my strongest problem-solving skill.</p>
                 </div>
               </div>
             </div>
