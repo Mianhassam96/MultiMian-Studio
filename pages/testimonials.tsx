@@ -15,7 +15,7 @@ const testimonials = [
     quote: 'Reliable, communicative, and pragmatic — they are not just developers, they are strategic partners in our success story.',
     image: '/testimonials/tom.jpg',
     rating: 5
-  },
+  }, 
   {
     name: 'Sarah Chen',
     role: 'Founder, Digital Solutions',
@@ -31,7 +31,7 @@ const testimonials = [
     rating: 5
   },
   {
-    name: 'Emma Wilson',
+    name: 'Emman Wilson',
     role: 'Marketing Director, GrowthCo',
     quote: 'From concept to launch, MultiMian provided exceptional service. Their attention to user experience is remarkable.',
     image: '/testimonials/emma.jpg',
