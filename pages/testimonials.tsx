@@ -40,7 +40,7 @@ const testimonials = [
   {
     name: 'David Kim',
     role: 'Entrepreneur, TechVentures',
-    quote: 'MultiMian&apos;s expertise in modern web technologies helped us scale our platform efficiently. Highly recommended!',
+    quote: 'MultiMian expertise in modern web technologies helped us scale our platform efficiently. Highly recommended!',
     image: '/testimonials/david.jpg',
     rating: 5
   }
