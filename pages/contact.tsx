@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -75,7 +76,14 @@ export default function Contact() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Head>
+        <title>Contact - Get in Touch</title>
+        <meta name="description" content="Get in touch with us for your web development project. Contact via email, phone, or WhatsApp. Fast response within 24 hours." />
+        <meta name="keywords" content="contact web developer, hire developer, web development inquiry, project consultation" />
+      </Head>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -85,16 +93,14 @@ export default function Contact() {
       >
         <div className="container">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Build Something Great Together
           </h1>
           <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-8">
-            Ready to bring your ideas to life? I'm here to help you build something amazing.
-            Whether it's a new project, collaboration, or just a chat about technology,
-            I'd love to hear from you.
+            Have a project in mind? Need a website that actually converts? Looking for a custom web solution? We&apos;re here to help. Get in touch and let&apos;s discuss how we can bring your vision to life.
           </p>
           <div className="inline-flex items-center gap-3 text-sm text-primary bg-primary/10 px-6 py-3 rounded-xl">
-            <span>🚀</span>
-            <span>Let's create something extraordinary together</span>
+            <span>⚡</span>
+            <span>We respond within 24 hours • Free consultation • No obligation</span>
           </div>
         </div>
       </motion.div>
@@ -234,23 +240,23 @@ export default function Contact() {
                 className="space-y-8"
               >
                 <div>
-                  <h3 className="text-2xl font-bold mb-4">Why Work With Me?</h3>
+                  <h3 className="text-2xl font-bold mb-4">Why Choose MultiMian?</h3>
                   <ul className="space-y-3 text-muted">
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Full-stack development expertise</span>
+                      <span>Results-driven solutions that grow your business</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Modern technologies and best practices</span>
+                      <span>Clear communication in plain English, no tech jargon</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Responsive and user-friendly designs</span>
+                      <span>Fast delivery without compromising quality</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Fast turnaround and clear communication</span>
+                      <span>Ongoing support and partnership after launch</span>
                     </li>
                   </ul>
                 </div>
@@ -273,11 +279,13 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="glass-card p-6 rounded-2xl">
-                  <h3 className="text-xl font-bold mb-4">Quick Response</h3>
-                  <p className="text-muted">
-                    I typically respond to messages within 24 hours. For urgent inquiries,
-                    feel free to reach out via WhatsApp for faster communication.
+                <div className="glass-card p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary-dark/5">
+                  <h3 className="text-xl font-bold mb-4">🎁 Free Consultation</h3>
+                  <p className="text-muted mb-4">
+                    Not sure where to start? Book a free 30-minute consultation. We&apos;ll discuss your goals, answer your questions, and provide honest advice—no sales pressure.
+                  </p>
+                  <p className="text-sm text-primary font-medium">
+                    ⚡ Response time: Within 24 hours
                   </p>
                 </div>
               </motion.div>
@@ -286,5 +294,6 @@ export default function Contact() {
         </div>
       </motion.div>
     </div>
+    </>
   )
 }
