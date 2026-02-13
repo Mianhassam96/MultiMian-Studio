@@ -156,46 +156,14 @@ body {
   font-family: 'Jaro', sans-serif !important;
   font-weight: 400;
   letter-spacing: 0.05em;
-  animation: writeIn 2s ease-out forwards;
-  opacity: 0;
 }
 
-/* Write-in animation */
-@keyframes writeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
+/* Subtle pulse animation */
+@keyframes pulse {
+  0%, 100% {
     opacity: 1;
-    transform: translateX(0);
   }
-}
-
-/* Letter by letter animation */
-.logo-fancy span {
-  display: inline-block;
-  opacity: 0;
-  animation: letterAppear 0.5s ease-out forwards;
-}
-
-.logo-fancy span:nth-child(1) { animation-delay: 0.1s; }
-.logo-fancy span:nth-child(2) { animation-delay: 0.2s; }
-.logo-fancy span:nth-child(3) { animation-delay: 0.3s; }
-.logo-fancy span:nth-child(4) { animation-delay: 0.4s; }
-.logo-fancy span:nth-child(5) { animation-delay: 0.5s; }
-.logo-fancy span:nth-child(6) { animation-delay: 0.6s; }
-.logo-fancy span:nth-child(7) { animation-delay: 0.7s; }
-.logo-fancy span:nth-child(8) { animation-delay: 0.8s; }
-.logo-fancy span:nth-child(9) { animation-delay: 0.9s; }
-
-@keyframes letterAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    opacity: 0.8;
   }
 }

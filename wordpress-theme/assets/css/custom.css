@@ -30,19 +30,15 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: writeIn 2s ease-out forwards;
-    opacity: 0;
 }
 
-/* Write-in animation */
-@keyframes writeIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
+/* Subtle pulse animation */
+@keyframes pulse {
+    0%, 100% {
         opacity: 1;
-        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.8;
     }
 }
 

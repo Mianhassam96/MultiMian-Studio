@@ -39,21 +39,13 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="glass-card p-2 rounded-3xl overflow-hidden"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden relative bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+              <div className="aspect-square rounded-2xl overflow-hidden relative">
                 <img 
                   src="/images/mian-hassam-founder.jpg" 
                   alt="Mian Hassam - Founder of MultiMian"
                   className="w-full h-full object-cover"
                   loading="eager"
-                  onError={(e) => {
-                    console.log('Image failed to load, showing fallback');
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = '<div class="w-full h-full flex items-center justify-center"><div class="text-center"><div class="text-8xl font-bold text-blue-600 dark:text-blue-400 mb-4">MH</div><div class="text-xl text-gray-600 dark:text-gray-400">Mian Hassam</div><div class="text-sm text-gray-500 dark:text-gray-500">Founder & Developer</div></div></div>';
-                    }
-                  }}
+                  style={{ display: 'block' }}
                 />
               </div>
             </motion.div>
