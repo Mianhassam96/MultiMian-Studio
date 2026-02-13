@@ -35,11 +35,18 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="group relative">
           <span className="text-3xl md:text-4xl font-bold tracking-wider relative inline-block logo-fancy">
-            <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
-              MULTIMIAN
+            <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span>M</span>
+              <span>U</span>
+              <span>L</span>
+              <span>T</span>
+              <span>I</span>
+              <span>M</span>
+              <span>I</span>
+              <span>A</span>
+              <span>N</span>
             </span>
             <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-500"></span>
-            <span className="absolute -inset-2 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 blur-2xl transition-all duration-500 rounded-lg"></span>
           </span>
         </Link>
 

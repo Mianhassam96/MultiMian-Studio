@@ -64,9 +64,18 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl md:text-3xl font-bold tracking-wide" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                <span className="text-blue-400 font-extrabold">MULTI</span>
-                <span className="text-white font-bold">MIAN</span>
+              <span className="text-2xl md:text-3xl font-bold tracking-wide logo-fancy">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  <span>M</span>
+                  <span>U</span>
+                  <span>L</span>
+                  <span>T</span>
+                  <span>I</span>
+                  <span>M</span>
+                  <span>I</span>
+                  <span>A</span>
+                  <span>N</span>
+                </span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
