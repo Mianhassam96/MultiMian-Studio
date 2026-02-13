@@ -6,8 +6,8 @@ export default function WhatsAppPopup() {
   const [isClosed, setIsClosed] = useState(false)
 
   useEffect(() => {
-    // Check if user has already closed the popup in this session
-    const hasClosedPopup = sessionStorage.getItem('whatsappPopupClosed')
+    // Check if user has already closed the popup (stored in localStorage)
+    const hasClosedPopup = localStorage.getItem('whatsappPopupClosed')
     
     if (!hasClosedPopup) {
       // Show popup after 3 seconds
@@ -22,7 +22,7 @@ export default function WhatsAppPopup() {
   const handleClose = () => {
     setIsVisible(false)
     setIsClosed(true)
-    sessionStorage.setItem('whatsappPopupClosed', 'true')
+    localStorage.setItem('whatsappPopupClosed', 'true')
   }
 
   const handleWhatsAppClick = () => {

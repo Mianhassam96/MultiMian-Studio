@@ -1,0 +1,26 @@
+SCREENSHOT INSTRUCTIONS
+=======================
+
+To complete the theme, you need to add a screenshot.png file (1200x900px).
+
+This screenshot will appear in the WordPress theme selector.
+
+How to create it:
+1. Open your website homepage in a browser
+2. Take a screenshot of the full page
+3. Crop/resize to 1200x900 pixels
+4. Save as "screenshot.png"
+5. Place in the theme root folder (same location as style.css)
+
+Recommended tools:
+- Photoshop
+- GIMP (free)
+- Online tools like Canva
+
+The screenshot should show:
+- Your hero section
+- Navigation
+- Part of the services section
+- Overall design aesthetic
+
+This file (screenshot.txt) can be deleted after you add screenshot.png.

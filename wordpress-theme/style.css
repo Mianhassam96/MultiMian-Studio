@@ -1,0 +1,20 @@
+/*
+Theme Name: MultiMian Studio
+Theme URI: https://mianhassam96.github.io/MultiMian-Studio/
+Author: Mian Hassam
+Author URI: https://github.com/Mianhassam96
+Description: A modern, professional web development agency theme with premium design, dark mode support, and conversion-focused layouts. Perfect for web agencies, freelancers, and digital studios.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: multimian
+Tags: business, portfolio, agency, dark-mode, responsive, custom-menu, featured-images, threaded-comments, translation-ready
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+
+MultiMian Studio WordPress Theme, Copyright 2026 Mian Hassam
+MultiMian Studio is distributed under the terms of the GNU GPL
+*/
+
+/* This file is intentionally minimal. All styles are loaded via functions.php */
