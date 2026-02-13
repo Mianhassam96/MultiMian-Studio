@@ -22,7 +22,7 @@ export default function Document() {
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rowdies:wght@300;400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <Main />

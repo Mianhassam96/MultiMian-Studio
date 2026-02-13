@@ -44,8 +44,9 @@ export default function About() {
                   src="/images/mian-hassam-founder.jpg" 
                   alt="Mian Hassam - Founder of MultiMian"
                   className="w-full h-full object-cover"
+                  loading="eager"
                   onError={(e) => {
-                    // Show placeholder with initials if image not found
+                    console.log('Image failed to load, showing fallback');
                     const target = e.currentTarget;
                     target.style.display = 'none';
                     const parent = target.parentElement;
