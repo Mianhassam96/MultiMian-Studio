@@ -34,11 +34,9 @@ export default function Header() {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="group relative">
-          <span className="text-3xl md:text-4xl font-bold tracking-wider relative inline-block" style={{ fontFamily: 'Jaro, sans-serif' }}>
-            <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-pulse">
-              MULTIMIAN
-            </span>
-            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-500"></span>
+          <span className="text-3xl md:text-4xl font-bold tracking-wider relative inline-block transition-all duration-300 hover:scale-105" style={{ fontFamily: '"Space Grotesk", sans-serif', animation: 'float 3s ease-in-out infinite' }}>
+            <span className="text-blue-600 dark:text-blue-400">MULTI</span>
+            <span className="text-gray-900 dark:text-white">MIAN</span>
           </span>
         </Link>
 

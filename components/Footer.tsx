@@ -64,10 +64,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl md:text-3xl font-bold tracking-wide" style={{ fontFamily: 'Jaro, sans-serif' }}>
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  MULTIMIAN
-                </span>
+              <span className="text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300 hover:scale-105" style={{ fontFamily: '"Space Grotesk", sans-serif', display: 'inline-block', animation: 'float 3s ease-in-out infinite' }}>
+                <span className="text-blue-400">MULTI</span>
+                <span className="text-white">MIAN</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">

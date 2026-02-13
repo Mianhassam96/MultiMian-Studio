@@ -1,7 +1,7 @@
 /* MultiMian Studio Custom Styles */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     --color-primary: #2563EB;
@@ -23,22 +23,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Fancy Logo Font */
 .logo-text {
-    font-family: 'Jaro', sans-serif;
-    font-weight: 400;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
     letter-spacing: 0.05em;
-    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #2563EB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    animation: float 3s ease-in-out infinite;
 }
 
-/* Subtle pulse animation */
-@keyframes pulse {
+/* Float animation */
+@keyframes float {
     0%, 100% {
-        opacity: 1;
+        transform: translateY(0px);
     }
     50% {
-        opacity: 0.8;
+        transform: translateY(-5px);
+    }
+}
+
+/* Scale bounce animation */
+@keyframes scaleBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
     }
 }
 

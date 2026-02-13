@@ -92,7 +92,7 @@ export default function WhatsAppPopup() {
                     </svg>
                   </motion.div>
                 </motion.div>
-                <h2 className="text-3xl font-bold text-white mb-2 relative z-10" style={{ fontFamily: 'Jaro, sans-serif', letterSpacing: '0.05em' }}>
+                <h2 className="text-3xl font-bold text-white mb-2 relative z-10" style={{ fontFamily: '"Space Grotesk", sans-serif', letterSpacing: '0.05em' }}>
                   Welcome to MultiMian! 👋
                 </h2>
                 <p className="text-green-50 text-base relative z-10">Let&apos;s start building something amazing</p>

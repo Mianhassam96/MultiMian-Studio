@@ -153,17 +153,43 @@ body {
 
 /* Fancy Logo Styles */
 .logo-fancy {
-  font-family: 'Jaro', sans-serif !important;
-  font-weight: 400;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700;
   letter-spacing: 0.05em;
 }
 
-/* Subtle pulse animation */
-@keyframes pulse {
+/* Scale bounce animation */
+@keyframes scaleBounce {
   0%, 100% {
-    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Rotate subtle animation */
+@keyframes rotateSubtle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
