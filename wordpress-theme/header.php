@@ -6,11 +6,27 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="scroll-smooth">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <?php wp_head(); ?>
 </head>
 
