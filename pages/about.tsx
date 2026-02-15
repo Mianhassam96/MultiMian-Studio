@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function About() {
+  const router = useRouter()
+  const basePath = router.basePath || ''
+  
   return (
     <>
       <Head>
@@ -41,7 +45,7 @@ export default function About() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden relative">
                 <img 
-                  src="/images/mian-hassam-founder.jpg" 
+                  src={`${basePath}/images/mian-hassam-founder.jpg`}
                   alt="Mian Hassam - Founder of MultiMian"
                   className="w-full h-full object-cover"
                   loading="eager"
