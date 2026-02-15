@@ -257,27 +257,6 @@ Read: `CONTENT_MASTER_INDEX.md`
 --container-max: 1200px;
 ```
 
----
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Other Platforms
-- Netlify
-- AWS Amplify
-- Digital Ocean
-- Heroku
-
----
-
 ## 📝 License
 
 © 2024 MultiMian. Built by Mian Hassam. All rights reserved.
