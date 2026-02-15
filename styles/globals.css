@@ -60,10 +60,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background-image: 
-    radial-gradient(circle at 100% 0%, var(--primary-dark) 0%, transparent 25%),
-    radial-gradient(circle at 0% 100%, var(--primary) 0%, transparent 25%);
-  background-attachment: fixed;
 }
 
 @layer components {
@@ -88,10 +84,7 @@ body {
   }
 
   .hero-gradient {
-    background: 
-      radial-gradient(circle at 0% 0%, var(--primary) 0%, transparent 25%),
-      radial-gradient(circle at 100% 100%, var(--primary-dark) 0%, transparent 25%),
-      linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   }
 
   .text-balance {
