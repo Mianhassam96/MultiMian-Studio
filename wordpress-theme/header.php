@@ -44,8 +44,8 @@
                     <?php if (has_custom_logo()) : ?>
                         <?php the_custom_logo(); ?>
                     <?php else : ?>
-                        <a href="<?php echo esc_url(home_url('/')); ?>" class="text-2xl font-bold logo-text">
-                            MULTIMIAN
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="text-3xl md:text-4xl font-bold tracking-wider hover:scale-105 transition-transform duration-300" style="font-family: 'Space Grotesk', sans-serif;">
+                            <span class="text-blue-600 dark:text-blue-400">MULTI</span><span class="text-gray-900 dark:text-white">MIAN</span>
                         </a>
                     <?php endif; ?>
                 </div>
