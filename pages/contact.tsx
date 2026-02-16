@@ -8,26 +8,21 @@ export default function Contact() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
-      })
-      if (res.ok) {
-        setStatus('sent')
-        setName('')
-        setEmail('')
-        setMessage('')
-      } else {
-        setStatus('error')
-      }
-    } catch (err) {
-      setStatus('error')
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${name}`)
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+    window.location.href = `mailto:mianhassam96@gmail.com?subject=${subject}&body=${body}`
+    
+    // Show success message
+    setStatus('sent')
+    setTimeout(() => {
+      setName('')
+      setEmail('')
+      setMessage('')
+      setStatus('idle')
+    }, 3000)
   }
 
   const contactInfo = [
@@ -204,11 +199,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <button
-                      className="w-full px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary-dark transition"
                       type="submit"
-                      disabled={status === 'sending'}
                     >
-                      {status === 'sending' ? 'Sending...' : 'Send Message'}
+                      Send Message via Email
                     </button>
                   </div>
                   {status === 'sent' && (
