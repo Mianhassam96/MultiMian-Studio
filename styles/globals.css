@@ -129,6 +129,7 @@ body {
 
 .animate-gradient {
   animation: gradient 3s ease infinite;
+  background-size: 200% auto;
 }
 
 .bg-grid-pattern {
