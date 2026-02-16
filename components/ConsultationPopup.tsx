@@ -105,7 +105,7 @@ export default function ConsultationPopup() {
             className="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
           >
             {/* Animated gradient line at top */}
-            <div className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient bg-[length:200%_auto]"></div>
+            <div className="h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 animate-gradient bg-[length:200%_auto]"></div>
 
             {/* Close Button */}
             <button
@@ -123,18 +123,18 @@ export default function ConsultationPopup() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative p-8 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white overflow-hidden"
+                className="relative p-8 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden"
               >
                 {/* Floating background shapes */}
                 <div className="absolute top-10 right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-10 left-10 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-blue-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
                 <div className="relative z-10">
                   <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="text-2xl md:text-3xl font-bold mb-3 leading-tight"
+                    className="text-2xl md:text-3xl font-bold mb-3 leading-tight text-white"
                   >
                     Need Expert Help?
                   </motion.h2>
@@ -157,7 +157,7 @@ export default function ConsultationPopup() {
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xl">📞</span>
-                      <a href="tel:+923258831437" className="text-lg font-bold hover:text-blue-200 transition-colors">
+                      <a href="tel:+923258831437" className="text-lg font-bold hover:text-blue-200 transition-colors text-white">
                         +92 325 883 1437
                       </a>
                     </div>
@@ -186,8 +186,8 @@ export default function ConsultationPopup() {
                         transition={{ delay: 0.6 + idx * 0.1 }}
                         className="flex items-center gap-2"
                       >
-                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-400 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                          <svg className="w-3 h-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
@@ -292,7 +292,7 @@ export default function ConsultationPopup() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-bold text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       >
                         {isSubmitting ? (
                           <>
@@ -321,7 +321,7 @@ export default function ConsultationPopup() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', duration: 0.6 }}
-                      className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4"
+                      className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4"
                     >
                       <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
