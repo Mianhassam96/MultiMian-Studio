@@ -336,7 +336,7 @@ export default function Home() {
               Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Stories</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Discover how we've helped businesses transform their digital presence and achieve remarkable growth
+              Discover how we&apos;ve helped businesses transform their digital presence and achieve remarkable growth
             </p>
           </motion.div>
           
@@ -415,7 +415,7 @@ export default function Home() {
               What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Don't just take our word for it - hear from the businesses we've helped transform
+              Don&apos;t just take our word for it - hear from the businesses we&apos;ve helped transform
             </p>
           </motion.div>
           
@@ -515,10 +515,10 @@ export default function Home() {
               Ready to Get Started?
             </motion.div>
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-              Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">Amazing Together</span>
+              Let&apos;s Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">Amazing Together</span>
             </h2>
             <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-              Transform your digital presence with our expert development team. From concept to launch, we're here to bring your vision to life with cutting-edge technology and exceptional design.
+              Transform your digital presence with our expert development team. From concept to launch, we&apos;re here to bring your vision to life with cutting-edge technology and exceptional design.
             </p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }} 
