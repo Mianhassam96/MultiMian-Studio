@@ -164,6 +164,20 @@ export default function Header() {
             Get Free Consultation
           </Link>
 
+          <Link 
+            href="/login" 
+            className="ml-2 px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all"
+          >
+            Login
+          </Link>
+
+          <Link 
+            href="/signup" 
+            className="px-4 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all"
+          >
+            Sign Up
+          </Link>
+
           <ThemeToggle />
         </nav>
 
