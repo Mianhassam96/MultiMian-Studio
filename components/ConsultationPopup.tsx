@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function ConsultationPopup() {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -15,6 +17,10 @@ export default function ConsultationPopup() {
   const [isSuccess, setIsSuccess] = useState(false)
 
   useEffect(() => {
+    // Clear any previous popup state to ensure it shows on every page load/refresh
+    setIsOpen(false)
+    setIsSuccess(false)
+    
     // Show after 10 seconds on every page load
     const timeoutId = setTimeout(() => {
       setIsOpen(true)
@@ -23,15 +29,39 @@ export default function ConsultationPopup() {
     return () => {
       clearTimeout(timeoutId)
     }
-  }, [])
+  }, []) // Empty dependency array ensures this runs on every mount (page load/refresh)
+
+  // Also show popup on route changes (page navigation)
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false)
+      setIsSuccess(false)
+      
+      // Show popup after 10 seconds on new page
+      setTimeout(() => {
+        setIsOpen(true)
+      }, 10000)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Free Strategy Call Request from ${formData.name}`)
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProject Type: ${formData.projectType}\n\nMessage:\n${formData.message}`)
+    
+    // Open email client
+    window.location.href = `mailto:mianhassam96@gmail.com?subject=${subject}&body=${body}`
 
+    // Show success message
     setIsSubmitting(false)
     setIsSuccess(true)
 

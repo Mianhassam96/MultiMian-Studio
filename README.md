@@ -26,17 +26,6 @@ Visit: http://localhost:3000
 
 ---
 
-## 📚 Complete Documentation
-
-### Core Systems
-1. **[Brand Identity Guide](docs/BRAND_IDENTITY_GUIDE.md)** - Complete brand system
-2. **[Business System](docs/BUSINESS_SYSTEM.md)** - Client acquisition & workflows
-3. **[Content Master Index](CONTENT_MASTER_INDEX.md)** - Website content strategy
-
-### Quick References
-- **[Brand Implementation Checklist](BRAND_IMPLEMENTATION_CHECKLIST.md)** - Action items
-- **[Business Quick Start](BUSINESS_SYSTEM_QUICK_START.md)** - Business operations
-
 ---
 
 ## 🎨 Brand Identity
