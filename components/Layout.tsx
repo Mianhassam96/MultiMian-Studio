@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import WhatsAppPopup from './WhatsAppPopup'
 import WhatsAppButton from './WhatsAppButton'
+import ConsultationPopup from './ConsultationPopup'
 
 const Layout: React.FC<{children: React.ReactNode}> = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const Layout: React.FC<{children: React.ReactNode}> = ({ children }) => {
       <Footer />
       <WhatsAppPopup />
       <WhatsAppButton />
+      <ConsultationPopup />
     </div>
   )
 }
