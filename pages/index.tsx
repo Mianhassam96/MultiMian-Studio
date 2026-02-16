@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MultiMian - Full Stack Development Agency</title>
+        <title>MultiMian - Full Stack Development Agency | Professional Web Development</title>
         <meta name="description" content="Professional full-stack development by Mian Hassam" />
       </Head>
       
