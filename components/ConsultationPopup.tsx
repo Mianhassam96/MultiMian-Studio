@@ -15,51 +15,13 @@ export default function ConsultationPopup() {
   const [isSuccess, setIsSuccess] = useState(false)
 
   useEffect(() => {
-    // Check if popup was shown in last 24 hours
-    const lastShown = localStorage.getItem('consultationPopupShown')
-    const now = Date.now()
-    
-    if (lastShown && now - parseInt(lastShown) < 24 * 60 * 60 * 1000) {
-      return // Don't show if shown in last 24 hours
-    }
-
-    let hasShown = false
-
-    // Show after 10 seconds
+    // Show after 10 seconds on every page load
     const timeoutId = setTimeout(() => {
-      if (!hasShown) {
-        setIsOpen(true)
-        hasShown = true
-        localStorage.setItem('consultationPopupShown', now.toString())
-      }
+      setIsOpen(true)
     }, 10000)
-
-    // Show on 60% scroll
-    const handleScroll = () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
-      if (scrollPercent > 60 && !hasShown) {
-        setIsOpen(true)
-        hasShown = true
-        localStorage.setItem('consultationPopupShown', now.toString())
-      }
-    }
-
-    // Show on exit intent
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown) {
-        setIsOpen(true)
-        hasShown = true
-        localStorage.setItem('consultationPopupShown', now.toString())
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    document.addEventListener('mouseleave', handleMouseLeave)
 
     return () => {
       clearTimeout(timeoutId)
-      window.removeEventListener('scroll', handleScroll)
-      document.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [])
 
@@ -110,7 +72,7 @@ export default function ConsultationPopup() {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
           >
             {/* Animated gradient line at top */}
             <div className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient bg-[length:200%_auto]"></div>
@@ -131,29 +93,29 @@ export default function ConsultationPopup() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative p-12 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white overflow-hidden"
+                className="relative p-8 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 text-white overflow-hidden"
               >
                 {/* Floating background shapes */}
-                <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-10 right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-10 left-10 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
                 <div className="relative z-10">
                   <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="text-3xl md:text-4xl font-bold mb-4 leading-tight"
+                    className="text-2xl md:text-3xl font-bold mb-3 leading-tight"
                   >
-                    Build Something Powerful.
+                    Need Expert Help?
                   </motion.h2>
 
                   <motion.p
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="text-lg text-blue-100 mb-8 leading-relaxed"
+                    className="text-sm text-blue-100 mb-6 leading-relaxed"
                   >
-                    MultiMian is a full stack development agency helping businesses launch scalable websites, SaaS platforms, and performance-driven digital products.
+                    Full stack development agency specializing in scalable web solutions.
                   </motion.p>
 
                   {/* Contact Info */}
@@ -161,11 +123,11 @@ export default function ConsultationPopup() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="mb-8 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20"
+                    className="mb-6 p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
                   >
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-2xl">📞</span>
-                      <a href="tel:+923258831437" className="text-xl font-bold hover:text-blue-200 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xl">📞</span>
+                      <a href="tel:+923258831437" className="text-lg font-bold hover:text-blue-200 transition-colors">
                         +92 325 883 1437
                       </a>
                     </div>
@@ -173,46 +135,36 @@ export default function ConsultationPopup() {
                       href="https://wa.me/923258831437"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-100 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-2 text-xs text-blue-100 hover:text-white transition-colors"
                     >
-                      <span>💬</span> Contact via WhatsApp
+                      <span>💬</span> WhatsApp
                     </a>
                   </motion.div>
 
                   {/* Trust Points */}
-                  <div className="space-y-4">
+                  <div className="space-y-2.5">
                     {[
                       'Custom Web Development',
-                      'WordPress & E-commerce',
-                      'Secure Authentication Systems',
-                      'SEO-Optimized Architecture',
-                      'Ongoing Support & Growth Strategy'
+                      'SaaS & E-commerce',
+                      'SEO Optimized',
+                      'Ongoing Support'
                     ].map((point, idx) => (
                       <motion.div
                         key={point}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.6 + idx * 0.1 }}
-                        className="flex items-start gap-3"
+                        className="flex items-center gap-2"
                       >
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-400 flex items-center justify-center mt-0.5">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-400 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-blue-50 font-medium">{point}</span>
+                        <span className="text-blue-50 text-sm font-medium">{point}</span>
                       </motion.div>
                     ))}
                   </div>
-
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2 }}
-                    className="mt-8 text-sm text-blue-200 italic"
-                  >
-                    Trusted by startups and growing businesses.
-                  </motion.p>
                 </div>
               </motion.div>
 
@@ -221,20 +173,20 @@ export default function ConsultationPopup() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="p-12 bg-white dark:bg-gray-900"
+                className="p-8 bg-white dark:bg-gray-900"
               >
                 {!isSuccess ? (
                   <>
-                    <h3 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-                      Let&apos;s Talk About Your Project
+                    <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
+                      Free Strategy Call
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-8">
-                      Book a free strategy session and discover how we can transform your idea into a high-performance digital solution.
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                      Let&apos;s discuss your project goals.
                     </p>
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
                           Full Name *
                         </label>
                         <input
@@ -242,79 +194,79 @@ export default function ConsultationPopup() {
                           required
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                          className="w-full px-3 py-2.5 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
                           placeholder="John Doe"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                          Email Address *
+                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                          Email *
                         </label>
                         <input
                           type="email"
                           required
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                          className="w-full px-3 py-2.5 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
                           placeholder="john@example.com"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                          Phone Number *
+                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                          Phone *
                         </label>
                         <input
                           type="tel"
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                          className="w-full px-3 py-2.5 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
                           placeholder="+92 300 1234567"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
                           Project Type *
                         </label>
                         <select
                           required
                           value={formData.projectType}
                           onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                          className="w-full px-3 py-2.5 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
                         >
-                          <option value="">Select a project type</option>
+                          <option value="">Select project type</option>
                           <option value="business-website">Business Website</option>
                           <option value="saas-platform">SaaS Platform</option>
-                          <option value="wordpress-website">WordPress Website</option>
+                          <option value="wordpress-website">WordPress</option>
                           <option value="ecommerce">E-commerce</option>
-                          <option value="custom-web-app">Custom Web Application</option>
+                          <option value="custom-web-app">Custom App</option>
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                          Message / Project Details
+                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                          Message
                         </label>
                         <textarea
-                          rows={3}
+                          rows={2}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none resize-none"
-                          placeholder="Tell us about your project..."
+                          className="w-full px-3 py-2.5 text-sm rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none resize-none"
+                          placeholder="Brief project description..."
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       >
                         {isSubmitting ? (
                           <>
-                            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                             </svg>
@@ -323,43 +275,33 @@ export default function ConsultationPopup() {
                         ) : (
                           <>
                             <span>🚀</span>
-                            <span>Start My Free Consultation</span>
+                            <span>Book Free Call</span>
                           </>
                         )}
                       </button>
-
-                      <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-                        By submitting, you agree to our{' '}
-                        <Link href="/privacy" className="text-blue-600 hover:underline">
-                          Privacy Policy
-                        </Link>
-                      </p>
                     </form>
                   </>
                 ) : (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center h-full text-center py-20"
+                    className="flex flex-col items-center justify-center h-full text-center py-12"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', duration: 0.6 }}
-                      className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6"
+                      className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4"
                     >
-                      <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </motion.div>
-                    <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                       Thank You!
                     </h3>
-                    <p className="text-lg text-gray-600 dark:text-gray-400 mb-2">
-                      We&apos;ve received your consultation request.
-                    </p>
-                    <p className="text-gray-500 dark:text-gray-500">
-                      We&apos;ll get back to you within 24 hours.
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      We&apos;ll contact you within 24 hours.
                     </p>
                   </motion.div>
                 )}
