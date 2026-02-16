@@ -7,58 +7,105 @@ const services = [
     category: "Web Development",
     icon: "🌐",
     description: "Professional websites that establish credibility and attract customers",
+    slug: "web-development",
     services: [
       {
         title: "Business Websites",
-        description: "A professional website designed to showcase your business, build trust, and convert visitors into customers.",
-        whoItsFor: "Small businesses, service providers, local businesses, professionals",
+        slug: "business-websites",
+        description: "A professional website designed to showcase your business, build trust, and convert visitors into customers. Built with modern technologies like React and Next.js for optimal performance and SEO.",
+        whoItsFor: "Small businesses, service providers, local businesses, professionals, consultants, agencies",
         benefits: [
-          "Custom design tailored to your brand",
-          "Mobile-responsive (works on all devices)",
-          "Fast loading speeds",
-          "SEO-optimized structure",
-          "Contact forms and lead capture",
-          "Easy content management",
-          "Security and SSL certificate",
-          "Google Analytics integration"
+          "Custom design tailored to your brand identity",
+          "Mobile-responsive (works perfectly on all devices)",
+          "Lightning-fast loading speeds (<2 seconds)",
+          "SEO-optimized structure for Google rankings",
+          "Contact forms and lead capture systems",
+          "Easy content management system (CMS)",
+          "Security and SSL certificate included",
+          "Google Analytics and tracking integration",
+          "Social media integration",
+          "Professional email setup"
         ],
-        results: "Increased credibility, more qualified leads, better search visibility, professional brand image",
+        features: [
+          "Homepage with hero section and CTAs",
+          "About page with team/founder info",
+          "Services/Products showcase",
+          "Contact page with form and map",
+          "Blog section (optional)",
+          "Testimonials and reviews section",
+          "Portfolio/Gallery (if applicable)"
+        ],
+        results: "Increased credibility, more qualified leads, better search visibility, professional brand image, 24/7 online presence",
+        caseStudy: "Helped a local consulting firm increase leads by 150% within 3 months of launch",
         investment: "Starting at $499",
-        timeline: "1-2 weeks"
+        timeline: "1-2 weeks",
+        techStack: "Next.js, React, Tailwind CSS, Node.js"
       },
       {
         title: "Portfolio Websites",
-        description: "Showcase your work with a stunning portfolio that highlights your skills and attracts ideal clients.",
-        whoItsFor: "Freelancers, creatives, photographers, designers, consultants",
+        slug: "portfolio-websites",
+        description: "Showcase your work with a stunning portfolio that highlights your skills and attracts ideal clients. Perfect for personal branding and establishing authority in your field.",
+        whoItsFor: "Freelancers, creatives, photographers, designers, consultants, developers, artists, content creators",
         benefits: [
-          "Eye-catching design",
-          "Project galleries",
-          "Case study sections",
-          "Testimonial displays",
-          "Contact integration",
-          "Blog functionality",
-          "Social media links",
-          "Fast performance"
+          "Eye-catching, modern design that stands out",
+          "Interactive project galleries with filters",
+          "Detailed case study sections",
+          "Client testimonial displays",
+          "Contact form integration",
+          "Blog functionality for thought leadership",
+          "Social media integration",
+          "Fast performance and smooth animations",
+          "Resume/CV download option",
+          "Skills and expertise showcase"
         ],
-        results: "Professional presentation, attract better clients, showcase expertise",
+        features: [
+          "Hero section with professional photo",
+          "About me/bio section",
+          "Portfolio grid with categories",
+          "Individual project pages",
+          "Client testimonials slider",
+          "Contact form",
+          "Blog (optional)",
+          "Downloadable resume"
+        ],
+        results: "Professional presentation, attract better clients, showcase expertise, establish authority, increase rates",
+        caseStudy: "Helped a freelance designer land 3 high-value clients within the first month",
         investment: "Starting at $399",
-        timeline: "1-2 weeks"
+        timeline: "1-2 weeks",
+        techStack: "Next.js, React, Framer Motion, Tailwind CSS"
       },
       {
         title: "Landing Pages",
-        description: "High-converting landing pages designed for specific campaigns, products, or services.",
-        whoItsFor: "Marketers, product launches, lead generation, event promotions",
+        slug: "landing-pages",
+        description: "High-converting landing pages designed for specific campaigns, products, or services. Optimized for paid ads (Google Ads, Facebook Ads) and organic traffic.",
+        whoItsFor: "Marketers, product launches, lead generation, event promotions, SaaS companies, course creators",
         benefits: [
-          "Conversion-focused design",
-          "A/B testing ready",
-          "Form integration",
-          "Analytics tracking",
-          "Fast deployment",
-          "Mobile-optimized"
+          "Conversion-focused design with clear CTAs",
+          "A/B testing ready for optimization",
+          "Form integration with email marketing tools",
+          "Analytics and conversion tracking",
+          "Fast deployment (3-5 days)",
+          "Mobile-optimized for all devices",
+          "Social proof and testimonials",
+          "Trust badges and security indicators",
+          "Exit-intent popups (optional)",
+          "Live chat integration (optional)"
         ],
-        results: "Higher conversion rates, better campaign ROI, more leads",
+        features: [
+          "Compelling hero section with value proposition",
+          "Benefits and features section",
+          "Social proof (testimonials, reviews, stats)",
+          "Pricing or offer section",
+          "FAQ section",
+          "Strong call-to-action",
+          "Lead capture form",
+          "Thank you page"
+        ],
+        results: "Higher conversion rates (avg 25-40%), better campaign ROI, more qualified leads, lower cost per acquisition",
+        caseStudy: "Increased conversion rate from 12% to 38% for a SaaS product launch",
         investment: "Starting at $299",
-        timeline: "3-5 days"
+        timeline: "3-5 days",
+        techStack: "Next.js, React, Tailwind CSS, Analytics"
       }
     ]
   },
@@ -66,57 +113,108 @@ const services = [
     category: "Web Applications",
     icon: "⚡",
     description: "Custom solutions that automate processes and scale your business",
+    slug: "web-applications",
     services: [
       {
         title: "Custom Web Apps",
-        description: "Tailored web applications built specifically for your business needs and workflows.",
-        whoItsFor: "Businesses with unique processes, companies needing automation, startups building MVPs",
+        slug: "custom-web-apps",
+        description: "Tailored web applications built specifically for your business needs and workflows. From CRM systems to project management tools, we build scalable solutions that grow with you.",
+        whoItsFor: "Businesses with unique processes, companies needing automation, startups building MVPs, enterprises needing custom tools",
         benefits: [
-          "Custom functionality",
-          "User authentication",
-          "Database design",
-          "Admin dashboards",
-          "API integrations",
-          "Scalable architecture",
-          "Security features",
-          "Documentation and training"
+          "Custom functionality designed for your workflow",
+          "User authentication and role-based access",
+          "Database design and optimization",
+          "Admin dashboards for management",
+          "Third-party API integrations",
+          "Scalable cloud architecture",
+          "Advanced security features",
+          "Documentation and training included",
+          "Real-time data synchronization",
+          "Mobile-responsive interface"
         ],
-        results: "Automated workflows, time savings, reduced errors, better data management, competitive advantage",
+        features: [
+          "User authentication system",
+          "Admin dashboard",
+          "Database management",
+          "API integrations",
+          "Reporting and analytics",
+          "Email notifications",
+          "File upload/management",
+          "Search and filtering"
+        ],
+        results: "Automated workflows, time savings (20+ hours/week), reduced errors, better data management, competitive advantage, improved team productivity",
+        caseStudy: "Built a custom CRM that saved a sales team 25 hours per week in manual data entry",
         investment: "Starting at $2,500",
-        timeline: "4-8 weeks"
+        timeline: "4-8 weeks",
+        techStack: "Next.js, Node.js, MongoDB/PostgreSQL, AWS"
       },
       {
         title: "SaaS Products",
-        description: "Software-as-a-Service platforms with subscription management and multi-tenant architecture.",
-        whoItsFor: "Entrepreneurs building SaaS, businesses offering software services",
+        slug: "saas-products",
+        description: "Software-as-a-Service platforms with subscription management, multi-tenant architecture, and scalable infrastructure. Turn your idea into a recurring revenue business.",
+        whoItsFor: "Entrepreneurs building SaaS, businesses offering software services, startups, tech companies",
         benefits: [
-          "Multi-tenant architecture",
-          "Subscription management",
-          "Payment gateway integration",
-          "User management",
-          "API access",
-          "Analytics dashboard",
-          "Scalable infrastructure"
+          "Multi-tenant architecture for scalability",
+          "Subscription and billing management",
+          "Payment gateway integration (Stripe, PayPal)",
+          "User management and permissions",
+          "RESTful API access for integrations",
+          "Analytics dashboard with key metrics",
+          "Scalable cloud infrastructure",
+          "Email automation and notifications",
+          "Onboarding flow for new users",
+          "Admin panel for management"
         ],
-        results: "Recurring revenue, scalable business model, automated billing",
+        features: [
+          "User registration and authentication",
+          "Subscription plans and billing",
+          "Payment processing",
+          "User dashboard",
+          "Admin panel",
+          "API documentation",
+          "Email notifications",
+          "Analytics and reporting",
+          "Team/workspace management",
+          "Integrations marketplace"
+        ],
+        results: "Recurring revenue model, scalable business, automated billing, reduced support costs, global reach",
+        caseStudy: "Launched a SaaS platform that reached $10k MRR within 6 months",
         investment: "Starting at $5,000",
-        timeline: "8-12 weeks"
+        timeline: "8-12 weeks",
+        techStack: "Next.js, Node.js, PostgreSQL, Stripe, AWS/Vercel"
       },
       {
         title: "Dashboards & Admin Panels",
-        description: "Powerful dashboards to visualize data, manage operations, and make informed decisions.",
-        whoItsFor: "Businesses needing data visualization, operations management, team collaboration",
+        slug: "dashboards-admin-panels",
+        description: "Powerful dashboards to visualize data, manage operations, and make informed decisions. Real-time analytics and reporting for your business.",
+        whoItsFor: "Businesses needing data visualization, operations management, team collaboration, executives needing insights",
         benefits: [
-          "Real-time data visualization",
-          "Custom reports",
-          "User role management",
-          "Export functionality",
-          "Responsive design",
-          "Secure access"
+          "Real-time data visualization with charts",
+          "Custom reports and exports",
+          "User role management and permissions",
+          "Export functionality (PDF, Excel, CSV)",
+          "Responsive design for all devices",
+          "Secure access with authentication",
+          "API integration with existing systems",
+          "Automated report generation",
+          "Customizable widgets and layouts",
+          "Dark mode support"
         ],
-        results: "Better decision making, improved efficiency, data-driven insights",
+        features: [
+          "Interactive charts and graphs",
+          "Data tables with sorting/filtering",
+          "User management",
+          "Report generation",
+          "Export capabilities",
+          "Real-time updates",
+          "Notifications and alerts",
+          "Custom widgets"
+        ],
+        results: "Better decision making, improved efficiency, data-driven insights, time savings, reduced manual reporting",
+        caseStudy: "Created an analytics dashboard that reduced reporting time from 8 hours to 15 minutes per week",
         investment: "Starting at $1,500",
-        timeline: "3-6 weeks"
+        timeline: "3-6 weeks",
+        techStack: "Next.js, React, Chart.js, Node.js, MongoDB"
       }
     ]
   },
@@ -124,41 +222,77 @@ const services = [
     category: "E-Commerce Solutions",
     icon: "🛒",
     description: "Complete online stores that make selling easy and boost revenue",
+    slug: "ecommerce-solutions",
     services: [
       {
         title: "Online Stores",
-        description: "Full-featured e-commerce websites with everything you need to sell products online.",
-        whoItsFor: "Retailers, product-based businesses, dropshipping businesses",
+        slug: "online-stores",
+        description: "Full-featured e-commerce websites with everything you need to sell products online. From product catalogs to secure checkout, we build stores that convert browsers into buyers.",
+        whoItsFor: "Retailers, product-based businesses, dropshipping businesses, wholesalers, brands launching online",
         benefits: [
-          "Product catalog management",
+          "Product catalog management with categories",
+          "Shopping cart with real-time updates",
+          "Secure checkout process",
+          "Payment gateway integration (Stripe, PayPal, etc.)",
+          "Inventory management system",
+          "Order tracking and management",
+          "Customer accounts and wishlists",
+          "Email notifications (order confirmations, shipping)",
+          "Mobile-responsive design",
+          "SEO-optimized product pages",
+          "Discount codes and promotions",
+          "Shipping calculator integration"
+        ],
+        features: [
+          "Product catalog with search",
           "Shopping cart",
           "Secure checkout",
-          "Payment gateway integration",
-          "Inventory management",
-          "Order tracking",
+          "Payment processing",
+          "Order management",
           "Customer accounts",
-          "Email notifications",
-          "Mobile-responsive",
-          "SEO-optimized"
+          "Inventory tracking",
+          "Shipping integration",
+          "Tax calculation",
+          "Analytics dashboard"
         ],
-        results: "Increased sales, 24/7 revenue, expanded market reach",
+        results: "Increased sales, 24/7 revenue generation, expanded market reach, reduced overhead costs, automated order processing",
+        caseStudy: "Helped an online retailer increase sales by 200% and reduce order processing time by 80%",
         investment: "Starting at $1,299",
-        timeline: "3-4 weeks"
+        timeline: "3-4 weeks",
+        techStack: "Next.js, Stripe, Node.js, MongoDB, Tailwind CSS"
       },
       {
         title: "Payment Integration",
-        description: "Secure payment processing with multiple payment methods and gateways.",
-        whoItsFor: "Any business accepting online payments, subscription services",
+        slug: "payment-integration",
+        description: "Secure payment processing with multiple payment methods and gateways. Accept credit cards, digital wallets, and international payments with confidence.",
+        whoItsFor: "Any business accepting online payments, subscription services, e-commerce stores, service providers",
         benefits: [
-          "Multiple payment gateways",
+          "Multiple payment gateways (Stripe, PayPal, Square)",
           "Secure PCI compliance",
-          "Recurring payments",
-          "Refund management",
-          "Transaction reporting"
+          "Recurring payments and subscriptions",
+          "Refund and dispute management",
+          "Transaction reporting and analytics",
+          "International payment support",
+          "Digital wallet integration (Apple Pay, Google Pay)",
+          "Fraud detection and prevention",
+          "Automated invoicing",
+          "Payment webhooks for automation"
         ],
-        results: "Secure transactions, customer trust, flexible payment options",
+        features: [
+          "Payment gateway setup",
+          "Checkout flow",
+          "Subscription billing",
+          "Invoice generation",
+          "Payment history",
+          "Refund processing",
+          "Security compliance",
+          "Multi-currency support"
+        ],
+        results: "Secure transactions, customer trust, flexible payment options, reduced cart abandonment, global sales capability",
+        caseStudy: "Integrated Stripe payments reducing checkout abandonment by 35%",
         investment: "Starting at $500",
-        timeline: "1-2 weeks"
+        timeline: "1-2 weeks",
+        techStack: "Stripe API, PayPal SDK, Node.js, Webhooks"
       }
     ]
   },
@@ -166,51 +300,106 @@ const services = [
     category: "Maintenance & Optimization",
     icon: "🔧",
     description: "Keep your website fast, secure, and performing at its best",
+    slug: "maintenance-optimization",
     services: [
       {
         title: "Speed Optimization",
-        description: "Make your website lightning fast for better user experience and SEO.",
-        whoItsFor: "Websites with slow loading times affecting conversions",
+        slug: "speed-optimization",
+        description: "Make your website lightning fast for better user experience and SEO. We optimize images, code, and server configuration to achieve sub-2-second load times.",
+        whoItsFor: "Websites with slow loading times affecting conversions, businesses losing traffic to slow sites, anyone wanting better SEO rankings",
         benefits: [
-          "Improved page load speeds",
-          "Better search engine rankings",
-          "Reduced bounce rates",
-          "Enhanced user experience"
+          "Improved page load speeds (target: <2 seconds)",
+          "Better search engine rankings (Core Web Vitals)",
+          "Reduced bounce rates (up to 50% improvement)",
+          "Enhanced user experience",
+          "Image optimization and lazy loading",
+          "Code minification and compression",
+          "CDN implementation",
+          "Database query optimization",
+          "Caching strategies",
+          "Performance monitoring setup"
         ],
-        results: "Higher conversions, better SEO, improved user satisfaction",
+        features: [
+          "Performance audit",
+          "Image optimization",
+          "Code optimization",
+          "Caching setup",
+          "CDN configuration",
+          "Database optimization",
+          "Before/after metrics",
+          "Ongoing monitoring"
+        ],
+        results: "Higher conversions (avg 20% increase), better SEO rankings, improved user satisfaction, reduced server costs",
+        caseStudy: "Reduced page load time from 8 seconds to 1.2 seconds, increasing conversions by 45%",
         investment: "Starting at $250",
-        timeline: "1 week"
+        timeline: "1 week",
+        techStack: "Next.js optimization, CDN, Image optimization, Caching"
       },
       {
         title: "Website Maintenance",
-        description: "Regular updates, backups, security monitoring, and technical support.",
-        whoItsFor: "Existing website owners who want peace of mind",
+        slug: "website-maintenance",
+        description: "Regular updates, backups, security monitoring, and technical support. Focus on your business while we keep your website running smoothly.",
+        whoItsFor: "Existing website owners who want peace of mind, businesses without technical staff, growing companies",
         benefits: [
-          "Regular updates",
-          "Security monitoring",
-          "Backup management",
+          "Regular software updates and patches",
+          "Security monitoring and threat detection",
+          "Automated backup management (daily/weekly)",
+          "Bug fixes and troubleshooting",
+          "Performance monitoring and optimization",
+          "Priority support (response within 24 hours)",
+          "Content updates (text, images)",
+          "Uptime monitoring (99.9% guarantee)",
+          "Monthly reports",
+          "Emergency support included"
+        ],
+        features: [
+          "Software updates",
+          "Security scans",
+          "Backups",
           "Bug fixes",
           "Performance monitoring",
-          "Priority support"
+          "Support tickets",
+          "Content updates",
+          "Monthly reports"
         ],
-        results: "Peace of mind, reduced downtime, secure website",
+        results: "Peace of mind, reduced downtime (99.9% uptime), secure website, always up-to-date, professional support",
+        caseStudy: "Prevented 3 security breaches and maintained 99.98% uptime for a client over 12 months",
         investment: "$150/month",
-        timeline: "Ongoing"
+        timeline: "Ongoing",
+        techStack: "Monitoring tools, Backup systems, Security tools"
       },
       {
         title: "Website Redesign",
-        description: "Modernize your website with fresh design and improved functionality.",
-        whoItsFor: "Businesses with outdated websites needing a refresh",
+        slug: "website-redesign",
+        description: "Modernize your website with fresh design and improved functionality. Transform your outdated site into a modern, high-performing digital asset.",
+        whoItsFor: "Businesses with outdated websites needing a refresh, companies rebranding, sites with poor conversion rates",
         benefits: [
           "Modern, contemporary design",
-          "Improved user experience",
+          "Improved user experience (UX)",
           "Mobile responsiveness",
           "Better conversion rates",
-          "Updated technology"
+          "Updated technology stack",
+          "SEO improvements",
+          "Faster loading speeds",
+          "Enhanced security",
+          "Content migration included",
+          "Training on new system"
         ],
-        results: "Increased credibility, better conversions, competitive advantage",
+        features: [
+          "Design mockups",
+          "Content migration",
+          "New features",
+          "Mobile optimization",
+          "SEO optimization",
+          "Testing and QA",
+          "Training",
+          "Launch support"
+        ],
+        results: "Increased credibility, better conversions (avg 30% increase), competitive advantage, improved brand perception",
+        caseStudy: "Redesigned a 5-year-old website, increasing leads by 180% and reducing bounce rate by 60%",
         investment: "Starting at $799",
-        timeline: "2-3 weeks"
+        timeline: "2-3 weeks",
+        techStack: "Next.js, React, Tailwind CSS, Modern frameworks"
       }
     ]
   }
@@ -221,8 +410,12 @@ export default function Services() {
     <>
       <Head>
         <title>Web Development Services - Custom Websites & Web Applications | MultiMian</title>
-        <meta name="description" content="Professional web development services for businesses. Custom websites, web applications, e-commerce solutions, and ongoing maintenance. Get a free quote today." />
-        <meta name="keywords" content="web development services, custom web development, web application development, e-commerce development" />
+        <meta name="description" content="Professional web development services by MultiMian. Custom business websites, SaaS applications, e-commerce stores, and web apps built with React, Next.js, and Node.js. Get a free consultation today." />
+        <meta name="keywords" content="web development services, custom web development, web application development, e-commerce development, SaaS development, React development, Next.js development, Node.js development, business website design, landing page design, MultiMian, Mian Hassam" />
+        <meta property="og:title" content="Web Development Services - Custom Websites & Web Applications | MultiMian" />
+        <meta property="og:description" content="Transform your business with professional web development. From business websites to complex SaaS platforms, we build scalable solutions that drive results." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://mianhassam96.github.io/MultiMian-Studio/services" />
       </Head>
 
       <div className="py-12">
@@ -399,6 +592,81 @@ export default function Services() {
           </div>
         </motion.section>
 
+        {/* Why MultiMian Section - NEW */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Businesses Trust MultiMian</h2>
+            <p className="text-lg text-muted max-w-2xl mx-auto">
+              We don&apos;t just build websites—we build digital assets that grow your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🎨',
+                title: 'Modern UI/UX Design',
+                description: 'Beautiful, intuitive interfaces that users love. We follow the latest design trends and best practices to create experiences that convert.'
+              },
+              {
+                icon: '🔍',
+                title: 'SEO Optimized Architecture',
+                description: 'Built from the ground up for search engines. Clean code, fast loading, proper meta tags, and structured data for better rankings.'
+              },
+              {
+                icon: '⚡',
+                title: 'Lightning Fast Performance',
+                description: 'Sub-2-second load times guaranteed. We optimize every aspect—images, code, and server configuration—for maximum speed.'
+              },
+              {
+                icon: '📱',
+                title: 'Mobile-First Development',
+                description: 'Perfect experience on every device. With 60%+ of traffic from mobile, we ensure your site works flawlessly on all screens.'
+              },
+              {
+                icon: '🔐',
+                title: 'Secure & Scalable Code',
+                description: 'Enterprise-grade security and architecture. Your website is built to handle growth and protect your data.'
+              },
+              {
+                icon: '🤝',
+                title: 'Ongoing Support & Maintenance',
+                description: 'We&apos;re here for the long haul. Get priority support, regular updates, and peace of mind knowing we&apos;ve got your back.'
+              }
+            ].map((reason, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="glass-card p-6 rounded-2xl hover:shadow-xl hover:scale-105 transition-all group"
+              >
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{reason.icon}</div>
+                <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{reason.title}</h3>
+                <p className="text-muted leading-relaxed">{reason.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+            >
+              Learn More About MultiMian
+              <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </motion.section>
+
         {/* Testimonials - Moved Up for Social Proof */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -526,18 +794,23 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-8 rounded-2xl hover:shadow-xl transition-all"
+                  className="glass-card p-8 rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
                 >
-                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
                   <p className="text-muted mb-6">{service.description}</p>
                   
-                  <div className="mb-4 flex items-center gap-2 text-sm">
+                  <div className="mb-4 flex items-center gap-2 text-sm flex-wrap">
                     <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full font-medium">
                       ✓ Proven Solution
                     </span>
                     <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full font-medium">
                       Fixed Price
                     </span>
+                    {service.techStack && (
+                      <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full font-medium text-xs">
+                        {service.techStack.split(',')[0]}
+                      </span>
+                    )}
                   </div>
 
                   <div className="mb-6">
@@ -547,22 +820,46 @@ export default function Services() {
 
                   <div className="mb-6">
                     <h4 className="font-semibold text-primary mb-3">What you get:</h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar">
                       {service.benefits.map((benefit, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-2 text-sm text-muted">
-                          <span className="text-primary mt-0.5">✓</span>
+                          <span className="text-primary mt-0.5 flex-shrink-0">✓</span>
                           <span>{benefit}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mb-6 p-4 bg-primary/5 rounded-lg">
-                    <h4 className="font-semibold text-primary mb-2">Results you can expect:</h4>
+                  {service.features && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-primary mb-3">Key Features:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.slice(0, 6).map((feature, fIdx) => (
+                          <span key={fIdx} className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-muted">
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                    <h4 className="font-semibold text-primary mb-2 flex items-center gap-2">
+                      <span>📈</span> Results you can expect:
+                    </h4>
                     <p className="text-sm text-muted">{service.results}</p>
                   </div>
 
-                  <div className="flex items-center justify-between mb-6">
+                  {service.caseStudy && (
+                    <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/10 rounded-lg border border-green-200 dark:border-green-900/30">
+                      <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2 flex items-center gap-2">
+                        <span>💡</span> Real Result:
+                      </h4>
+                      <p className="text-sm text-green-700 dark:text-green-400">{service.caseStudy}</p>
+                    </div>
+                  )}
+
+                  <div className="flex items-center justify-between mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
                     <div>
                       <div className="text-sm text-muted">Investment</div>
                       <div className="text-xl font-bold text-primary">{service.investment}</div>
@@ -573,12 +870,22 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <Link 
-                    href="/contact" 
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold hover:shadow-lg transition-all"
-                  >
-                    Start Your Project →
-                  </Link>
+                  <div className="flex gap-3">
+                    <Link 
+                      href="/contact" 
+                      className="flex-1 text-center px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                    >
+                      Start Your Project →
+                    </Link>
+                    {service.slug && (
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="px-6 py-3 border-2 border-primary/30 rounded-xl text-primary hover:bg-primary/5 transition-all font-semibold"
+                      >
+                        Learn More
+                      </Link>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>

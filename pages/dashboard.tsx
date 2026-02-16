@@ -14,6 +14,7 @@ export default function Dashboard() {
   const router = useRouter()
   const [user, setUser] = useState<User | null>(null)
   const [activeTab, setActiveTab] = useState('overview')
+  const [profileStrength, setProfileStrength] = useState(75) // Mock profile completion percentage
 
   useEffect(() => {
     // Check if user is logged in
@@ -50,6 +51,7 @@ export default function Dashboard() {
 
   const tabs = [
     { id: 'overview', name: 'Overview', icon: '📊' },
+    { id: 'profile', name: 'My Profile', icon: '👤' },
     { id: 'projects', name: 'My Projects', icon: '💼' },
     { id: 'submit', name: 'Submit Project', icon: '➕' },
     { id: 'articles', name: 'My Articles', icon: '📝' },
@@ -187,6 +189,220 @@ export default function Dashboard() {
                             <div className="font-semibold text-gray-900 dark:text-white">Write Guest Article</div>
                             <div className="text-sm text-gray-600 dark:text-gray-400">Submit a guest post</div>
                           </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeTab === 'profile' && (
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between mb-6">
+                      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">My Profile</h1>
+                      <Link
+                        href="/profile/mian-hassam"
+                        target="_blank"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
+                      >
+                        <span>👁️</span> View Public Profile
+                      </Link>
+                    </div>
+
+                    {/* Profile Strength */}
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 border-2 border-blue-200 dark:border-blue-900/30">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <h3 className="font-bold text-lg mb-1">Profile Strength</h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Complete your profile to increase visibility</p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-4xl font-bold text-blue-600">{profileStrength}%</div>
+                        </div>
+                      </div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                        <div 
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 h-4 rounded-full transition-all duration-500"
+                          style={{ width: `${profileStrength}%` }}
+                        ></div>
+                      </div>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <span className="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">✓ Basic Info</span>
+                        <span className="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">✓ Bio</span>
+                        <span className="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">✓ Skills</span>
+                        <span className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">○ Website</span>
+                        <span className="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">○ Social Links</span>
+                      </div>
+                    </div>
+
+                    {/* Profile Form */}
+                    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
+                      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Edit Profile</h2>
+                      <form className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                              Full Name *
+                            </label>
+                            <input
+                              type="text"
+                              defaultValue={user.name}
+                              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                              Username * <span className="text-xs text-gray-500">(unique)</span>
+                            </label>
+                            <input
+                              type="text"
+                              defaultValue="mian-hassam"
+                              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            />
+                            <p className="text-xs text-gray-500 mt-1">Your profile URL: multimian.com/profile/mian-hassam</p>
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Role / Title *
+                          </label>
+                          <input
+                            type="text"
+                            defaultValue="Full Stack Developer"
+                            placeholder="e.g., Full Stack Developer, UI/UX Designer"
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Bio * <span className="text-xs text-gray-500">(500-1000 characters)</span>
+                          </label>
+                          <textarea
+                            rows={6}
+                            defaultValue="Full Stack Developer & Founder of MultiMian. Specializing in React, Next.js, Node.js, and modern web technologies."
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            placeholder="Tell us about yourself, your experience, and what you do..."
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Location
+                          </label>
+                          <input
+                            type="text"
+                            defaultValue="Pakistan"
+                            placeholder="e.g., New York, USA"
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Experience Level
+                          </label>
+                          <select className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                            <option>Junior (0-2 years)</option>
+                            <option>Mid-Level (2-5 years)</option>
+                            <option selected>Senior (5+ years)</option>
+                            <option>Expert (10+ years)</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Skills <span className="text-xs text-gray-500">(comma separated)</span>
+                          </label>
+                          <input
+                            type="text"
+                            defaultValue="React, Next.js, Node.js, TypeScript, MongoDB"
+                            placeholder="React, Node.js, Python, etc."
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                          />
+                        </div>
+
+                        <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Links & Social Media</h3>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                🌐 Website URL
+                              </label>
+                              <input
+                                type="url"
+                                placeholder="https://yourwebsite.com"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                              />
+                              <p className="text-xs text-gray-500 mt-1">Links will be marked as rel=&quot;ugc nofollow&quot; for SEO safety</p>
+                            </div>
+
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                💼 LinkedIn
+                              </label>
+                              <input
+                                type="url"
+                                placeholder="https://linkedin.com/in/yourprofile"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                💻 GitHub
+                              </label>
+                              <input
+                                type="url"
+                                placeholder="https://github.com/yourusername"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                🐦 Twitter
+                              </label>
+                              <input
+                                type="url"
+                                placeholder="https://twitter.com/yourusername"
+                                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4 pt-6">
+                          <button
+                            type="submit"
+                            className="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
+                          >
+                            Save Changes
+                          </button>
+                          <button
+                            type="button"
+                            className="px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+
+                    {/* Copy Profile Link */}
+                    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
+                      <h3 className="font-bold text-lg mb-4">Share Your Profile</h3>
+                      <div className="flex gap-3">
+                        <input
+                          type="text"
+                          readOnly
+                          value="https://multimian.com/profile/mian-hassam"
+                          className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white"
+                        />
+                        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors">
+                          Copy Link
                         </button>
                       </div>
                     </div>
