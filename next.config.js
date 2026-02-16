@@ -5,8 +5,5 @@ module.exports = {
   basePath: '/MultiMian-Studio',
   images: {
     unoptimized: true
-  },
-  experimental: {
-    turbo: false
   }
 };
