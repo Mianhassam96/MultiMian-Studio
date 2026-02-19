@@ -40,10 +40,13 @@ add_action('after_setup_theme', 'multimian_setup');
 function multimian_scripts() {
     // Styles
     wp_enqueue_style('multimian-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_style('multimian-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
+    wp_enqueue_style('multimian-main', get_template_directory_uri() . '/assets/css/main.css', array('multimian-style'), '1.0.0');
     
     // Google Fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', array(), null);
+    
+    // jQuery (WordPress includes it)
+    wp_enqueue_script('jquery');
     
     // Scripts
     wp_enqueue_script('multimian-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
