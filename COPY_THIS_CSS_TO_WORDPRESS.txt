@@ -1,0 +1,69 @@
+========================================
+WORDPRESS THEME - MANUAL CSS FIX
+========================================
+
+Since the automatic CSS loading isn't working, here's how to add the CSS manually in WordPress:
+
+========================================
+STEP-BY-STEP INSTRUCTIONS:
+========================================
+
+1. GO TO WORDPRESS ADMIN:
+   - Appearance → Theme File Editor
+   - Select "MultiMian Pro" or "MultiMian Studio"
+   - Click on "style.css" in the right sidebar
+
+2. SCROLL TO THE BOTTOM of style.css
+
+3. COPY ALL THE CSS from the file:
+   wordpress-theme/assets/css/main.css
+   
+4. PASTE IT at the bottom of style.css in WordPress
+
+5. CLICK "Update File"
+
+6. CLEAR CACHE:
+   - Clear WordPress cache
+   - Press Ctrl + Shift + R in browser
+
+7. REFRESH YOUR SITE
+
+========================================
+ALTERNATIVE SOLUTION:
+========================================
+
+If that doesn't work, the issue might be that WordPress is using a different theme or there's a caching issue.
+
+Try this:
+1. In WordPress Admin, go to: Appearance → Customize
+2. Click "Additional CSS"
+3. Paste ALL the CSS from wordpress-theme/assets/css/main.css
+4. Click "Publish"
+
+This will add the CSS directly through the WordPress Customizer.
+
+========================================
+QUICK FIX - ADD THIS TO HEADER:
+========================================
+
+Or add this to your header.php file right before </head>:
+
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css?v=<?php echo time(); ?>">
+
+This forces WordPress to load the CSS file with cache busting.
+
+========================================
+
+The CSS file is located at:
+wordpress-theme/assets/css/main.css
+
+It contains all the styling for:
+- Hero section
+- Services section  
+- Features section
+- CTA section
+- Footer
+- Animations
+- Responsive design
+
+========================================
