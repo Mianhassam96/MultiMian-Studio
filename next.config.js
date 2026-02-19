@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '',
+  basePath: '/MultiMian-Studio',
   trailingSlash: true,
 }
 
