@@ -10,12 +10,12 @@
 
 ## ✨ Features
 
-- 🎨 **Stunning Hero Section** - Professional animations with Framer Motion
+- 🎨 **Stunning Hero Section** - "Transform Ideas Into Digital Reality"
 - 📱 **Fully Responsive** - Perfect on all devices
 - 🌙 **Dark Mode** - Beautiful dark theme support
 - ⚡ **Lightning Fast** - Static site generation with Next.js
 - 🎯 **SEO Optimized** - Built for search engines
-- 🎭 **Smooth Animations** - Engaging user experience
+- 🎭 **Smooth Animations** - Engaging user experience with Framer Motion
 - 💼 **Portfolio Showcase** - Display your best work
 - 📧 **Contact Form** - Easy client communication
 - 💰 **Pricing Plans** - Clear service offerings
@@ -87,31 +87,20 @@ MultiMian-Studio/
 ├── styles/             # Global styles
 │   └── globals.css     # Tailwind CSS
 ├── public/             # Static assets
-├── .github/            # GitHub Actions workflows
-└── next.config.js      # Next.js configuration
+├── wordpress-theme/    # WordPress theme version
+└── .github/            # GitHub Actions workflows
 ```
 
-## 🎨 Customization
+## 🎨 Hero Section
 
-### Colors
-Edit `tailwind.config.js` to customize your color scheme:
-```js
-theme: {
-  extend: {
-    colors: {
-      primary: '#3b82f6',
-      secondary: '#8b5cf6',
-      // Add your colors
-    }
-  }
-}
-```
-
-### Content
-- Update hero section in `components/Hero.tsx`
-- Modify services in `pages/services.tsx`
-- Add portfolio items in `pages/portfolio.tsx`
-- Update contact info in `pages/contact.tsx`
+The hero section features:
+- **Title:** "Transform Ideas Into Digital Reality"
+- **Description:** "We don't just build websites — we create digital experiences that captivate audiences and skyrocket your growth."
+- Animated gradient orbs
+- Floating particles
+- Interactive tech stack badges (React, Next.js, Tailwind, TypeScript)
+- Animated stats cards (50+ Projects, 30+ Clients, 5+ Years, 100% Satisfaction)
+- Smooth scroll indicator
 
 ## 📄 Pages
 
@@ -146,6 +135,28 @@ theme: {
 - ✅ Lazy Loading
 - ✅ Fast Page Loads
 - ✅ SEO Friendly
+
+## 🎯 WordPress Theme
+
+A WordPress version of this theme is included in the `wordpress-theme/` directory.
+
+### Installation
+1. Download `multimian-studio-WORKING.zip`
+2. Go to WordPress Admin → Appearance → Themes
+3. Click "Add New" → "Upload Theme"
+4. Choose the ZIP file and install
+5. Activate the theme
+
+### Adding CSS (Important!)
+The WordPress theme requires CSS to be added manually:
+
+1. Go to: Appearance → Customize
+2. Click "Additional CSS"
+3. Copy all content from `wordpress-theme/assets/css/main.css`
+4. Paste into Additional CSS box
+5. Click "Publish"
+
+See `WORDPRESS_THEME_INSTALL.txt` for detailed instructions.
 
 ## 🤝 Contributing
 
