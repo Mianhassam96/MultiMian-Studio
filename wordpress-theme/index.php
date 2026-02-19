@@ -31,8 +31,8 @@ get_header();
 
         <!-- Main Heading -->
         <h1 class="hero-title fade-in">
-            <span class="hero-title-line">Build Your</span>
-            <span class="hero-title-gradient">Digital Future</span>
+            <span class="hero-title-line">Transform Ideas Into</span>
+            <span class="hero-title-gradient">Digital Reality</span>
         </h1>
 
         <div class="hero-line fade-in"></div>
