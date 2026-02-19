@@ -491,11 +491,25 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 relative overflow-hidden">
+      <section className="relative py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute top-20 right-20 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 10, repeat: Infinity }}
+            className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-purple-400/20 rounded-full blur-3xl"
+          />
         </div>
         <div className="container px-4 relative z-10">
           <motion.div 
@@ -503,22 +517,25 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-5xl mx-auto"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-semibold mb-6"
+              className="inline-block px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-full text-white text-sm font-bold mb-8 shadow-lg"
             >
-              Ready to Get Started?
+              🎯 Ready to Transform Your Business?
             </motion.div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-              Let&apos;s Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">Amazing Together</span>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 text-white leading-tight">
+              Let&apos;s Build Something{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-purple-300">
+                Extraordinary
+              </span>
             </h2>
-            <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-              Transform your digital presence with our expert development team. From concept to launch, we&apos;re here to bring your vision to life with cutting-edge technology and exceptional design.
+            <p className="text-xl md:text-2xl text-blue-100 mb-14 leading-relaxed max-w-3xl mx-auto">
+              Transform your digital presence with our expert development team. From concept to launch, we bring your vision to life with cutting-edge technology and exceptional design.
             </p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }} 
@@ -527,30 +544,75 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
-              <Link 
-                href="/contact" 
-                className="group w-full sm:w-auto px-10 py-5 bg-white hover:bg-gray-100 text-blue-900 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center gap-3"
-              >
-                <motion.span
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.08, boxShadow: "0 25px 70px rgba(255, 255, 255, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group w-full sm:w-auto px-12 py-6 bg-white hover:bg-gray-50 text-blue-900 rounded-2xl font-bold text-xl shadow-2xl transition-all flex items-center justify-center gap-3"
                 >
-                  🚀
-                </motion.span>
-                <span>Start Your Project</span>
+                  <motion.span
+                    whileHover={{ scale: 1.2, rotate: 15 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="text-2xl"
+                  >
+                    🚀
+                  </motion.span>
+                  <span>Start Your Project</span>
+                  <motion.svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    whileHover={{ x: 5 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </motion.svg>
+                </motion.button>
               </Link>
-              <Link 
-                href="/portfolio" 
-                className="group w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 text-white rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-3"
-              >
-                <motion.span
-                  whileHover={{ scale: 1.2, rotate: -10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+              <Link href="/portfolio">
+                <motion.button
+                  whileHover={{ scale: 1.08, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group w-full sm:w-auto px-12 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 text-white rounded-2xl font-bold text-xl transition-all flex items-center justify-center gap-3"
                 >
-                  📁
-                </motion.span>
-                <span>View Our Work</span>
+                  <motion.span
+                    whileHover={{ scale: 1.2, rotate: -10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="text-2xl"
+                  >
+                    📁
+                  </motion.span>
+                  <span>View Our Work</span>
+                </motion.button>
               </Link>
+            </motion.div>
+            
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-16 flex flex-wrap items-center justify-center gap-8 text-white/80"
+            >
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-semibold">Free Consultation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-semibold">Fast Delivery</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-semibold">100% Satisfaction</span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
