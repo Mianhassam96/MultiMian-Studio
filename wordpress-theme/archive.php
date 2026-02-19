@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The template for displaying archive pages
  *
  * @package MultiMian_Pro
  */
@@ -10,13 +10,26 @@ get_header();
 
 <main id="primary" class="site-main">
     <div class="container py-16">
+        <header class="page-header mb-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+                <?php the_archive_title(); ?>
+            </h1>
+            <?php if (get_the_archive_description()) : ?>
+                <div class="text-xl text-gray-600 dark:text-gray-400">
+                    <?php the_archive_description(); ?>
+                </div>
+            <?php endif; ?>
+        </header>
+
         <?php if (have_posts()) : ?>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <?php while (have_posts()) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all'); ?>>
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="aspect-video overflow-hidden">
-                                <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover hover:scale-110 transition-transform duration-300')); ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover hover:scale-110 transition-transform duration-300')); ?>
+                                </a>
                             </div>
                         <?php endif; ?>
                         
@@ -51,7 +64,7 @@ get_header();
             </div>
         <?php else : ?>
             <div class="text-center py-16">
-                <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Nothing Found</h1>
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Nothing Found</h2>
                 <p class="text-gray-600 dark:text-gray-400">It looks like nothing was found at this location.</p>
             </div>
         <?php endif; ?>

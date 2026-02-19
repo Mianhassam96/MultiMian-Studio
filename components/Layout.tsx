@@ -10,17 +10,18 @@ import ConsultationPopup from './ConsultationPopup'
 const Layout: React.FC<{children: React.ReactNode}> = ({ children }) => {
   const router = useRouter()
   
-  // Use futuristic nav for homepage, regular header for other pages
-  const useFuturisticNav = router.pathname === '/'
+  // Pages that should not show navigation
+  const noNavPages = ['/login', '/signup']
+  const showNav = !noNavPages.includes(router.pathname)
 
   return (
     <div className="min-h-screen flex flex-col">
-      {useFuturisticNav ? <FuturisticNav /> : <Header />}
+      {showNav && <FuturisticNav />}
       <main className="flex-1 w-full">{children}</main>
-      <Footer />
-      <WhatsAppPopup />
-      <WhatsAppButton />
-      <ConsultationPopup />
+      {showNav && <Footer />}
+      {showNav && <WhatsAppPopup />}
+      {showNav && <WhatsAppButton />}
+      {showNav && <ConsultationPopup />}
     </div>
   )
 }

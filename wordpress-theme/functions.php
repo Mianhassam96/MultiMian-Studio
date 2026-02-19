@@ -68,7 +68,6 @@ function multimian_setup() {
 
     // Add support for editor styles
     add_theme_support('editor-styles');
-    add_editor_style('assets/css/editor-style.css');
 
     // Add support for responsive embeds
     add_theme_support('responsive-embeds');
@@ -130,9 +129,6 @@ function multimian_scripts() {
 
     // Custom CSS
     wp_enqueue_style('multimian-custom', MULTIMIAN_THEME_URI . '/assets/css/custom.css', array('multimian-style'), MULTIMIAN_VERSION);
-
-    // Navigation script
-    wp_enqueue_script('multimian-navigation', MULTIMIAN_THEME_URI . '/assets/js/navigation.js', array(), MULTIMIAN_VERSION, true);
 
     // Main JavaScript
     wp_enqueue_script('multimian-main', MULTIMIAN_THEME_URI . '/assets/js/main.js', array('jquery'), MULTIMIAN_VERSION, true);
@@ -437,14 +433,3 @@ function multimian_body_classes($classes) {
     return $classes;
 }
 add_filter('body_class', 'multimian_body_classes');
-
-/**
- * Include Required Files
- */
-require_once MULTIMIAN_THEME_DIR . '/inc/template-tags.php';
-require_once MULTIMIAN_THEME_DIR . '/inc/template-functions.php';
-
-// Include ACF fields if ACF is active
-if (class_exists('ACF')) {
-    require_once MULTIMIAN_THEME_DIR . '/inc/acf-fields.php';
-}

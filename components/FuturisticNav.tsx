@@ -93,7 +93,7 @@ export default function FuturisticNav() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
                 <div
                   key={link.name}
@@ -171,10 +171,10 @@ export default function FuturisticNav() {
             </div>
 
             {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-4">
               <Link
                 href="/login"
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="px-5 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 Login
               </Link>

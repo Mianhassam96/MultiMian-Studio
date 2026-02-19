@@ -3,9 +3,10 @@ import '../styles/globals.css'
 import Layout from '../components/Layout'
 import { MotionConfig } from 'framer-motion'
 import { ReducedMotionContext } from '../lib/ReducedMotionContext'
+import { SessionProvider } from 'next-auth/react'
 import { useState, useEffect } from 'react'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [reduced, setReduced] = useState(false)
   useEffect(()=>{
     try{
@@ -21,12 +22,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   },[reduced])
 
   return (
-    <ReducedMotionContext.Provider value={{reduced, setReduced}}>
-      <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </MotionConfig>
-    </ReducedMotionContext.Provider>
+    <SessionProvider session={session}>
+      <ReducedMotionContext.Provider value={{reduced, setReduced}}>
+        <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </MotionConfig>
+      </ReducedMotionContext.Provider>
+    </SessionProvider>
   )
 }
