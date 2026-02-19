@@ -63,7 +63,7 @@ export const authOptions: NextAuthOptions = {
           })
         } else if (existingUser.provider !== 'google') {
           existingUser.provider = 'google'
-          existingUser.image = user.image
+          existingUser.image = user.image || undefined
           await existingUser.save()
         }
       }
