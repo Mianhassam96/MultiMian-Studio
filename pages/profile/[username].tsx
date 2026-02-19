@@ -30,28 +30,39 @@ export default function PublicProfile() {
 
   useEffect(() => {
     if (username) {
-      // TODO: Replace with actual API call
-      // For now, using mock data
-      const mockProfile: UserProfile = {
-        id: '1',
-        name: 'Mian Hassam',
-        username: username as string,
-        email: 'mianhassam96@gmail.com',
-        bio: 'Full Stack Developer & Founder of MultiMian. Specializing in React, Next.js, Node.js, and modern web technologies. Building scalable web applications and helping businesses grow online.',
-        website: 'https://mianhassam96.github.io/MultiMian-Studio/',
-        linkedin: 'https://linkedin.com/in/mianhassam',
-        github: 'https://github.com/Mianhassam96',
-        twitter: 'https://twitter.com/mianhassam',
-        location: 'Pakistan',
-        skills: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL', 'Tailwind CSS', 'AWS'],
-        role: 'Full Stack Developer',
-        experience: '5+ years',
-        profileImage: '/images/mian-hassam-founder.jpg',
-        createdAt: '2024-01-01'
-      }
-      
-      setProfile(mockProfile)
-      setLoading(false)
+      // Fetch profile from API
+      fetch(`/api/profile/${username}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success && data.profile) {
+            const apiProfile: UserProfile = {
+              id: data.profile.username,
+              name: data.profile.name,
+              username: data.profile.username,
+              email: '',
+              bio: data.profile.bio || '',
+              website: data.profile.website,
+              linkedin: data.profile.socialLinks?.linkedin,
+              github: data.profile.socialLinks?.github,
+              twitter: data.profile.socialLinks?.twitter,
+              location: data.profile.location,
+              skills: data.profile.skills || [],
+              role: 'Developer',
+              experience: '5+ years',
+              profileImage: data.profile.avatar,
+              createdAt: data.profile.createdAt
+            }
+            setProfile(apiProfile)
+          } else {
+            setProfile(null)
+          }
+          setLoading(false)
+        })
+        .catch(error => {
+          console.error('Error fetching profile:', error)
+          setProfile(null)
+          setLoading(false)
+        })
     }
   }, [username])
 

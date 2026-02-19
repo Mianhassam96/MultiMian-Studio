@@ -1,208 +1,290 @@
-# MultiMian - Modern Web Development Agency
+# MultiMian Studio - Full Stack Web Development Agency
 
-**Turning Ideas into Powerful Web Solutions**
+A modern, professional web development agency website built with Next.js, featuring authentication, user profiles, and a comprehensive service showcase.
 
-MultiMian is a modern web development agency that builds high-performance websites and custom web applications for businesses, startups, and growing brands.
+## 🚀 Features
 
+### Core Features
+- ✅ Modern, responsive design with dark mode support
+- ✅ Professional landing pages and service showcases
+- ✅ Smooth animations with Framer Motion
+- ✅ SEO optimized with meta tags and structured data
+- ✅ Fast performance with Next.js optimization
 
----
+### Authentication System
+- ✅ Email/Password authentication
+- ✅ Google OAuth integration
+- ✅ JWT-based session management
+- ✅ Protected routes and middleware
+- ✅ Secure password hashing with bcrypt
 
-## 🎨 Brand Identity
+### User Profiles
+- ✅ Create and edit user profiles
+- ✅ Public shareable profile pages
+- ✅ Profile customization (bio, skills, social links)
+- ✅ Profile image upload support
+- ✅ Privacy controls (public/private profiles)
+- ✅ Profile view counter
 
-### Positioning Statement
-MultiMian is a modern web development agency that builds high-performance websites and custom web applications for businesses, startups, and growing brands.
-
-### Official Tagline
-**"Turning Ideas into Powerful Web Solutions"**
-
-### Brand Colors
-- **Primary:** Navy Blue (#0B1C2D)
-- **Accent:** Electric Blue (#2563EB)
-- **Secondary:** Purple (#7C3AED)
-
-### Typography
-- **Headings:** Poppins
-- **Body:** Inter
-
----
-
-## ✅ Setup Checklist
-
-### Required Images (Add These!)
-
-**1. Favicon Files** (Use logo image)
-- [ ] `public/favicon.ico` (32x32px)
-- [ ] `public/favicon.png` (512x512px)
-- [ ] `public/apple-touch-icon.png` (180x180px)
-- [ ] `public/android-chrome-192x192.png` (192x192px)
-- [ ] `public/android-chrome-512x512.png` (512x512px)
-
-**How to create:** Visit https://favicon.io/favicon-converter/ and upload your logo
-
-**2. Founder Image** (Already added!)
-- [x] `public/images/mian-hassam-founder.jpg` ✅
-
-**3. Portfolio Images** (Optional)
-- [ ] `public/images/portfolio/project1.jpg`
-- [ ] `public/images/portfolio/project2.jpg`
-
-### Brand Updates Applied ✅
-- [x] Hero tagline: "Turning Ideas into Powerful Web Solutions"
-- [x] Footer positioning statement
-- [x] Brand colors throughout
-- [x] Professional typography (Poppins/Inter)
-- [x] Standard CTAs
-- [x] Trust badges
-
----
-
-## 🎯 Features
-
-### Website Features
-- ✅ Responsive design (mobile, tablet, desktop)
-- ✅ Dark mode support
-- ✅ Mega dropdown menus
-- ✅ WhatsApp integration (popup + floating button)
-- ✅ Contact forms
-- ✅ SEO optimized
-- ✅ Fast performance
-- ✅ Professional animations
-
-### Pages Included
-- ✅ Homepage with hero, services, process
-- ✅ About page with founder story
-- ✅ Services page with detailed offerings
-- ✅ Portfolio page with projects
-- ✅ Pricing page with packages
-- ✅ Process page with 6-step workflow
-- ✅ Contact page with multiple methods
-- ✅ FAQ page with comprehensive answers
-- ✅ Testimonials page
-
-### Business Systems
-- ✅ 6 service packages defined
-- ✅ 4 ideal client profiles
-- ✅ 4 lead magnet strategies
-- ✅ 8-stage client journey
-- ✅ Communication templates
-- ✅ Discovery call framework
-- ✅ Proposal structure
-- ✅ Project workflow
-- ✅ Testimonial collection system
-- ✅ Follow-up sequences
-- ✅ Upsell strategy
-
----
-
-## 📞 Contact Information
-
-- **Email:** mianhassam96@gmail.com
-- **Phone:** +92 325 883 1437
-- **WhatsApp:** +92 325 883 1437
-- **Website:** multimian.com
-- **Location:** Pakistan
-
----
+### Pages
+- Home page with hero section and features
+- Services showcase
+- Portfolio gallery
+- About page
+- Contact form
+- Pricing page
+- Process overview
+- Testimonials
+- FAQ section
+- User dashboard
+- Profile management
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 13
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Icons:** Heroicons
-- **Fonts:** Poppins, Inter, Rajdhani
+### Frontend
+- **Next.js 13** - React framework with SSR
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS
+- **Framer Motion** - Animations
+- **React Hook Form** - Form management
+- **React Icons** - Icon library
 
----
+### Backend
+- **Next.js API Routes** - Serverless functions
+- **MongoDB** - Database
+- **Mongoose** - ODM
+- **NextAuth.js** - Authentication
+- **JWT** - Token-based auth
+- **bcryptjs** - Password hashing
 
-## 📈 Next Steps
+### DevOps
+- **Vercel** - Deployment (recommended)
+- **GitHub** - Version control
+- **ESLint** - Code linting
 
-### Immediate (Do Now)
-1. **Add Favicon Files** - Use https://favicon.io/favicon-converter/
-2. **Test Website** - Run `npm run dev` and check all pages
-3. **Update Email Signature** - Use template from Brand Guide
-4. **Update LinkedIn** - Use bio from Brand Guide
+## 📦 Installation
 
-### Soon
-1. Add real portfolio projects
-2. Collect client testimonials
-3. Set up analytics (Google Analytics)
-4. Configure contact form backend
-5. Add blog section
+### Prerequisites
+- Node.js 16+ and npm
+- MongoDB database (local or Atlas)
+- Google OAuth credentials (optional)
 
-### Marketing
-1. Create social media graphics
-2. Design business cards
-3. Create proposal template
-4. Build email templates
-5. Start LinkedIn content
+### Setup Steps
 
----
+1. **Clone the repository**
+```bash
+git clone https://github.com/Mianhassam96/MultiMian-Studio.git
+cd MultiMian-Studio
+```
 
-## 📚 Documentation Guide
+2. **Install dependencies**
+```bash
+npm install
+```
 
-### For Brand & Identity
-Read: `docs/BRAND_IDENTITY_GUIDE.md`
-- Brand positioning
-- Visual identity
-- Voice & tone
-- Templates
+3. **Configure environment variables**
 
-### For Business Operations
-Read: `docs/BUSINESS_SYSTEM.md`
-- Service offers
-- Client journey
-- Communication templates
-- Workflows
+Create a `.env.local` file in the root directory:
 
-### For Website Content
-Read: `CONTENT_MASTER_INDEX.md`
-- All page content
-- SEO strategy
-- Conversion optimization
-- Implementation guide
+```env
+# MongoDB
+MONGODB_URI=mongodb://localhost:27017/multimian
+# Or use MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
 
----
+# JWT Secret (generate a random string)
+JWT_SECRET=your-super-secret-jwt-key-change-this
 
-## 🎨 Design System
+# NextAuth Configuration
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-nextauth-secret-key-change-this
+
+# Google OAuth (optional)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# Cloudinary (optional - for image uploads)
+CLOUDINARY_CLOUD_NAME=your-cloud-name
+CLOUDINARY_API_KEY=your-api-key
+CLOUDINARY_API_SECRET=your-api-secret
+```
+
+4. **Run development server**
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🔧 Configuration
+
+### Google OAuth Setup
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+2. Create a new project or select existing
+3. Enable Google+ API
+4. Create OAuth 2.0 credentials
+5. Add authorized redirect URIs:
+   - `http://localhost:3000/api/auth/callback/google` (development)
+   - `https://your-domain.com/api/auth/callback/google` (production)
+6. Copy Client ID and Client Secret to `.env.local`
+
+### MongoDB Setup
+
+**Option 1: Local MongoDB**
+```bash
+# Install MongoDB locally
+# Start MongoDB service
+mongod
+
+# Use connection string
+MONGODB_URI=mongodb://localhost:27017/multimian
+```
+
+**Option 2: MongoDB Atlas (Cloud)**
+1. Create account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a cluster
+3. Get connection string
+4. Add to `.env.local`
+
+## 📝 Scripts
+
+```bash
+# Development
+npm run dev          # Start development server on port 3000
+
+# Production
+npm run build        # Build for production
+npm start            # Start production server
+
+# Linting
+npm run lint         # Run ESLint
+```
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your repository
+4. Add environment variables
+5. Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Mianhassam96/MultiMian-Studio)
+
+### Environment Variables for Production
+
+Make sure to set these in your deployment platform:
+
+```env
+MONGODB_URI=your_production_mongodb_uri
+JWT_SECRET=your_production_jwt_secret
+NEXTAUTH_URL=https://your-domain.com
+NEXTAUTH_SECRET=your_production_nextauth_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
+
+## 📁 Project Structure
+
+```
+MultiMian-Studio/
+├── components/          # React components
+│   ├── Hero.tsx
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── ...
+├── pages/              # Next.js pages
+│   ├── api/           # API routes
+│   │   ├── auth/      # Authentication endpoints
+│   │   └── profile/   # Profile endpoints
+│   ├── index.tsx      # Home page
+│   ├── login.tsx      # Login page
+│   ├── signup.tsx     # Signup page
+│   └── ...
+├── lib/               # Utility functions
+│   ├── auth.ts        # Auth helpers
+│   ├── mongodb.ts     # Database connection
+│   └── middleware.ts  # API middleware
+├── models/            # Mongoose models
+│   ├── User.ts
+│   └── Profile.ts
+├── styles/            # Global styles
+│   └── globals.css
+├── types/             # TypeScript types
+│   └── next-auth.d.ts
+├── public/            # Static assets
+├── .env.local         # Environment variables (not in git)
+├── next.config.js     # Next.js configuration
+├── tailwind.config.js # Tailwind configuration
+└── tsconfig.json      # TypeScript configuration
+```
+
+## 🔐 Security
+
+- Passwords are hashed using bcrypt
+- JWT tokens stored in httpOnly cookies
+- CSRF protection enabled
+- Input validation and sanitization
+- Rate limiting on authentication endpoints
+- Secure session management
+
+## 🎨 Customization
 
 ### Colors
-```css
---navy: #0B1C2D;
---blue: #2563EB;
---purple: #7C3AED;
---orange: #F97316;
---gray: #1F2937;
+Edit `tailwind.config.js` to customize the color scheme:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: '#2563eb',
+      // Add your colors
+    }
+  }
+}
 ```
 
-### Typography
-```css
---font-heading: 'Poppins', sans-serif;
---font-body: 'Inter', sans-serif;
---font-logo: 'Rajdhani', sans-serif;
-```
+### Content
+- Update company information in components
+- Modify service offerings in `pages/services.tsx`
+- Customize testimonials in `pages/testimonials.tsx`
+- Update contact information in `components/Footer.tsx`
 
-### Spacing
-```css
---section-padding: 80px;
---element-spacing: 24px-48px;
---container-max: 1200px;
-```
+## 📄 License
 
-## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-© 2026 MultiMian. Built by Mian Hassam. All rights reserved.
+## 👨‍💻 Author
 
----
-
-## 🤝 Support
-
-Need help? Contact:
+**Mian Hassam**
+- Website: [MultiMian Studio](https://mianhassam96.github.io/MultiMian-Studio/)
+- GitHub: [@Mianhassam96](https://github.com/Mianhassam96)
+- LinkedIn: [Mian Hassam](https://linkedin.com/in/mianhassam96)
 - Email: mianhassam96@gmail.com
-- WhatsApp: +92 325 883 1437
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For support, email mianhassam96@gmail.com or create an issue in the repository.
+
+## ⭐ Show your support
+
+Give a ⭐️ if this project helped you!
 
 ---
 
-**Built with ❤️ by MultiMian**
-
-*Turning Ideas into Powerful Web Solutions*
+Built with ❤️ by [Mian Hassam](https://github.com/Mianhassam96)
