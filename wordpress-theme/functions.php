@@ -38,9 +38,10 @@ add_action('after_setup_theme', 'multimian_setup');
  * Enqueue Scripts and Styles
  */
 function multimian_scripts() {
-    // Styles
-    wp_enqueue_style('multimian-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_style('multimian-main', get_template_directory_uri() . '/assets/css/main.css', array('multimian-style'), '1.0.0');
+    // Styles with cache busting
+    $version = '1.0.' . time();
+    wp_enqueue_style('multimian-style', get_stylesheet_uri(), array(), $version);
+    wp_enqueue_style('multimian-main', get_template_directory_uri() . '/assets/css/main.css', array('multimian-style'), $version);
     
     // Google Fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', array(), null);
@@ -49,7 +50,7 @@ function multimian_scripts() {
     wp_enqueue_script('jquery');
     
     // Scripts
-    wp_enqueue_script('multimian-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('multimian-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $version, true);
     
     // Localize script
     wp_localize_script('multimian-main', 'multimianAjax', array(
