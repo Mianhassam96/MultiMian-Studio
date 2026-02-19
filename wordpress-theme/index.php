@@ -39,7 +39,7 @@ get_header();
 
         <!-- Description -->
         <p class="hero-description fade-in">
-            We craft <span class="text-highlight">stunning websites</span> and <span class="text-highlight">powerful web applications</span> that drive real business results.
+            We don't just build websites — we create <span class="text-highlight">digital experiences</span> that <span class="text-highlight">captivate audiences</span> and <span class="text-highlight">skyrocket your growth</span>.
         </p>
 
         <!-- Tech Stack -->
