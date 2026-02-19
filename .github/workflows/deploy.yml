@@ -28,11 +28,17 @@ jobs:
           node-version: "18"
           cache: "npm"
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build with Next.js
         run: npm run build
+
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
