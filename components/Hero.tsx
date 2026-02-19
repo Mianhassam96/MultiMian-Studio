@@ -93,7 +93,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="block text-gray-900 dark:text-white mb-6"
               >
-                Build Your
+                Transform Ideas Into
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -101,7 +101,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
               >
-                Digital Future
+                Digital Reality
               </motion.span>
             </motion.h1>
 
@@ -121,8 +121,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-xl md:text-3xl text-gray-700 dark:text-gray-300 mb-14 max-w-5xl mx-auto leading-relaxed text-center font-medium"
           >
-            We craft <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">stunning websites</span> and{' '}
-            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">powerful web applications</span> that drive real business results.
+            We don't just build websites — we create <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">digital experiences</span> that{' '}
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">captivate audiences</span> and{' '}
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">skyrocket your growth</span>.
           </motion.p>
 
           {/* Tech Stack */}
