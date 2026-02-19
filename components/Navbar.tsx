@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface NavbarProps {
-  user?: {
-    name: string
-    email: string
-    username?: string
-  } | null
-}
-
-export default function Navbar({ user }: NavbarProps) {
-  const router = useRouter()
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +13,6 @@ export default function Navbar({ user }: NavbarProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const handleLogout = async () => {
-    try {
-      await fetch('/api/auth/logout', { method: 'POST' })
-      router.push('/')
-      window.location.reload()
-    } catch (error) {
-      console.error('Logout error:', error)
-    }
-  }
 
   return (
     <nav
@@ -83,80 +62,14 @@ export default function Navbar({ user }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Auth Buttons */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            {user ? (
-              <div className="relative">
-                <button
-                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
-                >
-                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
-                    {user.name.charAt(0).toUpperCase()}
-                  </div>
-                  <span>{user.name}</span>
-                </button>
-
-                <AnimatePresence>
-                  {isUserMenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
-                    >
-                      <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                        <p className="font-semibold text-gray-900 dark:text-white">{user.name}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{user.email}</p>
-                      </div>
-                      <div className="py-2">
-                        <Link
-                          href="/dashboard"
-                          className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                        >
-                          Dashboard
-                        </Link>
-                        {user.username && (
-                          <Link
-                            href={`/u/${user.username}`}
-                            className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                          >
-                            My Profile
-                          </Link>
-                        )}
-                        <Link
-                          href="/create-profile"
-                          className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                        >
-                          {user.username ? 'Edit Profile' : 'Create Profile'}
-                        </Link>
-                        <button
-                          onClick={handleLogout}
-                          className="w-full text-left px-4 py-2 text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                        >
-                          Logout
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className="px-6 py-2 text-gray-700 dark:text-gray-300 font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/signup"
-                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all"
-                >
-                  Sign Up
-                </Link>
-              </>
-            )}
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all hover:scale-105"
+            >
+              Get Started
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -196,28 +109,9 @@ export default function Navbar({ user }: NavbarProps) {
                 <Link href="/contact" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
                   Contact
                 </Link>
-                {user ? (
-                  <>
-                    <Link href="/dashboard" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
-                      Dashboard
-                    </Link>
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left px-4 py-2 text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link href="/login" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
-                      Login
-                    </Link>
-                    <Link href="/signup" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center rounded-lg">
-                      Sign Up
-                    </Link>
-                  </>
-                )}
+                <Link href="/contact" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center rounded-lg">
+                  Get Started
+                </Link>
               </div>
             </motion.div>
           )}
