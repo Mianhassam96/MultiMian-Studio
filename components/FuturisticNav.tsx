@@ -81,15 +81,35 @@ export default function FuturisticNav() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="relative z-50">
-              <div className="flex items-center gap-2">
-                <span
+              <motion.div 
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.span
                   className="text-2xl md:text-3xl font-bold tracking-wider"
                   style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                  animate={{ 
+                    textShadow: [
+                      "0 0 0px rgba(59, 130, 246, 0)",
+                      "0 0 10px rgba(59, 130, 246, 0.3)",
+                      "0 0 0px rgba(59, 130, 246, 0)"
+                    ]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <span className="text-blue-600">MULTI</span>
+                  <motion.span 
+                    className="text-blue-600"
+                    animate={{ 
+                      color: ["#2563eb", "#3b82f6", "#2563eb"]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    MULTI
+                  </motion.span>
                   <span className="text-gray-900 dark:text-white">MIAN</span>
-                </span>
-              </div>
+                </motion.span>
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -173,13 +193,6 @@ export default function FuturisticNav() {
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
-                href="/pricing"
-                className="px-5 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                Pricing
-              </Link>
-
-              <Link
                 href="/contact"
                 className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm transition-all hover:shadow-lg"
               >
@@ -256,14 +269,6 @@ export default function FuturisticNav() {
                 </div>
 
                 <div className="space-y-3 pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <Link
-                    href="/pricing"
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-6 py-4 text-center text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
-                  >
-                    Pricing
-                  </Link>
-                  
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}

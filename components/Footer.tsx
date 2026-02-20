@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -66,10 +67,30 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300 hover:scale-105" style={{ fontFamily: '"Space Grotesk", sans-serif' }}>
-                <span className="text-blue-400">MULTI</span>
+              <motion.span 
+                className="text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300 hover:scale-105" 
+                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                whileHover={{ scale: 1.05 }}
+                animate={{ 
+                  textShadow: [
+                    "0 0 0px rgba(96, 165, 250, 0)",
+                    "0 0 15px rgba(96, 165, 250, 0.4)",
+                    "0 0 0px rgba(96, 165, 250, 0)"
+                  ]
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <motion.span 
+                  className="text-blue-400"
+                  animate={{ 
+                    color: ["#60a5fa", "#3b82f6", "#60a5fa"]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  MULTI
+                </motion.span>
                 <span className="text-white">MIAN</span>
-              </span>
+              </motion.span>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               We build professional websites and custom web applications that help businesses grow online. From startups to established companies, we deliver solutions that work.
