@@ -173,17 +173,17 @@ export default function FuturisticNav() {
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
-                href="/login"
+                href="/pricing"
                 className="px-5 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                Login
+                Pricing
               </Link>
 
               <Link
-                href="/signup"
-                className="px-6 py-2.5 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-gray-900 rounded-lg font-semibold text-sm transition-all"
+                href="/contact"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold text-sm transition-all hover:shadow-lg"
               >
-                Sign Up
+                Get Started
               </Link>
 
               <div className="ml-2">
@@ -257,19 +257,19 @@ export default function FuturisticNav() {
 
                 <div className="space-y-3 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <Link
-                    href="/login"
+                    href="/pricing"
                     onClick={() => setMobileOpen(false)}
                     className="block px-6 py-4 text-center text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
                   >
-                    Login
+                    Pricing
                   </Link>
                   
                   <Link
-                    href="/signup"
+                    href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="block px-6 py-4 text-center bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-semibold"
+                    className="block px-6 py-4 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold"
                   >
-                    Sign Up
+                    Get Started
                   </Link>
                 </div>
 

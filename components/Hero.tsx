@@ -80,18 +80,18 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Heading */}
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl md:text-8xl lg:text-[10rem] font-black mb-10 leading-[0.9]"
+              className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1]"
             >
               <motion.span
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="block text-gray-900 dark:text-white mb-6"
+                className="block text-gray-900 dark:text-white mb-4"
               >
                 Transform Ideas Into
               </motion.span>
@@ -108,9 +108,9 @@ export default function Hero() {
             {/* Animated Line */}
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: 240 }}
+              animate={{ width: 200 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="h-2.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 mx-auto rounded-full shadow-lg"
+              className="h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 mx-auto rounded-full shadow-lg"
             />
           </div>
 
@@ -119,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-xl md:text-3xl text-gray-700 dark:text-gray-300 mb-14 max-w-5xl mx-auto leading-relaxed text-center font-medium"
+            className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed text-center font-medium"
           >
             We don't just build websites — we create <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">digital experiences</span> that{' '}
             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">captivate audiences</span> and{' '}
@@ -131,7 +131,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap items-center justify-center gap-5 mb-16"
+            className="flex flex-wrap items-center justify-center gap-4 mb-12"
           >
             {[
               { icon: '⚛️', text: 'React', color: 'from-cyan-500 to-blue-600' },
@@ -144,12 +144,12 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.3 + i * 0.1, type: "spring" }}
-                whileHover={{ scale: 1.15, y: -8 }}
-                className={`px-7 py-4 bg-gradient-to-r ${tech.color} text-white rounded-2xl font-bold shadow-xl cursor-pointer hover:shadow-2xl transition-shadow`}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className={`px-5 py-3 bg-gradient-to-r ${tech.color} text-white rounded-xl font-bold shadow-lg cursor-pointer hover:shadow-xl transition-shadow`}
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-3xl">{tech.icon}</span>
-                  <span className="text-lg">{tech.text}</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-2xl">{tech.icon}</span>
+                  <span className="text-base">{tech.text}</span>
                 </span>
               </motion.div>
             ))}
@@ -160,13 +160,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
+            className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16"
           >
             <Link href="/contact">
               <motion.button
-                whileHover={{ scale: 1.08, boxShadow: "0 25px 70px rgba(59, 130, 246, 0.5)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 60px rgba(59, 130, 246, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-12 py-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-2xl font-bold text-xl shadow-2xl overflow-hidden"
+                className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl overflow-hidden"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600"
@@ -174,17 +174,17 @@ export default function Hero() {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.4 }}
                 />
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="relative z-10 flex items-center gap-2">
                   <motion.span
                     animate={{ rotate: [0, 15, -15, 0] }}
                     transition={{ duration: 2.5, repeat: Infinity }}
-                    className="text-2xl"
+                    className="text-xl"
                   >
                     🚀
                   </motion.span>
                   <span>Start Your Project</span>
                   <motion.svg
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -198,16 +198,16 @@ export default function Hero() {
 
             <Link href="/portfolio">
               <motion.button
-                whileHover={{ scale: 1.08, boxShadow: "0 20px 50px rgba(0, 0, 0, 0.15)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 15px 40px rgba(0, 0, 0, 0.15)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-6 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-2xl font-bold text-xl shadow-xl transition-all"
+                className="px-10 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl font-bold text-lg shadow-lg transition-all"
               >
-                <span className="flex items-center gap-3">
+                <span className="flex items-center gap-2">
                   <span>View Portfolio</span>
                   <motion.span
-                    animate={{ scale: [1, 1.3, 1] }}
+                    animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="text-2xl"
+                    className="text-xl"
                   >
                     📁
                   </motion.span>
@@ -221,7 +221,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto"
           >
             {[
               { icon: '⭐', number: '50+', label: 'Projects Completed', gradient: 'from-yellow-400 to-orange-500' },
@@ -234,21 +234,21 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.9 + i * 0.1, type: "spring" }}
-                whileHover={{ scale: 1.08, y: -8 }}
-                className="group relative text-center p-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700 rounded-3xl shadow-xl cursor-pointer hover:shadow-2xl transition-all"
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="group relative text-center p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-all"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-300`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
                 <motion.div
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, delay: i * 0.5 }}
-                  className="text-6xl mb-4 relative z-10"
+                  className="text-5xl mb-3 relative z-10"
                 >
                   {stat.icon}
                 </motion.div>
-                <div className={`text-4xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2 relative z-10`}>
+                <div className={`text-3xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2 relative z-10`}>
                   {stat.number}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-semibold relative z-10">{stat.label}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-semibold relative z-10">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
