@@ -1,262 +1,204 @@
-jQuery(document).ready(function($) {
+/**
+ * MultiMian Studio Theme JavaScript
+ * @version 2.0.0
+ */
+
+(function($) {
     'use strict';
 
-    // Theme Toggle
-    const themeToggle = $('#themeToggle');
-    const body = $('body');
-    
-    // Check for saved theme preference
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-        body.addClass('dark-mode');
-    }
-    
-    themeToggle.on('click', function() {
-        body.toggleClass('dark-mode');
-        const theme = body.hasClass('dark-mode') ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
-    });
+    // Document Ready
+    $(document).ready(function() {
+        
+        // Header Scroll Effect
+        $(window).on('scroll', function() {
+            const header = $('#site-header');
+            if ($(window).scrollTop() > 20) {
+                header.addClass('scrolled');
+            } else {
+                header.removeClass('scrolled');
+            }
+        });
 
-    // Mobile Menu Toggle
-    const mobileMenuToggle = $('#mobileMenuToggle');
-    const mobileMenu = $('#mobileMenu');
-    
-    mobileMenuToggle.on('click', function() {
-        $(this).toggleClass('active');
-        mobileMenu.toggleClass('active');
-    });
+        // Mobile Menu Toggle
+        $('#mobile-menu-toggle').on('click', function() {
+            $('#main-nav').toggleClass('active');
+            $(this).find('span').text(function(i, text) {
+                return text === '☰' ? '✕' : '☰';
+            });
+        });
 
-    // Smooth Scroll
-    $('a[href^="#"]').on('click', function(e) {
-        const target = $(this.getAttribute('href'));
-        if (target.length) {
+        // Close mobile menu when clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.header-container').length) {
+                $('#main-nav').removeClass('active');
+                $('#mobile-menu-toggle').find('span').text('☰');
+            }
+        });
+
+        // Newsletter Form Submission
+        $('#newsletter-form').on('submit', function(e) {
             e.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 80
-            }, 1000);
-        }
-    });
-
-    // Scroll Indicator
-    $('.scroll-indicator').on('click', function() {
-        $('html, body').animate({
-            scrollTop: $(window).height()
-        }, 1000);
-    });
-
-    // Newsletter Form
-    $('#newsletterForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const form = $(this);
-        const email = form.find('input[name="email"]').val();
-        const messageDiv = $('.newsletter-message');
-        
-        $.ajax({
-            url: multimianAjax.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'multimian_newsletter',
-                nonce: multimianAjax.nonce,
-                email: email
-            },
-            beforeSend: function() {
-                form.find('button').prop('disabled', true).text('Subscribing...');
-            },
-            success: function(response) {
-                if (response.success) {
-                    messageDiv.html('<p style="color: #10b981;">' + response.data.message + '</p>');
-                    form[0].reset();
-                } else {
-                    messageDiv.html('<p style="color: #ef4444;">' + response.data.message + '</p>');
-                }
-            },
-            error: function() {
-                messageDiv.html('<p style="color: #ef4444;">An error occurred. Please try again.</p>');
-            },
-            complete: function() {
-                form.find('button').prop('disabled', false).text('Subscribe');
-                setTimeout(function() {
-                    messageDiv.html('');
-                }, 5000);
-            }
-        });
-    });
-
-    // Contact Form
-    $('#contactForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const form = $(this);
-        const formData = {
-            action: 'multimian_contact_form',
-            nonce: multimianAjax.nonce,
-            name: form.find('input[name="name"]').val(),
-            email: form.find('input[name="email"]').val(),
-            subject: form.find('input[name="subject"]').val(),
-            message: form.find('textarea[name="message"]').val()
-        };
-        
-        $.ajax({
-            url: multimianAjax.ajaxurl,
-            type: 'POST',
-            data: formData,
-            beforeSend: function() {
-                form.find('button[type="submit"]').prop('disabled', true).text('Sending...');
-            },
-            success: function(response) {
-                if (response.success) {
-                    alert(response.data.message);
-                    form[0].reset();
-                } else {
-                    alert(response.data.message);
-                }
-            },
-            error: function() {
-                alert('An error occurred. Please try again.');
-            },
-            complete: function() {
-                form.find('button[type="submit"]').prop('disabled', false).text('Send Message');
-            }
-        });
-    });
-
-    // Login Form
-    $('#loginForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const form = $(this);
-        const formData = {
-            action: 'multimian_login',
-            nonce: multimianAjax.nonce,
-            email: form.find('input[name="email"]').val(),
-            password: form.find('input[name="password"]').val(),
-            remember: form.find('input[name="remember"]').is(':checked')
-        };
-        
-        $.ajax({
-            url: multimianAjax.ajaxurl,
-            type: 'POST',
-            data: formData,
-            beforeSend: function() {
-                form.find('button[type="submit"]').prop('disabled', true).text('Logging in...');
-                $('.form-message').remove();
-            },
-            success: function(response) {
-                if (response.success) {
-                    form.before('<div class="form-message success">' + response.data.message + '</div>');
-                    setTimeout(function() {
-                        window.location.href = response.data.redirect;
-                    }, 1000);
-                } else {
-                    form.before('<div class="form-message error">' + response.data.message + '</div>');
-                }
-            },
-            error: function() {
-                form.before('<div class="form-message error">An error occurred. Please try again.</div>');
-            },
-            complete: function() {
-                form.find('button[type="submit"]').prop('disabled', false).text('Login');
-            }
-        });
-    });
-
-    // Register Form
-    $('#registerForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const form = $(this);
-        const password = form.find('input[name="password"]').val();
-        const confirmPassword = form.find('input[name="confirm_password"]').val();
-        
-        if (password !== confirmPassword) {
-            form.before('<div class="form-message error">Passwords do not match.</div>');
-            setTimeout(function() {
-                $('.form-message').remove();
-            }, 3000);
-            return;
-        }
-        
-        const formData = {
-            action: 'multimian_register',
-            nonce: multimianAjax.nonce,
-            name: form.find('input[name="name"]').val(),
-            email: form.find('input[name="email"]').val(),
-            password: password
-        };
-        
-        $.ajax({
-            url: multimianAjax.ajaxurl,
-            type: 'POST',
-            data: formData,
-            beforeSend: function() {
-                form.find('button[type="submit"]').prop('disabled', true).text('Creating account...');
-                $('.form-message').remove();
-            },
-            success: function(response) {
-                if (response.success) {
-                    form.before('<div class="form-message success">' + response.data.message + '</div>');
-                    setTimeout(function() {
-                        window.location.href = response.data.redirect;
-                    }, 1000);
-                } else {
-                    form.before('<div class="form-message error">' + response.data.message + '</div>');
-                }
-            },
-            error: function() {
-                form.before('<div class="form-message error">An error occurred. Please try again.</div>');
-            },
-            complete: function() {
-                form.find('button[type="submit"]').prop('disabled', false).text('Sign Up');
-            }
-        });
-    });
-
-    // Fade in elements on scroll
-    const fadeElements = $('.fade-in');
-    
-    function checkFade() {
-        fadeElements.each(function() {
-            const elementTop = $(this).offset().top;
-            const elementBottom = elementTop + $(this).outerHeight();
-            const viewportTop = $(window).scrollTop();
-            const viewportBottom = viewportTop + $(window).height();
             
-            if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                $(this).addClass('visible');
+            const form = $(this);
+            const email = form.find('input[name="email"]').val();
+            const button = form.find('button');
+            const messageDiv = $('#newsletter-message');
+            
+            // Disable button and show loading
+            button.prop('disabled', true).html('<span class="loading"></span> Subscribing...');
+            
+            $.ajax({
+                url: multimianAjax.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'newsletter_subscribe',
+                    email: email,
+                    nonce: multimianAjax.nonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        messageDiv.html('<div class="success-message">✓ ' + response.data.message + '</div>');
+                        form[0].reset();
+                    } else {
+                        messageDiv.html('<div class="error-message">✕ ' + response.data.message + '</div>');
+                    }
+                },
+                error: function() {
+                    messageDiv.html('<div class="error-message">✕ Something went wrong. Please try again.</div>');
+                },
+                complete: function() {
+                    button.prop('disabled', false).html('Subscribe');
+                    setTimeout(function() {
+                        messageDiv.html('');
+                    }, 5000);
+                }
+            });
+        });
+
+        // Contact Form Submission
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            const form = $(this);
+            const formData = {
+                action: 'contact_form',
+                name: form.find('input[name="name"]').val(),
+                email: form.find('input[name="email"]').val(),
+                message: form.find('textarea[name="message"]').val(),
+                nonce: multimianAjax.nonce
+            };
+            
+            const button = form.find('button[type="submit"]');
+            const messageDiv = $('#contact-message');
+            
+            // Disable button and show loading
+            button.prop('disabled', true).html('<span class="loading"></span> Sending...');
+            
+            $.ajax({
+                url: multimianAjax.ajaxurl,
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        messageDiv.html('<div class="success-message">✓ ' + response.data.message + '</div>');
+                        form[0].reset();
+                    } else {
+                        messageDiv.html('<div class="error-message">✕ ' + response.data.message + '</div>');
+                    }
+                },
+                error: function() {
+                    messageDiv.html('<div class="error-message">✕ Something went wrong. Please try again.</div>');
+                },
+                complete: function() {
+                    button.prop('disabled', false).html('Send Message');
+                    setTimeout(function() {
+                        messageDiv.html('');
+                    }, 5000);
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = $('#scroll-top');
+        
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 300) {
+                scrollTopBtn.addClass('visible');
+            } else {
+                scrollTopBtn.removeClass('visible');
             }
         });
-    }
-    
-    $(window).on('scroll', checkFade);
-    checkFade(); // Initial check
+        
+        scrollTopBtn.on('click', function() {
+            $('html, body').animate({ scrollTop: 0 }, 600);
+        });
 
-    // Add animation class
-    $('<style>.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s; } .fade-in.visible { opacity: 1; transform: translateY(0); }</style>').appendTo('head');
+        // Smooth Scroll for Anchor Links
+        $('a[href^="#"]').on('click', function(e) {
+            const target = $(this.getAttribute('href'));
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 80
+                }, 800);
+            }
+        });
 
-    // Sticky Header
-    $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 100) {
-            $('.site-header').addClass('scrolled');
-        } else {
-            $('.site-header').removeClass('scrolled');
+        // Animate elements on scroll
+        function animateOnScroll() {
+            $('.animate-fade-in, .animate-slide-in').each(function() {
+                const elementTop = $(this).offset().top;
+                const elementBottom = elementTop + $(this).outerHeight();
+                const viewportTop = $(window).scrollTop();
+                const viewportBottom = viewportTop + $(window).height();
+                
+                if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                    $(this).css({
+                        'opacity': '1',
+                        'transform': 'translateY(0) translateX(0)'
+                    });
+                }
+            });
         }
+
+        // Initial animation check
+        animateOnScroll();
+        
+        // Animation on scroll
+        $(window).on('scroll', animateOnScroll);
+
+        // Service Card Hover Effect
+        $('.service-card').hover(
+            function() {
+                $(this).find('.service-icon').css('transform', 'scale(1.2) rotate(10deg)');
+            },
+            function() {
+                $(this).find('.service-icon').css('transform', 'scale(1) rotate(0deg)');
+            }
+        );
+
+        // Add loading class to body when page is loading
+        $(window).on('load', function() {
+            $('body').addClass('loaded');
+        });
+
+        // Lazy load images
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+
+        // Console message
+        console.log('%c MultiMian Studio ', 'background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 5px;');
+        console.log('%c Built with ❤️ by Mian Hassam ', 'color: #3b82f6; font-size: 14px; font-weight: bold;');
+        console.log('%c https://github.com/Mianhassam96 ', 'color: #6b7280; font-size: 12px;');
     });
 
-    // User Menu Dropdown
-    $('.user-menu-toggle').on('click', function(e) {
-        e.stopPropagation();
-        $('.user-dropdown').toggleClass('show');
-    });
-
-    $(document).on('click', function() {
-        $('.user-dropdown').removeClass('show');
-    });
-
-    $('.user-dropdown').on('click', function(e) {
-        e.stopPropagation();
-    });
-
-    // Add show class styles
-    $('<style>.user-dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); }</style>').appendTo('head');
-});
+})(jQuery);
