@@ -7,13 +7,13 @@ const projects = [
   {
     title: "MultiMian SkyScope Weather",
     tagline: "Real-Time Weather Intelligence",
-    description: "Transformed weather data into an intuitive experience with live forecasts, interactive maps, and location-based alerts. Increased user engagement by 200%.",
-    impact: "200% more engagement",
+    description: "Stay informed with real-time weather forecasts including temperature, humidity, wind speed, and more. Interactive maps and location-based alerts for better weather tracking.",
+    impact: "Real-time data",
     tech: [
+      { name: "TypeScript", type: "frontend" },
       { name: "Next.js", type: "frontend" },
-      { name: "React", type: "frontend" },
-      { name: "OpenWeather API", type: "api" },
-      { name: "Leaflet", type: "library" }
+      { name: "Weather API", type: "api" },
+      { name: "Leaflet Maps", type: "library" }
     ],
     image: "/portfolio/skyscope.jpg",
     demo: "https://v0-weather-app-sauqh5veloe.vercel.app/",
@@ -21,35 +21,83 @@ const projects = [
     category: "Web Application"
   },
   {
-    title: "E-Commerce Platform",
-    tagline: "Complete Online Store Solution",
-    description: "Built a scalable e-commerce platform with secure payments, real-time inventory tracking, and powerful admin tools. Processed $100K+ in first quarter.",
-    impact: "$100K+ revenue",
+    title: "MianScribe - Character Counter",
+    tagline: "Smart Writing Assistant",
+    description: "Real-time character and word counting tool with customizable limits, progress tracking, and copy/reset functionality. Perfect for writers and content creators.",
+    impact: "Productivity tool",
     tech: [
-      { name: "Next.js", type: "frontend" },
-      { name: "TypeScript", type: "frontend" },
-      { name: "Stripe", type: "api" },
-      { name: "Prisma", type: "backend" }
+      { name: "JavaScript", type: "frontend" },
+      { name: "HTML5", type: "frontend" },
+      { name: "CSS3", type: "design" },
+      { name: "LocalStorage", type: "api" }
     ],
-    image: "/portfolio/ecommerce.jpg",
-    demo: "#",
-    repo: "#",
-    category: "E-Commerce"
+    image: "/portfolio/mianscribe.jpg",
+    demo: "https://mianhassam96.github.io/MianScribe/",
+    repo: "https://github.com/Mianhassam96/MianScribe",
+    category: "Web Application"
   },
   {
-    title: "SaaS Analytics Dashboard",
-    tagline: "Data-Driven Business Intelligence",
-    description: "Created a modern analytics platform with real-time data visualization, user management, and automated reporting. Reduced decision-making time by 60%.",
-    impact: "60% faster decisions",
+    title: "MultiRank Explorer",
+    tagline: "Website Analytics & SEO Tool",
+    description: "Comprehensive website analytics tracking SEO performance, domain authority, and rankings. Get actionable insights to boost your site's visibility and performance.",
+    impact: "SEO insights",
     tech: [
+      { name: "TypeScript", type: "frontend" },
       { name: "React", type: "frontend" },
-      { name: "Node.js", type: "backend" },
-      { name: "D3.js", type: "library" },
-      { name: "PostgreSQL", type: "backend" }
+      { name: "SEO APIs", type: "api" },
+      { name: "Charts.js", type: "library" }
     ],
-    image: "/portfolio/dashboard.jpg",
+    image: "/portfolio/multirank.jpg",
+    demo: "https://mianhassam96.github.io/MultiRank-Explorer/",
+    repo: "https://github.com/Mianhassam96/MultiRank-Explorer",
+    category: "Web Application"
+  },
+  {
+    title: "IP Address Tracker",
+    tagline: "Real-Time Location Tracking",
+    description: "Enter an IP address or domain to view its real-time location on an interactive map. Provides details like IP address, location, timezone, and ISP information.",
+    impact: "Network tool",
+    tech: [
+      { name: "CSS", type: "design" },
+      { name: "JavaScript", type: "frontend" },
+      { name: "IP API", type: "api" },
+      { name: "Leaflet", type: "library" }
+    ],
+    image: "/portfolio/iptracker.jpg",
+    demo: "https://mianhassam96.github.io/IP-Address-Tracker/",
+    repo: "https://github.com/Mianhassam96/IP-Address-Tracker",
+    category: "Web Application"
+  },
+  {
+    title: "MultiMian Portfolio",
+    tagline: "Full-Stack Developer Showcase",
+    description: "Personal portfolio showcasing web apps and tools that merge creativity with functionality. Features projects focused on solving real-world problems with user-friendly interfaces.",
+    impact: "Professional site",
+    tech: [
+      { name: "TypeScript", type: "frontend" },
+      { name: "Next.js", type: "frontend" },
+      { name: "Tailwind CSS", type: "design" },
+      { name: "Framer Motion", type: "library" }
+    ],
+    image: "/portfolio/portfolio.jpg",
+    demo: "https://mianhassam96.github.io/MultiMian-Studio/",
+    repo: "https://github.com/Mianhassam96/MultiMian-Studio",
+    category: "Business Website"
+  },
+  {
+    title: "MultiMian TypePro",
+    tagline: "Smart Writing Assistant",
+    description: "Advanced writing tool with real-time suggestions, grammar checking, and productivity features. Helps writers create better content faster with AI-powered assistance.",
+    impact: "Writing tool",
+    tech: [
+      { name: "TypeScript", type: "frontend" },
+      { name: "React", type: "frontend" },
+      { name: "AI API", type: "api" },
+      { name: "Monaco Editor", type: "library" }
+    ],
+    image: "/portfolio/typepro.jpg",
     demo: "#",
-    repo: "#",
+    repo: "https://github.com/Mianhassam96",
     category: "Web Application"
   }
 ]
