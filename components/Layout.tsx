@@ -1,6 +1,5 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Header from './Header'
 import FuturisticNav from './FuturisticNav'
 import Footer from './Footer'
 import WhatsAppPopup from './WhatsAppPopup'
