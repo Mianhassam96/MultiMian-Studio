@@ -37,6 +37,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
+              href="/"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+            >
+              Home
+            </Link>
+            <Link
               href="/services"
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
             >
@@ -97,6 +103,9 @@ export default function Navbar() {
               className="md:hidden border-t border-gray-200 dark:border-gray-700"
             >
               <div className="py-4 space-y-2">
+                <Link href="/" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
+                  Home
+                </Link>
                 <Link href="/services" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
                   Services
                 </Link>
@@ -109,7 +118,7 @@ export default function Navbar() {
                 <Link href="/contact" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
                   Contact
                 </Link>
-                <Link href="/contact" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center rounded-lg">
+                <Link href="/contact" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center rounded-lg mt-2">
                   Get Started
                 </Link>
               </div>

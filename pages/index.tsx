@@ -14,62 +14,69 @@ export default function Home() {
       <Hero />
 
       {/* Services Section */}
-      <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"></div>
+      <section className="py-32 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"></div>
+        </div>
         <div className="container px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-bold mb-6 backdrop-blur-sm"
             >
-              Our Expertise
+              ✨ Our Expertise
             </motion.div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
-              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Digital Solutions</span>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white leading-tight">
+              Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Digital Solutions</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
               From concept to deployment, we deliver cutting-edge web solutions that drive business growth and user engagement
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
             {[
               { 
                 icon: '🌐', 
                 title: 'Business Websites', 
                 desc: 'Professional websites that establish your online presence and convert visitors into customers', 
                 features: ['Custom Design', 'SEO Ready', 'Fast Loading', 'Mobile Responsive'],
-                color: 'from-blue-500 to-cyan-500'
+                color: 'from-blue-500 to-cyan-500',
+                bgGradient: 'from-blue-500/5 to-cyan-500/5'
               },
               { 
                 icon: '⚡', 
                 title: 'SaaS Platforms', 
                 desc: 'Scalable subscription-based applications with advanced features and integrations', 
                 features: ['Multi-tenant', 'Subscription Billing', 'Admin Dashboard', 'API Integration'],
-                color: 'from-purple-500 to-pink-500'
+                color: 'from-purple-500 to-pink-500',
+                bgGradient: 'from-purple-500/5 to-pink-500/5'
               },
               { 
                 icon: '🛒', 
                 title: 'E-Commerce Solutions', 
                 desc: 'Complete online stores with secure payment processing and inventory management', 
                 features: ['Payment Gateway', 'Product Management', 'Order Tracking', 'Analytics'],
-                color: 'from-green-500 to-emerald-500'
+                color: 'from-green-500 to-emerald-500',
+                bgGradient: 'from-green-500/5 to-emerald-500/5'
               },
               { 
                 icon: '📱', 
                 title: 'Web Applications', 
                 desc: 'Custom web applications tailored to your specific business requirements', 
                 features: ['Custom Features', 'Database Design', 'User Authentication', 'Cloud Hosting'],
-                color: 'from-orange-500 to-red-500'
+                color: 'from-orange-500 to-red-500',
+                bgGradient: 'from-orange-500/5 to-red-500/5'
               }
             ].map((s, i) => (
               <motion.div 
@@ -78,28 +85,29 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ delay: i * 0.1, duration: 0.8 }} 
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group relative p-8 bg-white dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 hover:border-transparent shadow-lg hover:shadow-2xl transition-all duration-500"
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="group relative p-10 bg-white dark:bg-gray-800/50 rounded-3xl border-2 border-gray-100 dark:border-gray-700/50 hover:border-transparent shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
               >
+                <div className={`absolute inset-0 bg-gradient-to-br ${s.bgGradient} opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500`}></div>
                 <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative z-10">
                   <motion.div 
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="text-6xl mb-6"
+                    className="text-7xl mb-8"
                   >
                     {s.icon}
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-3xl font-black mb-5 text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${s.color} transition-all">
                     {s.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{s.desc}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-lg">{s.desc}</p>
+                  <div className="flex flex-wrap gap-3">
                     {s.features.map(f => (
                       <motion.span 
                         key={f} 
-                        whileHover={{ scale: 1.05 }}
-                        className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold"
+                        whileHover={{ scale: 1.08, y: -2 }}
+                        className={`px-4 py-2 bg-gradient-to-r ${s.color} bg-opacity-10 text-gray-700 dark:text-gray-300 rounded-xl text-sm font-bold border border-gray-200 dark:border-gray-700 hover:border-transparent hover:text-white hover:shadow-lg transition-all`}
                       >
                         {f}
                       </motion.span>
