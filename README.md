@@ -8,6 +8,8 @@
 
 **Website:** [https://mianhassam96.github.io/MultiMian-Studio/](https://mianhassam96.github.io/MultiMian-Studio/)
 
+https://multimian.com/
+
 ## ✨ Features
 
 - 🎨 **Stunning Hero Section** - "Transform Ideas Into Digital Reality"
@@ -70,37 +72,14 @@ git commit -m "Your commit message"
 git push origin main
 ```
 
-## 📁 Project Structure
-
-```
-MultiMian-Studio/
-├── components/          # React components
-│   ├── Hero.tsx        # Hero section
-│   ├── Navbar.tsx      # Navigation bar
-│   ├── Footer.tsx      # Footer component
-│   └── ...
-├── pages/              # Next.js pages
-│   ├── index.tsx       # Home page
-│   ├── services.tsx    # Services page
-│   ├── portfolio.tsx   # Portfolio page
-│   └── ...
-├── styles/             # Global styles
+Global styles
 │   └── globals.css     # Tailwind CSS
 ├── public/             # Static assets
 ├── wordpress-theme/    # WordPress theme version
 └── .github/            # GitHub Actions workflows
 ```
 
-## 🎨 Hero Section
 
-The hero section features:
-- **Title:** "Transform Ideas Into Digital Reality"
-- **Description:** "We don't just build websites — we create digital experiences that captivate audiences and skyrocket your growth."
-- Animated gradient orbs
-- Floating particles
-- Interactive tech stack badges (React, Next.js, Tailwind, TypeScript)
-- Animated stats cards (50+ Projects, 30+ Clients, 5+ Years, 100% Satisfaction)
-- Smooth scroll indicator
 
 ## 📄 Pages
 
