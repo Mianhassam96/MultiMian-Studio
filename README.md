@@ -72,26 +72,7 @@ git commit -m "Your commit message"
 git push origin main
 ```
 
-Global styles
-│   └── globals.css     # Tailwind CSS
-├── public/             # Static assets
-├── wordpress-theme/    # WordPress theme version
-└── .github/            # GitHub Actions workflows
-```
 
-
-
-## 📄 Pages
-
-- **Home** (`/`) - Landing page with hero section
-- **Services** (`/services`) - Service offerings
-- **Portfolio** (`/portfolio`) - Project showcase
-- **About** (`/about`) - Company information
-- **Contact** (`/contact`) - Contact form
-- **Pricing** (`/pricing`) - Pricing plans
-- **Process** (`/process`) - Work process
-- **Testimonials** (`/testimonials`) - Client reviews
-- **FAQ** (`/faq`) - Frequently asked questions
 
 ## 🔧 Configuration
 
