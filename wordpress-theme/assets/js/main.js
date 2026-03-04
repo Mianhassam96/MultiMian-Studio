@@ -1,204 +1,346 @@
 /**
  * MultiMian Studio Theme JavaScript
- * @version 2.0.0
+ * Version: 2.0
  */
 
-(function($) {
+(function() {
     'use strict';
-
-    // Document Ready
-    $(document).ready(function() {
+    
+    // Theme Toggle - Must run immediately on page load
+    function initThemeToggle() {
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
         
-        // Header Scroll Effect
-        $(window).on('scroll', function() {
-            const header = $('#site-header');
-            if ($(window).scrollTop() > 20) {
-                header.addClass('scrolled');
+        if (!themeToggle) {
+            console.log('Theme toggle button not found');
+            return;
+        }
+        
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme');
+        
+        // Function to update icons
+        function updateIcons(isDark) {
+            if (isDark) {
+                if (sunIcon) sunIcon.style.display = 'none';
+                if (moonIcon) moonIcon.style.display = 'block';
             } else {
-                header.removeClass('scrolled');
+                if (sunIcon) sunIcon.style.display = 'block';
+                if (moonIcon) moonIcon.style.display = 'none';
             }
-        });
-
-        // Mobile Menu Toggle
-        $('#mobile-menu-toggle').on('click', function() {
-            $('#main-nav').toggleClass('active');
-            $(this).find('span').text(function(i, text) {
-                return text === '☰' ? '✕' : '☰';
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('.header-container').length) {
-                $('#main-nav').removeClass('active');
-                $('#mobile-menu-toggle').find('span').text('☰');
-            }
-        });
-
-        // Newsletter Form Submission
-        $('#newsletter-form').on('submit', function(e) {
-            e.preventDefault();
-            
-            const form = $(this);
-            const email = form.find('input[name="email"]').val();
-            const button = form.find('button');
-            const messageDiv = $('#newsletter-message');
-            
-            // Disable button and show loading
-            button.prop('disabled', true).html('<span class="loading"></span> Subscribing...');
-            
-            $.ajax({
-                url: multimianAjax.ajaxurl,
-                type: 'POST',
-                data: {
-                    action: 'newsletter_subscribe',
-                    email: email,
-                    nonce: multimianAjax.nonce
-                },
-                success: function(response) {
-                    if (response.success) {
-                        messageDiv.html('<div class="success-message">✓ ' + response.data.message + '</div>');
-                        form[0].reset();
-                    } else {
-                        messageDiv.html('<div class="error-message">✕ ' + response.data.message + '</div>');
-                    }
-                },
-                error: function() {
-                    messageDiv.html('<div class="error-message">✕ Something went wrong. Please try again.</div>');
-                },
-                complete: function() {
-                    button.prop('disabled', false).html('Subscribe');
-                    setTimeout(function() {
-                        messageDiv.html('');
-                    }, 5000);
-                }
-            });
-        });
-
-        // Contact Form Submission
-        $('#contact-form').on('submit', function(e) {
-            e.preventDefault();
-            
-            const form = $(this);
-            const formData = {
-                action: 'contact_form',
-                name: form.find('input[name="name"]').val(),
-                email: form.find('input[name="email"]').val(),
-                message: form.find('textarea[name="message"]').val(),
-                nonce: multimianAjax.nonce
-            };
-            
-            const button = form.find('button[type="submit"]');
-            const messageDiv = $('#contact-message');
-            
-            // Disable button and show loading
-            button.prop('disabled', true).html('<span class="loading"></span> Sending...');
-            
-            $.ajax({
-                url: multimianAjax.ajaxurl,
-                type: 'POST',
-                data: formData,
-                success: function(response) {
-                    if (response.success) {
-                        messageDiv.html('<div class="success-message">✓ ' + response.data.message + '</div>');
-                        form[0].reset();
-                    } else {
-                        messageDiv.html('<div class="error-message">✕ ' + response.data.message + '</div>');
-                    }
-                },
-                error: function() {
-                    messageDiv.html('<div class="error-message">✕ Something went wrong. Please try again.</div>');
-                },
-                complete: function() {
-                    button.prop('disabled', false).html('Send Message');
-                    setTimeout(function() {
-                        messageDiv.html('');
-                    }, 5000);
-                }
-            });
-        });
-
-        // Scroll to Top Button
-        const scrollTopBtn = $('#scroll-top');
+        }
         
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() > 300) {
-                scrollTopBtn.addClass('visible');
+        // Apply saved theme immediately
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            updateIcons(true);
+        } else {
+            document.body.classList.remove('dark-mode');
+            updateIcons(false);
+        }
+        
+        // Add click event listener
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle dark mode class
+            const isDark = document.body.classList.toggle('dark-mode');
+            
+            // Update icons
+            updateIcons(isDark);
+            
+            // Save preference
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+                console.log('Dark mode enabled');
             } else {
-                scrollTopBtn.removeClass('visible');
+                localStorage.setItem('theme', 'light');
+                console.log('Light mode enabled');
             }
         });
         
-        scrollTopBtn.on('click', function() {
-            $('html, body').animate({ scrollTop: 0 }, 600);
+        console.log('Theme toggle initialized');
+    }
+    
+    // Initialize theme toggle immediately
+    initThemeToggle();
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNavigation = document.querySelector('.main-navigation');
+    const menuIcon = document.querySelector('.menu-icon');
+    
+    if (mobileMenuToggle && mainNavigation) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNavigation.classList.toggle('active');
+            const isExpanded = mainNavigation.classList.contains('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+            menuIcon.textContent = isExpanded ? '✕' : '☰';
         });
-
-        // Smooth Scroll for Anchor Links
-        $('a[href^="#"]').on('click', function(e) {
-            const target = $(this.getAttribute('href'));
-            if (target.length) {
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mainNavigation.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mainNavigation.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                menuIcon.textContent = '☰';
+            }
+        });
+    }
+    
+    // Scroll to Top Button
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Popup Management - Show consultation popup on every page load
+    const consultationPopup = document.getElementById('consultationPopup');
+    const consultationForm = document.getElementById('consultationForm');
+    
+    if (consultationPopup) {
+        // Show popup after 3 seconds on every page load
+        setTimeout(function() {
+            consultationPopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 3000);
+        
+        // Close popup handlers
+        const closeButtons = consultationPopup.querySelectorAll('.popup-close-btn, .popup-close');
+        closeButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                consultationPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close on overlay click
+        consultationPopup.addEventListener('click', function(e) {
+            if (e.target === consultationPopup) {
+                consultationPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Handle form submission
+        if (consultationForm) {
+            consultationForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top - 80
-                }, 800);
-            }
-        });
-
-        // Animate elements on scroll
-        function animateOnScroll() {
-            $('.animate-fade-in, .animate-slide-in').each(function() {
-                const elementTop = $(this).offset().top;
-                const elementBottom = elementTop + $(this).outerHeight();
-                const viewportTop = $(window).scrollTop();
-                const viewportBottom = viewportTop + $(window).height();
                 
-                if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                    $(this).css({
-                        'opacity': '1',
-                        'transform': 'translateY(0) translateX(0)'
+                const formData = new FormData(consultationForm);
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                
+                // Disable button and show loading
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+                
+                // Send AJAX request
+                fetch(multimianAjax.ajaxurl, {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        action: 'multimian_consultation',
+                        nonce: multimianAjax.nonce,
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        projectType: formData.get('projectType'),
+                        message: formData.get('message')
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage(data.data.message, 'success');
+                        consultationForm.reset();
+                        setTimeout(function() {
+                            consultationPopup.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }, 2000);
+                    } else {
+                        showMessage(data.data.message, 'error');
+                    }
+                })
+                .catch(() => {
+                    showMessage('An error occurred. Please try again.', 'error');
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalText;
+                });
+            });
+        }
+    }
+    
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+            
+            fetch(multimianAjax.ajaxurl, {
+                method: 'POST',
+                body: new URLSearchParams({
+                    action: 'multimian_contact_form',
+                    nonce: multimianAjax.nonce,
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    message: formData.get('message')
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage(data.data.message, 'success');
+                    contactForm.reset();
+                } else {
+                    showMessage(data.data.message, 'error');
+                }
+            })
+            .catch(error => {
+                showMessage('An error occurred. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+            });
+        });
+    }
+    
+    // Newsletter Form Handler
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(newsletterForm);
+            const submitButton = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="spinner"></span> Subscribing...';
+            
+            fetch(multimianAjax.ajaxurl, {
+                method: 'POST',
+                body: new URLSearchParams({
+                    action: 'multimian_newsletter',
+                    nonce: multimianAjax.nonce,
+                    email: formData.get('email')
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage(data.data.message, 'success');
+                    newsletterForm.reset();
+                } else {
+                    showMessage(data.data.message, 'error');
+                }
+            })
+            .catch(error => {
+                showMessage('An error occurred. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+            });
+        });
+    }
+    
+    // Show Message Function
+    function showMessage(message, type) {
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        
+        if (messageBox && messageText) {
+            messageText.textContent = message;
+            messageBox.className = 'message ' + type + ' active';
+            
+            // Scroll to message
+            messageBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Auto hide after 5 seconds
+            setTimeout(function() {
+                messageBox.classList.remove('active');
+            }, 5000);
+        }
+    }
+    
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '#!') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
-            });
-        }
-
-        // Initial animation check
-        animateOnScroll();
-        
-        // Animation on scroll
-        $(window).on('scroll', animateOnScroll);
-
-        // Service Card Hover Effect
-        $('.service-card').hover(
-            function() {
-                $(this).find('.service-icon').css('transform', 'scale(1.2) rotate(10deg)');
-            },
-            function() {
-                $(this).find('.service-icon').css('transform', 'scale(1) rotate(0deg)');
             }
-        );
-
-        // Add loading class to body when page is loading
-        $(window).on('load', function() {
-            $('body').addClass('loaded');
         });
-
-        // Lazy load images
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            // Fallback for browsers that don't support lazy loading
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-            document.body.appendChild(script);
-        }
-
-        // Console message
-        console.log('%c MultiMian Studio ', 'background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 5px;');
-        console.log('%c Built with ❤️ by Mian Hassam ', 'color: #3b82f6; font-size: 14px; font-weight: bold;');
-        console.log('%c https://github.com/Mianhassam96 ', 'color: #6b7280; font-size: 12px;');
     });
-
-})(jQuery);
+    
+    // Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards and sections
+    document.querySelectorAll('.card, .section').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Header Scroll Effect
+    const header = document.querySelector('.site-header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            header.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+})();
