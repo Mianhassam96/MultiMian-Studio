@@ -25,6 +25,7 @@ function multimian_enqueue_scripts() {
     // Styles
     wp_enqueue_style('multimian-style', get_stylesheet_uri(), array(), '2.0');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', array(), null);
+    wp_enqueue_style('luxury-theme', get_template_directory_uri() . '/assets/css/luxury-theme.css', array('multimian-style'), '2.0');
     
     // Scripts
     wp_enqueue_script('multimian-main', get_template_directory_uri() . '/assets/js/main.js', array(), '2.0', true);

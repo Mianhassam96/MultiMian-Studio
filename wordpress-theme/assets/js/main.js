@@ -122,7 +122,7 @@
         }, 3000);
         
         // Close popup handlers
-        const closeButtons = consultationPopup.querySelectorAll('.popup-close-btn, .popup-close');
+        const closeButtons = consultationPopup.querySelectorAll('.popup-close-btn, .popup-close, .popup-close-luxury');
         closeButtons.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 consultationPopup.classList.remove('active');
