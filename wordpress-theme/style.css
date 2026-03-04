@@ -50,11 +50,13 @@ Tags: business, portfolio, agency, responsive, modern
 
 /* ===== DARK MODE ===== */
 body.dark-mode {
-  --bg-primary: #111827;
-  --bg-secondary: #1f2937;
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --border-color: #374151;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #0f0f0f;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: #2a2a2a;
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
 body {
@@ -176,15 +178,20 @@ p {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 .logo-multi {
   color: #0f172a;
   font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  letter-spacing: -0.02em;
 }
 
 .dark-mode .logo-multi {
   color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 .logo-mian {
@@ -193,14 +200,42 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% auto;
-  animation: gradient 3s linear infinite;
+  animation: gradientShift 3s linear infinite;
   font-weight: 900;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.02em;
 }
 
-@keyframes gradient {
+.logo-mian::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 2px;
+  animation: underlineGlow 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes underlineGlow {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+.site-logo a:hover .logo-multi {
+  transform: scale(1.05);
+}
+
+.site-logo a:hover .logo-mian {
+  animation: gradientShift 1.5s linear infinite;
 }
 
 .main-navigation {
@@ -2224,4 +2259,208 @@ textarea:focus {
   .type-large {
     font-size: 4rem;
   }
+}
+
+
+/* ===== COMPREHENSIVE DARK MODE STYLES ===== */
+.dark-mode {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .site-header {
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .main-navigation a {
+  color: #ffffff;
+}
+
+.dark-mode .main-navigation a:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.dark-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dark-mode .mobile-menu-toggle {
+  color: #ffffff;
+}
+
+.dark-mode .site-footer {
+  background: #000000;
+  color: #a0a0a0;
+}
+
+.dark-mode .site-footer h3 {
+  color: #ffffff;
+}
+
+.dark-mode .site-footer a {
+  color: #a0a0a0;
+}
+
+.dark-mode .site-footer a:hover {
+  color: #3b82f6;
+}
+
+.dark-mode .card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #3b82f6;
+}
+
+.dark-mode .card-title {
+  color: #ffffff;
+}
+
+.dark-mode .card-description {
+  color: #a0a0a0;
+}
+
+.dark-mode .section-title {
+  color: #ffffff;
+}
+
+.dark-mode .section-subtitle {
+  color: #a0a0a0;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #ffffff;
+}
+
+.dark-mode p {
+  color: #a0a0a0;
+}
+
+.dark-mode .form-input,
+.dark-mode .form-select,
+.dark-mode .form-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dark-mode .form-input::placeholder,
+.dark-mode .form-select::placeholder,
+.dark-mode .form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .form-label {
+  color: #ffffff;
+}
+
+.dark-mode .popup-container {
+  background: #0f0f0f;
+}
+
+.dark-mode .popup-title {
+  color: #ffffff;
+}
+
+.dark-mode .popup-subtitle {
+  color: #a0a0a0;
+}
+
+.dark-mode .consultation-popup {
+  background: #0f0f0f;
+}
+
+.dark-mode .popup-close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.dark-mode .popup-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .contact-info-item {
+  color: #ffffff;
+}
+
+.dark-mode .contact-info-item a {
+  color: #ffffff;
+}
+
+.dark-mode .form-privacy-text {
+  color: #a0a0a0;
+}
+
+/* ===== FOOTER POSITIONING FIX ===== */
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.site-footer {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+}
+
+/* ===== IMPROVED THEME TOGGLE ===== */
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover::before {
+  opacity: 1;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+.theme-toggle svg {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-toggle:hover svg {
+  color: white;
+}
+
+.dark-mode .theme-toggle:hover svg {
+  color: white;
 }
