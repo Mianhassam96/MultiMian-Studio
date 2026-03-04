@@ -1780,25 +1780,6 @@
   color: #a0a0a0 !important;
 }
 
-/* ===== FOOTER POSITIONING FIX ===== */
-.site-footer {
-  position: relative;
-  margin-top: 0;
-  background: #111827;
-  color: #d1d5db;
-}
-
-.dark-mode .site-footer {
-  background: #000000;
-}
-
-/* Ensure main content doesn't overlap footer */
-.site-main {
-  min-height: calc(100vh - 70px);
-  display: flex;
-  flex-direction: column;
-}
-
 /* ===== RESPONSIVE IMPROVEMENTS ===== */
 @media (max-width: 768px) {
   .site-logo a {
