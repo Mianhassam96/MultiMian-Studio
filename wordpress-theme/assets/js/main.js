@@ -11,6 +11,7 @@
         const themeToggle = document.getElementById('themeToggle');
         const sunIcon = document.querySelector('.sun-icon');
         const moonIcon = document.querySelector('.moon-icon');
+        const body = document.body;
         
         if (!themeToggle) {
             console.log('Theme toggle button not found');
@@ -20,24 +21,26 @@
         // Check for saved theme preference or default to light mode
         const savedTheme = localStorage.getItem('theme');
         
-        // Function to update icons
-        function updateIcons(isDark) {
+        // Function to update icons and theme
+        function updateTheme(isDark) {
             if (isDark) {
+                body.classList.add('dark-mode');
                 if (sunIcon) sunIcon.style.display = 'none';
                 if (moonIcon) moonIcon.style.display = 'block';
+                localStorage.setItem('theme', 'dark');
             } else {
+                body.classList.remove('dark-mode');
                 if (sunIcon) sunIcon.style.display = 'block';
                 if (moonIcon) moonIcon.style.display = 'none';
+                localStorage.setItem('theme', 'light');
             }
         }
         
-        // Apply saved theme immediately
+        // Apply saved theme immediately on page load
         if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            updateIcons(true);
+            updateTheme(true);
         } else {
-            document.body.classList.remove('dark-mode');
-            updateIcons(false);
+            updateTheme(false);
         }
         
         // Add click event listener
@@ -45,23 +48,14 @@
             e.preventDefault();
             e.stopPropagation();
             
-            // Toggle dark mode class
-            const isDark = document.body.classList.toggle('dark-mode');
+            // Toggle dark mode
+            const isDark = body.classList.contains('dark-mode');
+            updateTheme(!isDark);
             
-            // Update icons
-            updateIcons(isDark);
-            
-            // Save preference
-            if (isDark) {
-                localStorage.setItem('theme', 'dark');
-                console.log('Dark mode enabled');
-            } else {
-                localStorage.setItem('theme', 'light');
-                console.log('Light mode enabled');
-            }
+            console.log('Theme toggled to:', !isDark ? 'dark' : 'light');
         });
         
-        console.log('Theme toggle initialized');
+        console.log('Theme toggle initialized with theme:', savedTheme || 'light');
     }
     
     // Initialize theme toggle immediately
