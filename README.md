@@ -1,150 +1,171 @@
-# MultiMian Studio 🚀
+# MultiMian Studio - Premium WordPress Theme
 
-> Professional Full-Stack Development Agency Website
+## 🎨 Professional Full-Stack Development Agency Theme
 
-[![Deploy to GitHub Pages](https://github.com/Mianhassam96/MultiMian-Studio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Mianhassam96/MultiMian-Studio/actions/workflows/deploy.yml)
+A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and premium animations.
 
-## 🌐 Live Preview
-
-**Website:** [https://mianhassam96.github.io/MultiMian-Studio/](https://mianhassam96.github.io/MultiMian-Studio/)
-
-https://multimian.com/
+---
 
 ## ✨ Features
 
-- 🎨 **Stunning Hero Section** - "Transform Ideas Into Digital Reality"
-- 📱 **Fully Responsive** - Perfect on all devices
-- 🌙 **Dark Mode** - Beautiful dark theme support
-- ⚡ **Lightning Fast** - Static site generation with Next.js
-- 🎯 **SEO Optimized** - Built for search engines
-- 🎭 **Smooth Animations** - Engaging user experience with Framer Motion
-- 💼 **Portfolio Showcase** - Display your best work
-- 📧 **Contact Form** - Easy client communication
-- 💰 **Pricing Plans** - Clear service offerings
-- ⭐ **Testimonials** - Social proof section
+### Design
+- **Luxury Glassmorphism UI** - Modern glass effects throughout
+- **Dark/Light Mode** - Full theme toggle with localStorage persistence
+- **Blue Glow Effects** - Professional hover animations
+- **Fancy Animated Logo** - Gradient animation with glow effect
+- **Responsive Design** - Perfect on all devices (mobile, tablet, desktop)
 
-## 🛠️ Tech Stack
+### Sections
+1. **Hero Section** - Animated grid, floating orbs, dashboard preview
+2. **Services** - 6 premium glass cards with hover effects
+3. **Portfolio** - Project showcase with glassmorphism
+4. **Why Choose Us** - 6 feature cards
+5. **Development Process** - 4-step timeline
+6. **Testimonials** - Client reviews with ratings
+7. **Final CTA** - Conversion-focused section
 
-- **Framework:** Next.js 13.5.4
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Icons:** React Icons
-- **Deployment:** GitHub Pages
+### Interactive Elements
+- **Premium Popup** - Professional consultation form with WhatsApp & Call buttons
+- **Theme Toggle** - Smooth transition between light and dark modes
+- **WhatsApp Float Button** - Easy contact access
+- **Scroll to Top** - Smooth scroll functionality
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Node.js 18+ installed
-- npm or yarn package manager
+## 🚀 Installation
 
-### Installation
+1. Download the theme files
+2. Upload to WordPress `/wp-content/themes/` directory
+3. Activate the theme in WordPress admin
+4. Customize via Appearance > Customize
 
-```bash
-# Clone the repository
-git clone https://github.com/Mianhassam96/MultiMian-Studio.git
+---
 
-# Navigate to project directory
-cd MultiMian-Studio
+## 🎨 Color Scheme
 
-# Install dependencies
-npm install
+### Light Mode
+- Background: White (#ffffff)
+- Text: Dark (#0f172a)
+- Primary: Blue (#3b82f6)
+- Accent: Blue gradient
 
-# Run development server
-npm run dev
+### Dark Mode
+- Background: Deep Black (#0a0a0a)
+- Text: White (#ffffff)
+- Primary: Blue (#3b82f6)
+- Accent: Blue gradient
+
+---
+
+## 📱 Responsive Breakpoints
+
+- **Desktop**: 1024px+ (Full features)
+- **Tablet**: 768-1023px (Optimized layouts)
+- **Mobile**: <768px (Single column, touch-friendly)
+- **Small Mobile**: <480px (Compact design)
+
+---
+
+## 🔧 Technical Stack
+
+- **PHP**: 8.0+
+- **CSS**: Custom luxury theme (3000+ lines)
+- **JavaScript**: Vanilla JS (no jQuery)
+- **Fonts**: Inter (Google Fonts)
+- **Icons**: SVG inline
+
+---
+
+## 📞 Contact Integration
+
+- **Phone**: Configurable via WordPress Customizer
+- **WhatsApp**: Floating button + popup integration
+- **Email**: Contact form with AJAX submission
+
+---
+
+## 🌐 Live Demo
+
+**GitHub Pages**: https://mianhassam96.github.io/MultiMian-Studio/
+
+---
+
+## 📝 Customization
+
+### Theme Customizer Options
+- Phone Number
+- WhatsApp Number
+- Email Address
+- Logo (optional)
+
+### Files Structure
+```
+wordpress-theme/
+├── style.css              # Main theme styles
+├── functions.php          # Theme functions
+├── header.php            # Header template
+├── footer.php            # Footer template
+├── index.php             # Homepage template
+├── page.php              # Generic page template
+└── assets/
+    ├── css/
+    │   └── luxury-theme.css  # Premium styles
+    └── js/
+        └── main.js           # Interactive features
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to see your site!
+---
 
-## 📦 Build & Deploy
+## ✅ Features Checklist
 
-### Build for Production
-```bash
-npm run build
-```
+- [x] Luxury glassmorphism design
+- [x] Full dark/light mode support
+- [x] Fancy animated logo
+- [x] Premium responsive popup
+- [x] WhatsApp integration
+- [x] Theme toggle with persistence
+- [x] Smooth animations
+- [x] Mobile-first responsive
+- [x] SEO optimized
+- [x] Accessibility compliant
+- [x] Fast performance
+- [x] Clean code
 
-### Deploy to GitHub Pages
-Simply push to the `main` branch - GitHub Actions will automatically build and deploy!
+---
 
-```bash
-git add .
-git commit -m "Your commit message"
-git push origin main
-```
+## 🎯 Browser Support
 
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- Mobile browsers (iOS, Android)
 
+---
 
-## 🔧 Configuration
+## 📄 License
 
-### GitHub Pages Setup
-1. Go to repository **Settings**
-2. Navigate to **Pages** section
-3. Set **Source** to **GitHub Actions**
-4. Save and wait for deployment
+GNU General Public License v2 or later
 
-### Custom Domain (Optional)
-1. Add `CNAME` file to `public/` directory
-2. Add your domain name in the file
-3. Configure DNS settings with your domain provider
-
-## 📊 Performance
-
-- ✅ Static Site Generation (SSG)
-- ✅ Optimized Images
-- ✅ Code Splitting
-- ✅ Lazy Loading
-- ✅ Fast Page Loads
-- ✅ SEO Friendly
-
-## 🎯 WordPress Theme
-
-A WordPress version of this theme is included in the `wordpress-theme/` directory.
-
-### Installation
-1. Download `multimian-studio-WORKING.zip`
-2. Go to WordPress Admin → Appearance → Themes
-3. Click "Add New" → "Upload Theme"
-4. Choose the ZIP file and install
-5. Activate the theme
-
-### Adding CSS (Important!)
-The WordPress theme requires CSS to be added manually:
-
-1. Go to: Appearance → Customize
-2. Click "Additional CSS"
-3. Copy all content from `wordpress-theme/assets/css/main.css`
-4. Paste into Additional CSS box
-5. Click "Publish"
-
-See `WORDPRESS_THEME_INSTALL.txt` for detailed instructions.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+---
 
 ## 👨‍💻 Author
 
 **Mian Hassam**
-- GitHub: [@Mianhassam96](https://github.com/Mianhassam96)
-- Website: [MultiMian Studio](https://mianhassam96.github.io/MultiMian-Studio/)
-
-## 🙏 Acknowledgments
-
-- Next.js team for the amazing framework
-- Tailwind CSS for the utility-first CSS framework
-- Framer Motion for smooth animations
-- Vercel for Next.js development
-
-## 📞 Support
-
-For support, email or open an issue in the GitHub repository.
+- Email: mianhassam96@gmail.com
+- Phone: +92 325 883 1437
+- GitHub: https://github.com/Mianhassam96
 
 ---
 
-**Made with ❤️ by Mian Hassam**
+## 🙏 Credits
 
-⭐ Star this repo if you find it helpful!
+- Font: Inter by Google Fonts
+- Icons: Custom SVG
+- Design: Inspired by Stripe, Vercel, Notion
+
+---
+
+**Version**: 2.0  
+**Last Updated**: March 4, 2026  
+**Status**: Production Ready ✅
