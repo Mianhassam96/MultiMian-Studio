@@ -1,6 +1,6 @@
-# MultiMian Studio - Premium WordPress Theme
+# MultiMian Studio
 
-## 🎨 Professional Full-Stack Development Agency Theme
+## 🎨 Professional Full-Stack Development Agency 
 
 A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and premium animations.
 
