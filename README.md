@@ -32,30 +32,7 @@ A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and
 
 ---
 
-## 🚀 Installation
 
-1. Download the theme files
-2. Upload to WordPress `/wp-content/themes/` directory
-3. Activate the theme in WordPress admin
-4. Customize via Appearance > Customize
-
----
-
-## 🎨 Color Scheme
-
-### Light Mode
-- Background: White (#ffffff)
-- Text: Dark (#0f172a)
-- Primary: Blue (#3b82f6)
-- Accent: Blue gradient
-
-### Dark Mode
-- Background: Deep Black (#0a0a0a)
-- Text: White (#ffffff)
-- Primary: Blue (#3b82f6)
-- Accent: Blue gradient
-
----
 
 ## 📱 Responsive Breakpoints
 
