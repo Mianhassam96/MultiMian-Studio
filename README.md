@@ -32,17 +32,6 @@ A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and
 
 ---
 
-
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: 1024px+ (Full features)
-- **Tablet**: 768-1023px (Optimized layouts)
-- **Mobile**: <768px (Single column, touch-friendly)
-- **Small Mobile**: <480px (Compact design)
-
----
-
 ## 🔧 Technical Stack
 
 - **PHP**: 8.0+
