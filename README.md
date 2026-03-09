@@ -67,6 +67,3 @@ A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and
 ---
 
 
-**Version**: 2.0  
-**Last Updated**: March 4, 2026  
-**Status**: Production Ready ✅
