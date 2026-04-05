@@ -57,13 +57,16 @@ A luxury, modern WordPress theme with glassmorphism design, dark/light mode, and
 **Visit WordPress Website**: https://multimian.com/
 ---
 
-## 👨‍💻 Author
 
+## 👨‍💻 Author
 **Mian Hassam**
 - Email: mianhassam96@gmail.com
 - Phone: +92 325 883 1437
 - GitHub: https://github.com/Mianhassam96
-
 ---
 
+📄 License
+This project is licensed under the MIT License.
 
+⭐ Support
+If you like this project, consider giving it a star on GitHub ⭐
