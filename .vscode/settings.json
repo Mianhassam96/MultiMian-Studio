@@ -1,3 +1,6 @@
 {
+<<<<<<< HEAD
     "typescript.autoClosingTags": false
+=======
+>>>>>>> 4384903 (feat: v2.0 complete redesign - design system, gallery, tech stack, animated counters, 6 color themes, sticky nav with scroll progress, enriched footer, accessible components)
 }
