@@ -2,6 +2,58 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
+// Floating particle definitions
+const PARTICLES = [
+  { size: 'w-5 h-5', pos: 'top-16 left-16',    delay: 0,  dur: 8  },
+  { size: 'w-8 h-8', pos: 'top-28 right-20',   delay: 1,  dur: 10 },
+  { size: 'w-4 h-4', pos: 'bottom-40 left-28', delay: 2,  dur: 9  },
+  { size: 'w-6 h-6', pos: 'top-1/2 left-10',   delay: 3,  dur: 7  },
+  { size: 'w-7 h-7', pos: 'bottom-24 right-14',delay: 4,  dur: 11 },
+  { size: 'w-3 h-3', pos: 'top-1/3 right-1/3', delay: 1.5,dur: 6  },
+]
+
+const THEMES = {
+  blue: {
+    gradientFrom:  'from-blue-500',
+    gradientTo:    'to-cyan-400',
+    hoverFrom:     'hover:from-blue-600',
+    hoverTo:       'hover:to-cyan-500',
+    accent:        'text-cyan-300',
+    badge:         'from-blue-500/20 to-cyan-500/20 border-cyan-400/30',
+    bg:            'from-slate-900 via-blue-950/90 to-indigo-950/80',
+    particleColors:['from-cyan-400 to-blue-500', 'from-purple-400 to-pink-400', 'from-indigo-400 to-cyan-400', 'from-emerald-400 to-teal-400', 'from-violet-400 to-purple-400','from-blue-300 to-cyan-300'],
+    glow:          'shadow-blue-500/40',
+    ring:          'focus:ring-blue-500/50',
+  },
+  cyan: {
+    gradientFrom:  'from-cyan-500',
+    gradientTo:    'to-blue-400',
+    hoverFrom:     'hover:from-cyan-600',
+    hoverTo:       'hover:to-blue-500',
+    accent:        'text-blue-300',
+    badge:         'from-cyan-500/20 to-blue-500/20 border-blue-400/30',
+    bg:            'from-slate-900 via-cyan-950/90 to-blue-950/80',
+    particleColors:['from-blue-400 to-cyan-500', 'from-pink-400 to-purple-400', 'from-cyan-400 to-indigo-400', 'from-teal-400 to-emerald-400', 'from-purple-400 to-violet-400','from-cyan-300 to-blue-300'],
+    glow:          'shadow-cyan-500/40',
+    ring:          'focus:ring-cyan-500/50',
+  },
+} as const
+
+type ThemeKey = keyof typeof THEMES
+
+const FEATURE_BULLETS = [
+  { icon: '✅', title: 'Full Stack Expertise',          sub: 'Frontend · Backend · APIs · Databases' },
+  { icon: '✅', title: 'Clean & Scalable Code',          sub: 'Maintainable architecture & best practices' },
+  { icon: '✅', title: 'Responsive & SEO-Optimized',     sub: 'Fast, accessible, and search-friendly' },
+  { icon: '✅', title: 'On-Time Delivery',               sub: 'Reliable timelines and ongoing support' },
+]
+
+const STATS = [
+  { value: '40+', label: 'Projects Delivered' },
+  { value: '5★',  label: 'Client Rating'      },
+  { value: '24/7',label: 'Support'             },
+]
+
 export default function Hero() {
   const [heroTheme, setHeroTheme] = useState<'blue' | 'cyan'>('blue')
 
@@ -131,7 +183,7 @@ export default function Hero() {
           style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.8)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
         >
           <motion.span
             initial={{ opacity: 0, x: -50 }}
@@ -156,7 +208,7 @@ export default function Hero() {
           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
         >
           <motion.span
             initial={{ opacity: 0 }}
@@ -176,12 +228,23 @@ export default function Hero() {
           </motion.span>
         </motion.div>
 
+        <motion.p
+          className="text-base text-slate-300 max-w-2xl mx-auto mb-10"
+          style={{ textShadow: '0 2px 6px rgba(0,0,0,0.5)' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.38 }}
+        >
+          💡 React · Next.js · TypeScript · Node.js · Tailwind CSS · Framer Motion · MongoDB · PostgreSQL · AWS
+        </motion.p>
+
+        {/* Feature bullets */}
         <motion.div
           className="max-w-4xl mx-auto text-lg md:text-xl text-white mb-10 leading-relaxed font-light"
           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
         >
           <motion.p
             className="mb-4"
@@ -289,11 +352,55 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* CTAs */}
         <motion.div
-          className="mt-16 flex items-center justify-center gap-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+        >
+          <motion.div whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <Link
+              href="/portfolio"
+              className={`bg-gradient-to-r ${t.gradientFrom} ${t.gradientTo} ${t.hoverFrom} ${t.hoverTo} text-white px-9 py-4 rounded-2xl font-semibold text-base inline-flex items-center gap-2.5 shadow-2xl ${t.glow} focus:outline-none focus:ring-4 ${t.ring} transition-all duration-300`}
+            >
+              <span>👁️</span> View Live Demo
+              <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd"/>
+              </svg>
+            </Link>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <a
+              href="https://github.com/Mianhassam96/MultiMian-Studio"
+              target="_blank"
+              rel="noreferrer"
+              className="px-9 py-4 rounded-2xl font-semibold text-base inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/25 text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.4-3.8-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.4-1.3-5.4-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.2 1.8-.3 2.7-.3s1.9.1 2.7.3c2.3-1.6 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.7.9 1.2 2 1.2 3.3 0 4.4-2.8 5.4-5.4 5.7.6.5 1 1.3 1 2.6v3.8c0 .4.2.8.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+              </svg>
+              View Source Code
+            </a>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <Link
+              href="/contact"
+              className={`bg-gradient-to-r ${t.gradientFrom} ${t.gradientTo} ${t.hoverFrom} ${t.hoverTo} text-white px-9 py-4 rounded-2xl font-semibold text-base inline-flex items-center gap-2.5 shadow-2xl ${t.glow} focus:outline-none focus:ring-4 ${t.ring} transition-all duration-300`}
+            >
+              <span>👉</span> Let's Build Together
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Stats row */}
+        <motion.div
+          className="flex items-center justify-center gap-10 flex-wrap"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
         >
           <div className="text-center">
             <div className="text-2xl font-bold text-cyan-700 mb-1">40+</div>
@@ -325,6 +432,9 @@ export default function Hero() {
           </button>
         </motion.div>
       </motion.div>
+
+      {/* Bottom fade into page */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[var(--bg)] to-transparent pointer-events-none" />
     </section>
   )
 }

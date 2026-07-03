@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -7,26 +8,21 @@ export default function Contact() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
-      })
-      if (res.ok) {
-        setStatus('sent')
-        setName('')
-        setEmail('')
-        setMessage('')
-      } else {
-        setStatus('error')
-      }
-    } catch (err) {
-      setStatus('error')
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${name}`)
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+    window.location.href = `mailto:mianhassam96@gmail.com?subject=${subject}&body=${body}`
+    
+    // Show success message
+    setStatus('sent')
+    setTimeout(() => {
+      setName('')
+      setEmail('')
+      setMessage('')
+      setStatus('idle')
+    }, 3000)
   }
 
   const contactInfo = [
@@ -75,7 +71,14 @@ export default function Contact() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <>
+      <Head>
+        <title>Contact - Get in Touch</title>
+        <meta name="description" content="Get in touch with us for your web development project. Contact via email, phone, or WhatsApp. Fast response within 24 hours." />
+        <meta name="keywords" content="contact web developer, hire developer, web development inquiry, project consultation" />
+      </Head>
+
+      <div className="min-h-screen">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -198,11 +201,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <button
-                      className="w-full px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-8 py-4 bg-primary text-white rounded-xl font-medium hover:bg-primary-dark transition"
                       type="submit"
-                      disabled={status === 'sending'}
                     >
-                      {status === 'sending' ? 'Sending...' : 'Send Message'}
+                      Send Message via Email
                     </button>
                   </div>
                   {status === 'sent' && (
@@ -234,23 +236,23 @@ export default function Contact() {
                 className="space-y-8"
               >
                 <div>
-                  <h3 className="text-2xl font-bold mb-4">Why Work With Me?</h3>
+                  <h3 className="text-2xl font-bold mb-4">Why Choose MultiMian?</h3>
                   <ul className="space-y-3 text-muted">
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Full-stack development expertise</span>
+                      <span>Results-driven solutions that grow your business</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Modern technologies and best practices</span>
+                      <span>Clear communication in plain English, no tech jargon</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Responsive and user-friendly designs</span>
+                      <span>Fast delivery without compromising quality</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">✓</span>
-                      <span>Fast turnaround and clear communication</span>
+                      <span>Ongoing support and partnership after launch</span>
                     </li>
                   </ul>
                 </div>
@@ -273,11 +275,13 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="glass-card p-6 rounded-2xl">
-                  <h3 className="text-xl font-bold mb-4">Quick Response</h3>
-                  <p className="text-muted">
-                    I typically respond to messages within 24 hours. For urgent inquiries,
-                    feel free to reach out via WhatsApp for faster communication.
+                <div className="glass-card p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary-dark/5">
+                  <h3 className="text-xl font-bold mb-4">🎁 Free Consultation</h3>
+                  <p className="text-muted mb-4">
+                    Not sure where to start? Book a free 30-minute consultation. We&apos;ll discuss your goals, answer your questions, and provide honest advice—no sales pressure.
+                  </p>
+                  <p className="text-sm text-primary font-medium">
+                    ⚡ Response time: Within 24 hours
                   </p>
                 </div>
               </motion.div>
@@ -286,5 +290,6 @@ export default function Contact() {
         </div>
       </motion.div>
     </div>
+    </>
   )
 }

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-export default function CTABanner(){
+export default function CTABanner() {
   return (
     <motion.section initial={{opacity:0, y:8}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="mt-16 animated-bg text-white rounded-lg p-8 hover-lift">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">

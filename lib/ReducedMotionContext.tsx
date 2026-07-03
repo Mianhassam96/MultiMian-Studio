@@ -1,14 +1,13 @@
-import React from 'react'
+import { createContext } from 'react'
 
-type RMContext = {
+interface ReducedMotionContextType {
   reduced: boolean
-  setReduced: (v:boolean)=>void
+  setReduced: (reduced: boolean) => void
 }
 
-export const ReducedMotionContext = React.createContext<RMContext | undefined>(undefined)
+export const ReducedMotionContext = createContext<ReducedMotionContextType>({
+  reduced: false,
+  setReduced: () => {},
+})
 
-export function useReducedMotionPref(){
-  const ctx = React.useContext(ReducedMotionContext)
-  if(!ctx) throw new Error('useReducedMotionPref must be used within provider')
-  return ctx
-}
+export const ReducedMotionProvider = ReducedMotionContext.Provider
