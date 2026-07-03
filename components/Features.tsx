@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 interface Feature {
@@ -13,7 +13,7 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    icon: '⚡',
+    icon: 'âš¡',
     title: 'Fast Delivery',
     desc: 'Ship production-ready features rapidly with an optimized workflow and streamlined CI/CD pipeline.',
     stat: '48h',
@@ -22,16 +22,16 @@ const FEATURES: Feature[] = [
     href: '/services',
   },
   {
-    icon: '🏗️',
+    icon: 'ðŸ—ï¸',
     title: 'Scalable Architecture',
-    desc: 'Design systems that handle growth gracefully — low latency, clean separation, and minimal tech debt.',
+    desc: 'Design systems that handle growth gracefully â€” low latency, clean separation, and minimal tech debt.',
     stat: '99.9%',
     statLabel: 'uptime ready',
     color: 'from-blue-500/15 to-indigo-400/10',
     href: '/services',
   },
   {
-    icon: '👨‍💻',
+    icon: 'ðŸ‘¨â€ðŸ’»',
     title: 'Developer Friendly',
     desc: 'Readable, typed code with clear documentation, strong DX patterns, and reusable component libraries.',
     stat: '100%',
@@ -40,7 +40,7 @@ const FEATURES: Feature[] = [
     href: '/about',
   },
   {
-    icon: '📱',
+    icon: 'ðŸ“±',
     title: 'Fully Responsive',
     desc: 'Mobile-first design with fluid layouts, adaptive typography, and perfect rendering on every device.',
     stat: '3+',
@@ -49,7 +49,7 @@ const FEATURES: Feature[] = [
     href: '/services',
   },
   {
-    icon: '🎨',
+    icon: 'ðŸŽ¨',
     title: 'Polished UI/UX',
     desc: 'Thoughtful animations, consistent design tokens, and pixel-perfect interfaces your users will love.',
     stat: '95+',
@@ -58,9 +58,9 @@ const FEATURES: Feature[] = [
     href: '/portfolio',
   },
   {
-    icon: '🔒',
+    icon: 'ðŸ”’',
     title: 'Secure by Default',
-    desc: 'Security best practices baked in from day one — input validation, auth patterns, and safe deployments.',
+    desc: 'Security best practices baked in from day one â€” input validation, auth patterns, and safe deployments.',
     stat: 'A+',
     statLabel: 'security grade',
     color: 'from-purple-500/15 to-violet-400/10',
@@ -78,18 +78,14 @@ export default function Features() {
         transition={{ duration: 0.7 }}
         className="text-center mb-14"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-          Key Features
-=======
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-          ✨ Key Features
+          âœ¨ Key Features
         </span>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
           What Makes This Stand Out
->>>>>>> 4384903 (feat: v2.0 complete redesign - design system, gallery, tech stack, animated counters, 6 color themes, sticky nav with scroll progress, enriched footer, accessible components)
-        </h2>
+</h2>
         <p className="text-muted max-w-2xl mx-auto text-base">
-          Built with modern standards — every detail reflects a commitment to quality, performance, and user experience.
+          Built with modern standards â€” every detail reflects a commitment to quality, performance, and user experience.
         </p>
       </motion.div>
 
@@ -141,7 +137,7 @@ export default function Features() {
                 aria-label={`Learn more about ${f.title}`}
               >
                 Learn More
-                <span className="inline-block transition-transform duration-200 group-hover/link:translate-x-0.5">→</span>
+                <span className="inline-block transition-transform duration-200 group-hover/link:translate-x-0.5">â†’</span>
               </Link>
             </div>
           </motion.div>
@@ -150,3 +146,4 @@ export default function Features() {
     </section>
   )
 }
+

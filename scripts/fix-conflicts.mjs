@@ -1,4 +1,16 @@
-import Link from 'next/link'
+/**
+ * Fixes merge conflict markers in source files
+ * and writes the clean v2.0 versions
+ */
+import { writeFileSync, readFileSync } from 'fs'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const root = resolve(__dirname, '..')
+
+// ── Footer.tsx (clean v2.0) ───────────────────────────────────────────────────
+const footer = `import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const QUICK_LINKS = [
@@ -161,3 +173,27 @@ export default function Footer() {
     </footer>
   )
 }
+`
+
+writeFileSync(resolve(root, 'components/Footer.tsx'), footer, 'utf8')
+console.log('✔  Footer.tsx conflict resolved')
+
+// ── Verify no more conflict markers anywhere ──────────────────────────────────
+import { readdirSync, statSync } from 'fs'
+
+function scanDir(dir) {
+  const entries = readdirSync(dir)
+  for (const entry of entries) {
+    if (['node_modules', '.git', '.next', 'out', 'scripts'].includes(entry)) continue
+    const full = resolve(dir, entry)
+    if (statSync(full).isDirectory()) { scanDir(full); continue }
+    if (!entry.match(/\.(tsx|ts|css|js)$/)) continue
+    const content = readFileSync(full, 'utf8')
+    if (content.includes('<<<<<<<') || content.includes('>>>>>>>')) {
+      console.error('  ❌ Conflict still in:', full)
+    }
+  }
+}
+
+scanDir(root)
+console.log('✔  Conflict scan complete')
