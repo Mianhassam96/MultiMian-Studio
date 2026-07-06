@@ -1,4 +1,4 @@
-MultiMian-Studio 🚀
+MultiMian-Studio
 
 
 
