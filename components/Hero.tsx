@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -69,6 +69,7 @@ export default function Hero() {
       floating: ['from-cyan-400 to-blue-500', 'from-purple-400 to-pink-400', 'from-indigo-400 to-cyan-400', 'from-emerald-400 to-teal-400', 'from-violet-400 to-purple-400'],
       bgAccent: 'from-indigo-600/20 via-purple-400/15 to-blue-500/20',
       glow: 'shadow-blue-500/50',
+      ring: 'focus:ring-blue-500/50',
     },
     cyan: {
       primary: 'cyan',
@@ -80,10 +81,12 @@ export default function Hero() {
       floating: ['from-blue-400 to-cyan-500', 'from-pink-400 to-purple-400', 'from-cyan-400 to-indigo-400', 'from-teal-400 to-emerald-400', 'from-purple-400 to-violet-400'],
       bgAccent: 'from-cyan-600/20 via-blue-400/15 to-indigo-500/20',
       glow: 'shadow-cyan-500/50',
+      ring: 'focus:ring-cyan-500/50',
     },
   }
 
   const currentTheme = themeColors[heroTheme]
+  const t = currentTheme
 
   return (
     <section className="rounded-2xl p-8 md:p-16 text-center relative overflow-hidden min-h-[85vh] flex items-center justify-center">

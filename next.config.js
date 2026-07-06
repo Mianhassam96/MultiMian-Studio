@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export', // enable static export
-  basePath: '/MultiMian-Studio', // GitHub repo name
-  assetPrefix: '/MultiMian-Studio/', // ensures assets load correctly
-  experimental: {
-    turbo: {},
+  output: 'export',           // static export — required for GitHub Pages
+  basePath: '/MultiMian-Studio',
+  assetPrefix: '/MultiMian-Studio/',
+  images: {
+    unoptimized: true,        // required for static export
   },
 }
 
