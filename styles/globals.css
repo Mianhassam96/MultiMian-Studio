@@ -20,10 +20,20 @@
   --text: #0f172a;
   --muted: #475569;
   --glass: rgba(255,255,255,0.8);
-  --glass-stroke: rgba(255,255,255,0.1);
+  --glass-stroke: rgba(0,0,0,0.08);
   --card-shadow: 0 8px 32px -4px rgba(0,0,0,0.1);
   --gradient-start: rgba(255,255,255,0.8);
   --gradient-end: rgba(255,255,255,0.6);
+  /* Navbar */
+  --nav-bg: rgba(248,250,252,0.95);
+  --nav-bg-scrolled: rgba(248,250,252,0.98);
+  --nav-border: rgba(0,0,0,0.07);
+  /* Footer */
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --footer-border: rgba(255,255,255,0.07);
+  --footer-hover: #ffffff;
+  --footer-cta-bg: rgba(255,255,255,0.04);
 }
 
 .dark {
@@ -37,11 +47,21 @@
   --bg: #07112a;
   --text: #e6eef8;
   --muted: #9fb3d4;
-  --glass: rgba(255,255,255,0.04);
-  --glass-stroke: rgba(255,255,255,0.05);
+  --glass: rgba(255,255,255,0.05);
+  --glass-stroke: rgba(255,255,255,0.07);
   --card-shadow: 0 8px 32px -4px rgba(0,0,0,0.3);
   --gradient-start: rgba(255,255,255,0.1);
   --gradient-end: rgba(255,255,255,0.05);
+  /* Navbar */
+  --nav-bg: rgba(7,17,42,0.95);
+  --nav-bg-scrolled: rgba(7,17,42,0.98);
+  --nav-border: rgba(255,255,255,0.06);
+  /* Footer — stays dark in both modes, slightly lighter in dark */
+  --footer-bg: #060e20;
+  --footer-text: #7f96b8;
+  --footer-border: rgba(255,255,255,0.06);
+  --footer-hover: #e6eef8;
+  --footer-cta-bg: rgba(255,255,255,0.03);
 }
 
 @layer base {
