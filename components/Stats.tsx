@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  {label: 'Projects', value: '40+'},
-  {label: 'Years', value: '4'},
-  {label: 'Happy clients', value: '60+'},
+  {label: 'Projects Delivered', value: '50+'},
+  {label: 'Years Experience',   value: '5+' },
+  {label: 'Happy Clients',      value: '50+'},
 ]
 
 export default function Stats(){

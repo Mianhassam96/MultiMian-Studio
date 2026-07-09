@@ -5,15 +5,15 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Favicon Configuration */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+        <link rel="icon" type="image/x-icon" href="/MultiMian-Studio/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/MultiMian-Studio/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/MultiMian-Studio/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/MultiMian-Studio/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/MultiMian-Studio/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/MultiMian-Studio/android-chrome-512x512.png" />
         
         {/* Web App Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/MultiMian-Studio/site.webmanifest" />
         
         {/* Theme Color */}
         <meta name="theme-color" content="#2563EB" />

@@ -13,9 +13,9 @@ const STATS: Stat[] = [
   { value: 15,  suffix: '+',  label: 'Components',        icon: '🧩', color: 'from-blue-500/20 to-cyan-400/15'    },
   { value: 100, suffix: '%',  label: 'Responsive',         icon: '📱', color: 'from-emerald-500/20 to-teal-400/15' },
   { value: 95,  suffix: '+',  label: 'Lighthouse Score',   icon: '⚡', color: 'from-amber-500/20 to-yellow-400/15' },
-  { value: 8,   suffix: '+',  label: 'Pages Built',        icon: '📄', color: 'from-purple-500/20 to-pink-400/15'  },
-  { value: 40,  suffix: '+',  label: 'Projects Delivered', icon: '🚀', color: 'from-primary/20 to-primary-dark/15' },
-  { value: 4,   suffix: '+',  label: 'Years Experience',   icon: '🏆', color: 'from-rose-500/20 to-orange-400/15'  },
+  { value: 13,  suffix: '+',  label: 'Pages Built',        icon: '📄', color: 'from-purple-500/20 to-pink-400/15'  },
+  { value: 50,  suffix: '+',  label: 'Projects Delivered', icon: '🚀', color: 'from-primary/20 to-primary-dark/15' },
+  { value: 5,   suffix: '+',  label: 'Years Experience',   icon: '🏆', color: 'from-rose-500/20 to-orange-400/15'  },
 ]
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
