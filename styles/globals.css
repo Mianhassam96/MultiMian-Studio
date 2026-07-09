@@ -28,12 +28,14 @@
   --nav-bg: rgba(248,250,252,0.95);
   --nav-bg-scrolled: rgba(248,250,252,0.98);
   --nav-border: rgba(0,0,0,0.07);
-  /* Footer */
+  /* Footer — light mode: deep slate that complements the light page bg */
   --footer-bg: #0f172a;
+  --footer-heading: #f1f5f9;
   --footer-text: #94a3b8;
-  --footer-border: rgba(255,255,255,0.07);
-  --footer-hover: #ffffff;
-  --footer-cta-bg: rgba(255,255,255,0.04);
+  --footer-text-hover: #f1f5f9;
+  --footer-border: rgba(255,255,255,0.08);
+  --footer-surface: rgba(255,255,255,0.04);
+  --footer-surface-hover: rgba(255,255,255,0.08);
 }
 
 .dark {
@@ -56,12 +58,14 @@
   --nav-bg: rgba(7,17,42,0.95);
   --nav-bg-scrolled: rgba(7,17,42,0.98);
   --nav-border: rgba(255,255,255,0.06);
-  /* Footer — stays dark in both modes, slightly lighter in dark */
-  --footer-bg: #060e20;
-  --footer-text: #7f96b8;
+  /* Footer — dark mode: even deeper, slightly blue-tinted dark */
+  --footer-bg: #050d1e;
+  --footer-heading: #e2e8f0;
+  --footer-text: #64748b;
+  --footer-text-hover: #e2e8f0;
   --footer-border: rgba(255,255,255,0.06);
-  --footer-hover: #e6eef8;
-  --footer-cta-bg: rgba(255,255,255,0.03);
+  --footer-surface: rgba(255,255,255,0.03);
+  --footer-surface-hover: rgba(255,255,255,0.06);
 }
 
 @layer base {
