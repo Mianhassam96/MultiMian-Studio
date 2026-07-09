@@ -5,8 +5,8 @@ import { useState } from 'react'
 
 const packages = [
   {
-    name: "Starter",
-    tagline: "Launch Your Presence",
+    name: "Business Starter",
+    tagline: "Launch Your Online Presence",
     price: "$499",
     duration: "1-2 weeks",
     description: "Perfect for small businesses and startups getting online",
@@ -26,8 +26,8 @@ const packages = [
     popular: false
   },
   {
-    name: "Professional",
-    tagline: "Grow Your Business",
+    name: "Business Growth",
+    tagline: "Grow Your Business Online",
     price: "$1,499",
     duration: "2-4 weeks",
     description: "Complete solution for established businesses",
@@ -50,7 +50,7 @@ const packages = [
     popular: true
   },
   {
-    name: "Enterprise",
+    name: "Enterprise Solution",
     tagline: "Scale Without Limits",
     price: "Custom",
     duration: "4-12 weeks",

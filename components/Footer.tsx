@@ -75,7 +75,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-5">
-              A full-stack development portfolio showcasing modern web experiences, clean code, and interactive UIs built with Next.js, React, and Tailwind CSS.
+              A full-stack development portfolio showcasing professional website development for businesses — modern, fast, SEO-optimized, and built for long-term growth.
             </p>
             {/* Socials */}
             <div className="flex items-center gap-2">

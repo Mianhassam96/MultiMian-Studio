@@ -102,7 +102,7 @@ const projects = [
   }
 ]
 
-const categories = ["All Projects", "Web Application", "E-Commerce", "Business Website"]
+const categories = ["All Projects", "Business Website", "E-Commerce", "Web Application"]
 
 const techColors = {
   frontend: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800",
@@ -152,14 +152,14 @@ export default function Portfolio() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6">
             <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
-            <span className="text-sm font-semibold text-blue-700 dark:text-blue-400">
-              50+ Successful Projects Delivered
-            </span>
+            <span className="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
+                  50+ Businesses Served
+                </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="block text-gray-900 dark:text-white">
-              Projects That Drive
+              Websites Built for
             </span>
             <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Real Business Results
@@ -167,8 +167,7 @@ export default function Portfolio() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            Every project we build is designed to solve real business challenges and deliver measurable results. 
-            From increasing revenue to improving efficiency, see how we turn ideas into powerful digital solutions.
+            Every project we build is designed to help your business establish credibility, attract customers, and grow online. See how we turn ideas into professional digital solutions.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">

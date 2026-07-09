@@ -18,9 +18,9 @@ export default function About() {
         {/* Hero */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-5xl mx-auto mb-20 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-            Building Digital Solutions That Drive Real Results
+            Professional Website Development That Grows Your Business
           </h1>
-          <p className="text-xl text-muted">We&apos;re not just developers—we&apos;re your strategic partner in digital growth.</p>
+          <p className="text-xl text-muted">We&apos;re not just developers &mdash; we&apos;re your long-term partner in digital growth.</p>
         </motion.div>
 
         {/* Story */}
@@ -60,9 +60,10 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-3xl font-bold mb-6">Meet Mian Hassam</h2>
-              <p className="text-lg text-muted mb-6">Founder of MultiMian and full-stack developer specializing in modern web technologies.</p>
-              <p className="text-lg text-muted mb-6">With expertise in JavaScript, TypeScript, React, Node.js, and AI tools, I help businesses transform ideas into powerful digital solutions.</p>
-              <p className="text-lg text-muted mb-8">My mission is simple: build websites and applications that don&apos;t just look good—they drive real business results.</p>
+              <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Founder of MultiMian &mdash; Website Development Expert</p>
+              <p className="text-lg text-muted mb-6">Founder of MultiMian and professional website development specialist helping businesses establish credibility and grow online.</p>
+              <p className="text-lg text-muted mb-6">I partner with business owners long-term — building websites that attract customers, establishing your brand online, and providing ongoing support so you can focus on running your business.</p>
+              <p className="text-lg text-muted mb-8">My mission: build professional websites that don&apos;t just look great — they drive real business results and build lasting partnerships.</p>
               <Link href="/contact" className="inline-flex items-center gap-2 glass-button px-6 py-3 rounded-xl">
                 Let&apos;s Work Together →
               </Link>

@@ -5,42 +5,42 @@ const testimonials = [
   {
     name: 'Aisha Johnson',
     role: 'CEO, TechStart Inc.',
-    quote: 'MultiMian turned our idea into a polished product in record time. Their attention to detail and technical expertise exceeded our expectations.',
+    quote: 'MultiMian delivered a professional website that helped us build credibility and attract more customer inquiries within the first month of launch.',
     image: '/testimonials/aisha.jpg',
     rating: 5
   },
   {
     name: 'Tom Anderson',
-    role: 'CTO, Innovation Labs',
-    quote: 'Reliable, communicative, and pragmatic — they are not just developers, they are strategic partners in our success story.',
+    role: 'Owner, Anderson Consulting',
+    quote: 'Our new business website brought in 3 new clients in the first two weeks. Mian understood exactly what we needed and delivered on time.',
     image: '/testimonials/tom.jpg',
     rating: 5
   },
   {
     name: 'Sarah Chen',
     role: 'Founder, Digital Solutions',
-    quote: 'The quality of work and professionalism shown by MultiMian is outstanding. They delivered exactly what we needed and more.',
+    quote: 'MultiMian redesigned our outdated website and our bounce rate dropped by 40%. The site is fast, mobile-friendly, and finally reflects our brand.',
     image: '/testimonials/sarah.jpg',
     rating: 5
   },
   {
     name: 'Michael Rodriguez',
-    role: 'Product Manager, StartupXYZ',
-    quote: 'Working with MultiMian was a game-changer for our project. Their innovative approach and technical skills are top-notch.',
+    role: 'Marketing Director, GrowthCo',
+    quote: 'The landing page MultiMian built for our campaign more than doubled our conversion rate. Professional, fast, and exactly what our customers needed.',
     image: '/testimonials/michael.jpg',
     rating: 5
   },
   {
     name: 'Emma Wilson',
-    role: 'Marketing Director, GrowthCo',
-    quote: 'From concept to launch, MultiMian provided exceptional service. Their attention to user experience is remarkable.',
+    role: 'Restaurant Owner, The Corner Table',
+    quote: 'Our online orders increased significantly after launching the new website. Customers can now find us easily on Google and book a table in seconds.',
     image: '/testimonials/emma.jpg',
     rating: 5
   },
   {
     name: 'David Kim',
-    role: 'Entrepreneur, TechVentures',
-    quote: 'MultiMian&apos;s expertise in modern web technologies helped us scale our platform efficiently. Highly recommended!',
+    role: 'Real Estate Agent, Prime Properties',
+    quote: 'MultiMian built a stunning property listings site that helped me close more deals. Clients comment on how professional and easy to use it is.',
     image: '/testimonials/david.jpg',
     rating: 5
   }
@@ -88,11 +88,10 @@ export default function Testimonials() {
         className="text-center max-w-4xl mx-auto mb-16"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-          Client Testimonials
+          What Our Clients Say
         </h1>
         <p className="text-xl text-muted mb-8">
-          Don&apos;t just take our word for it &mdash; hear from our satisfied clients who have experienced
-          the quality and dedication we bring to every project.
+          Real businesses, real results. See how MultiMian has helped business owners build credibility, attract customers, and grow online.
         </p>
         <div className="inline-flex items-center gap-3 text-sm text-primary bg-primary/10 px-6 py-3 rounded-xl">
           <span>⭐</span>
